@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAISAL SABER SCENEPACKS // CORE INVENTORY ULTRA EDITION</title>
+    <title>FAISAL SABER // FREE EDITING RESOURCES</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
-
     <!-- FAVICON -->
-<link rel="icon" href="ChatGPT Image Jun 18, 2026, 07_42_27 AM.png" type="image/png">
-<link rel="shortcut icon" href="ChatGPT Image Jun 18, 2026, 07_42_27 AM.png" type="image/png">
-<link rel="apple-touch-icon" href="ChatGPT Image Jun 18, 2026, 07_42_27 AM.png">
+    <link rel="icon" href="13905.png" type="image/png">
+    <link rel="shortcut icon" href="13905.png" type="image/png">
+    <link rel="apple-touch-icon" href="13905.png">
 
-<!-- Theme Color -->
-<meta name="theme-color" content="#a855f7">
-    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#a855f7">
+
     <style>
         :root {
             --bg-deep: #030305;
@@ -239,17 +238,36 @@
             background: var(--bg-card); border-radius: 20px; overflow: hidden;
             border: 1px solid var(--glass-border); position: relative;
             transition: var(--transition-smooth); display: flex; flex-direction: column;
-            transform-style: preserve-3d; perspective: 1000px;
+            transform-style: preserve-3d; perspective: 1000px; cursor: pointer;
         }
         .studio-card:hover {
             border-color: rgba(0, 242, 254, 0.35);
             box-shadow: 0 30px 70px rgba(0,0,0,0.8), 0 0 40px rgba(0, 242, 254, 0.06);
         }
-        .card-media { position: relative; width: 100%; padding-top: 130%; overflow: hidden; background-color: #07080c; }
-        .card-media img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .studio-card:hover .card-media img { transform: scale(1.07); }
+        /* Resource card icon area instead of image */
+        .card-media {
+            position: relative; width: 100%; padding-top: 65%; overflow: hidden;
+            background: linear-gradient(135deg, #0d0f17 0%, #12141e 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .card-icon-wrap {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px;
+        }
+        .card-icon-bg {
+            width: 80px; height: 80px; border-radius: 22px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .studio-card:hover .card-icon-bg { transform: scale(1.1) rotate(-5deg); }
+        .card-icon-bg::after {
+            content: ''; position: absolute; inset: -1px; border-radius: 23px;
+            background: linear-gradient(135deg, var(--primary), var(--accent)); z-index: -1;
+            opacity: 0.3;
+        }
         .card-media::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 65%;
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 40%;
             background: linear-gradient(to top, var(--bg-card) 0%, transparent 100%); z-index: 1;
         }
         .card-badge {
@@ -259,7 +277,7 @@
             font-size: 0.7rem; font-weight: 700; font-family: var(--font-display);
             text-transform: uppercase; z-index: 2;
         }
-        .fps-badge {
+        .type-badge {
             position: absolute; top: 14px; left: 14px;
             background: rgba(255, 0, 127, 0.15); border: 1px solid var(--accent); color: var(--accent);
             backdrop-filter: blur(10px); padding: 5px 12px; border-radius: 8px;
@@ -315,12 +333,12 @@
         }
         .card-action-btn:hover i { transform: translateX(4px); }
 
-        /* ===== MODAL ===== */
+        /* ===== RESOURCE MODAL ===== */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(3, 3, 5, 0.9); backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px); z-index: 2000;
-            display: flex; justify-content: center; align-items: center;
+            display: flex; justify-content: center; align-items: flex-start;
             opacity: 0; pointer-events: none;
             transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1); padding: 1rem;
             overflow-y: auto;
@@ -328,7 +346,7 @@
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal-window {
             background: var(--bg-surface); border: 1px solid rgba(0, 242, 254, 0.15);
-            width: 100%; max-width: 600px; border-radius: 24px; position: relative;
+            width: 100%; max-width: 680px; border-radius: 24px; position: relative;
             transform: translateY(40px) scale(0.95); transition: var(--transition-smooth);
             overflow: hidden; box-shadow: 0 50px 120px rgba(0,0,0,0.9), 0 0 60px rgba(0,242,254,0.05);
             margin: auto;
@@ -337,8 +355,14 @@
         .modal-header-banner {
             background: linear-gradient(135deg, rgba(0,242,254,0.08) 0%, rgba(255,0,127,0.08) 100%);
             border-bottom: 1px solid var(--glass-border); padding: 2rem 2.5rem;
+            display: flex; align-items: center; gap: 16px;
+        }
+        .modal-header-icon {
+            width: 56px; height: 56px; border-radius: 16px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
         }
         .modal-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; }
+        .modal-subtitle { font-size: 0.82rem; color: var(--text-sub); margin-top: 3px; }
         .modal-close-btn {
             position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.5);
             border: 1px solid var(--glass-border); width: 38px; height: 38px;
@@ -348,22 +372,116 @@
         }
         .modal-close-btn:hover { background: var(--accent); transform: rotate(90deg); }
         .modal-body { padding: 2rem 2.5rem; }
-        .modal-spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 2rem; }
-        .spec-box { background: var(--bg-card); border: 1px solid var(--glass-border); padding: 14px; border-radius: 12px; }
-        .spec-box label { display: block; font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-        .spec-box span { font-weight: 600; font-size: 1rem; }
-        .download-server-list { display: flex; flex-direction: column; gap: 12px; }
-        .server-link {
-            display: flex; justify-content: space-between; align-items: center;
+
+        /* Resource items inside modal */
+        .resource-list { display: flex; flex-direction: column; gap: 12px; }
+        .resource-item {
+            display: flex; align-items: center; gap: 14px;
             background: var(--bg-card); border: 1px solid var(--glass-border);
-            padding: 16px 20px; border-radius: 14px; text-decoration: none;
-            color: var(--text-main); font-weight: 600; transition: var(--transition-smooth);
+            padding: 14px 18px; border-radius: 14px; transition: var(--transition-smooth);
+            position: relative; overflow: hidden;
         }
-        .server-link:hover { transform: translateX(6px); border-color: var(--accent); background: rgba(255, 0, 127, 0.06); }
-        .server-link .server-info { display: flex; align-items: center; gap: 14px; }
-        .server-link .server-info i { font-size: 1.3rem; }
-        .server-link.mediafire i { color: #1a73e8; }
-        .server-link.drive i { color: #2dca73; }
+        .resource-item:hover { border-color: rgba(0,242,254,0.3); transform: translateX(4px); background: rgba(0,242,254,0.03); }
+        .resource-item-icon {
+            width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+        }
+        .resource-item-info { flex: 1; min-width: 0; }
+        .resource-item-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .resource-item-desc { font-size: 0.75rem; color: var(--text-sub); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .resource-item-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+        .res-badge {
+            font-size: 0.62rem; font-weight: 700; padding: 3px 9px; border-radius: 6px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .res-badge.new { background: rgba(0,242,254,0.12); border: 1px solid rgba(0,242,254,0.3); color: var(--primary); }
+        .res-badge.popular { background: rgba(255,0,127,0.12); border: 1px solid rgba(255,0,127,0.3); color: var(--accent); }
+        .res-badge.hot { background: rgba(255,165,0,0.12); border: 1px solid rgba(255,165,0,0.3); color: #ffaa00; }
+        .res-dl-count { font-size: 0.7rem; color: var(--text-sub); display: flex; align-items: center; gap: 4px; }
+        .res-dl-count i { color: var(--accent); font-size: 0.65rem; }
+        .res-download-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none; padding: 7px 16px; border-radius: 8px; color: #000;
+            font-weight: 700; font-family: var(--font-display); font-size: 0.75rem;
+            cursor: pointer; transition: var(--transition-fast); display: flex; align-items: center; gap: 5px;
+            text-decoration: none; white-space: nowrap;
+        }
+        .res-download-btn:hover { box-shadow: 0 4px 15px var(--primary-glow); transform: scale(1.05); }
+
+        /* Image / Icon grid items (CC, PNG, Icons, Text Animation, Plugins) */
+        .media-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+            gap: 14px;
+        }
+        .media-card {
+            background: var(--bg-card); border: 1px solid var(--glass-border);
+            border-radius: 14px; overflow: hidden; transition: var(--transition-smooth);
+            display: flex; flex-direction: column;
+        }
+        .media-card:hover { border-color: rgba(0,242,254,0.3); transform: translateY(-3px); }
+        .media-thumb {
+            width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #07080c; position: relative;
+        }
+        .media-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .media-thumb-icon {
+            width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
+            font-size: 2.1rem;
+        }
+        .media-info { padding: 10px 12px 2px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1; }
+        .media-name {
+            font-family: var(--font-display); font-weight: 700; font-size: 0.8rem;
+            color: var(--text-main); line-height: 1.3;
+        }
+        .media-download-btn {
+            margin: 10px 12px 12px; background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none; padding: 8px; border-radius: 8px; color: #000; font-weight: 700;
+            font-family: var(--font-display); font-size: 0.72rem; text-decoration: none;
+            display: flex; align-items: center; justify-content: center; gap: 6px; transition: var(--transition-fast);
+        }
+        .media-download-btn:hover { box-shadow: 0 4px 15px var(--primary-glow); transform: scale(1.03); }
+
+        /* Sound effect items (play + download) */
+        .audio-item {
+            display: flex; align-items: center; gap: 14px;
+            background: var(--bg-card); border: 1px solid var(--glass-border);
+            padding: 12px 16px; border-radius: 14px; transition: var(--transition-smooth);
+        }
+        .audio-item:hover { border-color: rgba(0,242,254,0.3); background: rgba(0,242,254,0.03); }
+        .audio-play-btn {
+            width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0; border: none; cursor: pointer;
+            background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000;
+            display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+            transition: var(--transition-fast);
+        }
+        .audio-play-btn:hover { transform: scale(1.08); }
+        .audio-play-btn.playing { background: linear-gradient(45deg, var(--accent), #ff5050); color: #fff; }
+        .audio-info { flex: 1; min-width: 0; }
+        .audio-name {
+            font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--text-main);
+            display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .audio-desc {
+            font-size: 0.72rem; color: var(--text-sub); display: block; margin-top: 2px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+
+        /* AI Prompt items */
+        .prompt-item {
+            background: var(--bg-card); border: 1px solid var(--glass-border);
+            padding: 16px 18px; border-radius: 14px; transition: var(--transition-smooth);
+        }
+        .prompt-item:hover { border-color: rgba(0,242,254,0.3); background: rgba(0,242,254,0.03); }
+        .prompt-item-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+        .prompt-item-title { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
+        .prompt-item-desc { font-size: 0.82rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 12px; }
+        .copy-prompt-btn {
+            background: rgba(0,242,254,0.08); border: 1px solid rgba(0,242,254,0.25); color: var(--primary);
+            padding: 8px 18px; border-radius: 8px; font-family: var(--font-display); font-weight: 700;
+            font-size: 0.78rem; cursor: pointer; transition: var(--transition-fast);
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+        .copy-prompt-btn:hover { background: rgba(0,242,254,0.18); transform: scale(1.03); }
+        .copy-prompt-btn.copied { background: rgba(0,255,100,0.12); border-color: rgba(0,255,100,0.3); color: #00ff64; }
 
         /* ===== FOOTER ===== */
         footer { background: var(--bg-surface); border-top: 1px solid var(--glass-border); padding: 4rem 1.5rem 2rem 1.5rem; margin-top: 6rem; }
@@ -392,7 +510,7 @@
         .carousel-section::after { right: 0; background: linear-gradient(-90deg, var(--bg-deep), transparent); }
         .carousel-track {
             display: flex; gap: 16px;
-            animation: carouselScroll 38s linear infinite;
+            animation: carouselScroll 42s linear infinite;
             width: max-content;
         }
         .carousel-track:hover { animation-play-state: paused; }
@@ -401,25 +519,20 @@
             100% { transform: translateX(-50%); }
         }
         .carousel-card {
-            flex-shrink: 0; width: 160px; height: 220px; border-radius: 16px; overflow: hidden;
+            flex-shrink: 0; width: 150px; height: 100px; border-radius: 14px; overflow: hidden;
             position: relative; border: 1px solid var(--glass-border);
             cursor: pointer; transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex; align-items: center; justify-content: center;
         }
         .carousel-card:hover { transform: translateY(-6px) scale(1.04); border-color: var(--primary); }
-        .carousel-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .carousel-card::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 55%;
-            background: linear-gradient(to top, rgba(3,3,5,0.95) 0%, transparent 100%);
+        .carousel-card-icon {
+            display: flex; flex-direction: column; align-items: center; gap: 6px;
+            width: 100%; height: 100%; justify-content: center;
         }
+        .carousel-card-icon i { font-size: 1.5rem; }
         .carousel-card-label {
-            position: absolute; bottom: 10px; left: 0; right: 0; padding: 0 10px;
-            font-family: var(--font-display); font-size: 0.72rem; font-weight: 700;
-            color: var(--text-main); text-align: center; z-index: 2; line-height: 1.3;
-        }
-        .carousel-card-fps {
-            position: absolute; top: 8px; left: 8px; z-index: 2;
-            background: rgba(255,0,127,0.15); border: 1px solid var(--accent); color: var(--accent);
-            font-size: 0.6rem; font-weight: 700; padding: 3px 8px; border-radius: 6px;
+            font-family: var(--font-display); font-size: 0.65rem; font-weight: 700;
+            color: var(--text-main); text-align: center; z-index: 2; line-height: 1.3; padding: 0 8px;
         }
 
         /* ===== SIDE PAGE PANELS ===== */
@@ -507,9 +620,8 @@
             .card-title { font-size: 1rem; }
             .card-meta-specs { font-size: 0.72rem; }
             .card-action-btn { font-size: 0.8rem; padding: 11px; }
-            .fps-badge, .card-badge { font-size: 0.62rem; padding: 4px 9px; }
+            .type-badge, .card-badge { font-size: 0.62rem; padding: 4px 9px; }
             .filter-btn { padding: 9px 18px; font-size: 0.82rem; }
-            .modal-spec-grid { grid-template-columns: 1fr; }
             .modal-body { padding: 1.5rem; }
             .modal-header-banner { padding: 1.5rem; }
             .modal-title { font-size: 1.2rem; }
@@ -522,6 +634,10 @@
             .nav-social-icons a { width: 34px; height: 34px; font-size: 0.85rem; }
             .logo { font-size: 1.1rem; }
             .logo-img-asset { width: 36px; height: 36px; }
+            .resource-item { flex-wrap: wrap; }
+            .resource-item-right { flex-direction: row; align-items: center; width: 100%; justify-content: space-between; }
+            .media-grid { grid-template-columns: repeat(2, 1fr); }
+            .audio-item { flex-wrap: wrap; }
         }
 
         @media (max-width: 400px) {
@@ -544,8 +660,8 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#catalog">Asset Vault</a></li>
-                <li><a href="#request" class="nav-btn">Request Pack</a></li>
+                <li><a href="#catalog">Resources</a></li>
+                <li><a href="#catalog" class="nav-btn">Browse Free</a></li>
             </ul>
             <div class="nav-social-icons">
                 <a href="https://www.instagram.com/faisal_saber__?igsh=d2s3YW5qZmdlMTdz" target="_blank" class="insta" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -560,18 +676,19 @@
     </header>
 
     <section class="hero" id="home">
-        <div class="hero-badge">⚡ Ultra Raw Asset Resource Pipeline</div>
-        <h1><span>Download Logoless Premium</span><br><span class="highlight">Scenepacks For Editors</span></h1>
-        <p>High-bitrate, color-accurate raw clips — fully optimized for Twixtor, velocity edits, and clean compositing. 15+ packs updated regularly.</p>
+        <div class="hero-badge">⚡ Premium Free Editing Resources</div>
+        <h1><span>Download Premium Free</span><br><span class="highlight">Editing Resources</span></h1>
+        <p>Free After Effects presets, PNG packs, overlays, AI prompts, LUTs, transitions and more — updated weekly.</p>
         <div class="hero-stats">
-            <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Scenepacks</div></div>
-            <div class="stat-item"><div class="stat-num">4K</div><div class="stat-label">Ultra HD</div></div>
-            <div class="stat-item"><div class="stat-num">60fps</div><div class="stat-label">Twixtor</div></div>
+            <div class="stat-item"><div class="stat-num">55+</div><div class="stat-label">Free Presets</div></div>
+            <div class="stat-item"><div class="stat-num">Weekly</div><div class="stat-label">Updates</div></div>
+            <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Downloads</div></div>
+            <div class="stat-item"><div class="stat-num">Premium</div><div class="stat-label">Quality</div></div>
         </div>
         <div class="search-container">
             <div class="search-wrapper">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="studioSearch" placeholder="Search scenepacks... (e.g. Spider-Man, Zendaya)">
+                <input type="text" id="studioSearch" placeholder="Search resources... (e.g. Twixtor, LUT, PNG Packs)">
                 <button class="search-btn">Search</button>
             </div>
         </div>
@@ -581,366 +698,460 @@
     <div class="carousel-section">
         <div class="carousel-track" id="carouselTrack">
             <!-- Set 1 -->
-            <div class="carousel-card"><img src="millie bobby brown.png" alt="Millie Bobby Brown"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Millie Bobby Brown</div></div>
-            <div class="carousel-card"><img src="Max ( Sadie Sink ).png" alt="Sadie Sink"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Sadie Sink</div></div>
-            <div class="carousel-card"><img src="Cristiano Ronaldo manchester united wallpaper 4k hd for iphone.png" alt="Ronaldo"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Cristiano Ronaldo</div></div>
-            <div class="carousel-card"><img src="Ironman.png" alt="Iron Man"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Iron Man</div></div>
-            <div class="carousel-card"><img src="Robert pattinson.png" alt="Robert Pattinson"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Robert Pattinson</div></div>
-            <div class="carousel-card"><img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=300&q=80" alt="Spider-Man"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Spider-Man</div></div>
-            <div class="carousel-card"><img src="Zendaya.jpg" alt="Zendaya"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Zendaya</div></div>
-            <div class="carousel-card"><img src="download (1).png" alt="Timothée"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Timothée Chalamet</div></div>
-            <div class="carousel-card"><img src="THOR.jpg" alt="Harry Styles"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Thor</div></div>
-            <div class="carousel-card"><img src="captain.jpg" alt="captain America"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Captain America</div></div>
-            <div class="carousel-card"><img src="Peaky.jpg" alt="Cillian Murphy"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Cillian Murphy</div></div>
-            <div class="carousel-card"><img src="Black.jpg" alt="Black Widow"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Black Widow</div></div>
-            <div class="carousel-card"><img src="Emma.jpg" alt="Emma Watson"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Emma Watson</div></div>
-            <div class="carousel-card"><img src="tegan.jpg" alt="Teagan Croft"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Teagan Croft</div></div>
-            <div class="carousel-card"><img src="titan.jpg" alt="Attack on Titan"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Attack on Titan</div></div>
-            <!-- Set 2 (duplicate for infinite loop) -->
-            <div class="carousel-card"><img src="millie bobby brown.png" alt="Millie Bobby Brown"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Millie Bobby Brown</div></div>
-            <div class="carousel-card"><img src="Max ( Sadie Sink ).png" alt="Sadie Sink"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Sadie Sink</div></div>
-            <div class="carousel-card"><img src="Cristiano Ronaldo manchester united wallpaper 4k hd for iphone.png" alt="Ronaldo"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Cristiano Ronaldo</div></div>
-            <div class="carousel-card"><img src="Ironman.png" alt="Iron Man"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Iron Man</div></div>
-            <div class="carousel-card"><img src="Robert pattinson.png" alt="Robert Pattinson"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Robert Pattinson</div></div>
-            <div class="carousel-card"><img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=300&q=80" alt="Spider-Man"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Spider-Man</div></div>
-            <div class="carousel-card"><img src="Zendaya.jpg" alt="Zendaya"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Zendaya</div></div>
-            <div class="carousel-card"><img src="download (1).png" alt="Timothée"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Timothée Chalamet</div></div>
-            <div class="carousel-card"><img src="THOR.jpg" alt="Thor"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Thor</div></div>
-            <div class="carousel-card"><img src="captain.jpg" alt="captain America"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Captain America</div></div>
-            <div class="carousel-card"><img src="Peaky.jpg" alt="Cillian Murphy"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Cillian Murphy</div></div>
-            <div class="carousel-card"><img src="Black.jpg" alt="Black Widow"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Black Widow</div></div>
-            <div class="carousel-card"><img src="Emma.jpg" alt="Emma Watson"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Emma Watson</div></div>
-            <div class="carousel-card"><img src="tegan.jpg" alt="Teagan Croft"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Teagan Croft</div></div>
-            <div class="carousel-card"><img src="titan.jpg" alt="Attack on Titan"><div class="carousel-card-fps">60 FPS</div><div class="carousel-card-label">Attack on Titan</div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1520,#091525);"><div class="carousel-card-icon"><i class="fa-solid fa-bolt" style="color:#00f2fe;"></i><span class="carousel-card-label">AE Presets</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#150d20,#1a0925);"><div class="carousel-card-icon"><i class="fa-solid fa-image" style="color:#ff007f;"></i><span class="carousel-card-label">PNG Packs</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1510,#091520);"><div class="carousel-card-icon"><i class="fa-solid fa-palette" style="color:#4facfe;"></i><span class="carousel-card-label">LUT Packs</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#201505,#250d09);"><div class="carousel-card-icon"><i class="fa-solid fa-layer-group" style="color:#ffaa00;"></i><span class="carousel-card-label">Overlays</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#0d0f17,#12141e);"><div class="carousel-card-icon"><i class="fa-solid fa-film" style="color:#00f2fe;"></i><span class="carousel-card-label">Transitions</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#15100d,#1e1209);"><div class="carousel-card-icon"><i class="fa-solid fa-music" style="color:#ff007f;"></i><span class="carousel-card-label">Sound FX</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#050d15,#080f1a);"><div class="carousel-card-icon"><i class="fa-solid fa-robot" style="color:#4facfe;"></i><span class="carousel-card-label">AI Prompts</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#150520,#1a0928);"><div class="carousel-card-icon"><i class="fa-solid fa-font" style="color:#ffaa00;"></i><span class="carousel-card-label">Fonts</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1520,#091525);"><div class="carousel-card-icon"><i class="fa-solid fa-icons" style="color:#00f2fe;"></i><span class="carousel-card-label">Icons</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#150d0d,#1e1009);"><div class="carousel-card-icon"><i class="fa-solid fa-plug" style="color:#ff007f;"></i><span class="carousel-card-label">Plugins</span></div></div>
+            <!-- Set 2 (duplicate for infinite scroll) -->
+            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1520,#091525);"><div class="carousel-card-icon"><i class="fa-solid fa-bolt" style="color:#00f2fe;"></i><span class="carousel-card-label">AE Presets</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#150d20,#1a0925);"><div class="carousel-card-icon"><i class="fa-solid fa-image" style="color:#ff007f;"></i><span class="carousel-card-label">PNG Packs</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1510,#091520);"><div class="carousel-card-icon"><i class="fa-solid fa-palette" style="color:#4facfe;"></i><span class="carousel-card-label">LUT Packs</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#201505,#250d09);"><div class="carousel-card-icon"><i class="fa-solid fa-layer-group" style="color:#ffaa00;"></i><span class="carousel-card-label">Overlays</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#0d0f17,#12141e);"><div class="carousel-card-icon"><i class="fa-solid fa-film" style="color:#00f2fe;"></i><span class="carousel-card-label">Transitions</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#15100d,#1e1209);"><div class="carousel-card-icon"><i class="fa-solid fa-music" style="color:#ff007f;"></i><span class="carousel-card-label">Sound FX</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#050d15,#080f1a);"><div class="carousel-card-icon"><i class="fa-solid fa-robot" style="color:#4facfe;"></i><span class="carousel-card-label">AI Prompts</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#150520,#1a0928);"><div class="carousel-card-icon"><i class="fa-solid fa-font" style="color:#ffaa00;"></i><span class="carousel-card-label">Fonts</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1520,#091525);"><div class="carousel-card-icon"><i class="fa-solid fa-icons" style="color:#00f2fe;"></i><span class="carousel-card-label">Icons</span></div></div>
+            <div class="carousel-card" style="background: linear-gradient(135deg,#150d0d,#1e1009);"><div class="carousel-card-icon"><i class="fa-solid fa-plug" style="color:#ff007f;"></i><span class="carousel-card-label">Plugins</span></div></div>
         </div>
     </div>
-        <button class="filter-btn active" data-filter="all">All Packs</button>
-        <button class="filter-btn" data-filter="movie">Movies</button>
-        <button class="filter-btn" data-filter="series">TV Series</button>
-        <button class="filter-btn" data-filter="anime">Anime</button>
-        <button class="filter-btn" data-filter="sports">Sports</button>
+
+    <!-- FILTER TABS -->
+    <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">All Resources</button>
+        <button class="filter-btn" data-filter="presets">AE Presets</button>
+        <button class="filter-btn" data-filter="packs">Packs</button>
+        <button class="filter-btn" data-filter="tools">Tools</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
         <button class="filter-btn" data-filter="trending">Trending</button>
     </div>
 
     <main class="main-catalog" id="catalog">
         <div class="catalog-header">
-            <h2>Scenepack <span>Vault</span></h2>
-            <span class="catalog-count" id="packCount">15 Packs Available</span>
+            <h2>Resource <span>Vault</span></h2>
+            <span class="catalog-count" id="packCount">16 Resources Available</span>
         </div>
 
         <div class="grid-layout" id="catalogGrid">
 
-            <!-- 1. Millie Bobby Brown -->
-            <div class="studio-card" data-id="millie" data-category="series trending" data-search="millie bobby brown stranger things eleven enola holmes 4k">
+            <!-- 1. AE Twixtor Presets -->
+            <div class="studio-card" data-id="twixtor" data-category="presets trending" data-search="twixtor after effects slow motion velocity cinematic ae presets">
                 <div class="card-media">
-                    <img src="millie bobby brown.png" alt="Millie Bobby Brown">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K UHD</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="millie">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="millie">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(0,242,254,0.15), rgba(79,172,254,0.1));"><i class="fa-solid fa-bolt" style="color:#00f2fe;"></i></div>
+                    </div>
+                    <div class="type-badge">AE</div>
+                    <div class="card-badge">Popular</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="twixtor">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="twixtor">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Logoless</span><span class="info-tag">Stranger Things</span></div>
-                    <h3 class="card-title">Millie Bobby Brown 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Slow-Mo</span></div>
+                    <h3 class="card-title">AE Twixtor Presets</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 3.2 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 10:30 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 6 Presets</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('millie','Millie Bobby Brown 4K Scenepack','3.2 GB','4K UHD Ultra','60 FPS','MILLIE_MEDIAFIRE_LINK','MILLIE_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('twixtor')">
+                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 2. Sadie Sink -->
-            <div class="studio-card" data-id="sadie" data-category="series trending" data-search="sadie sink stranger things max mayfield fear street 4k">
+            <!-- 2. Zoom Presets -->
+            <div class="studio-card" data-id="zoom" data-category="presets trending" data-search="zoom in out smooth camera whip ae preset after effects">
                 <div class="card-media">
-                    <img src="Max ( Sadie Sink ).png" alt="Sadie Sink">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K UHD</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="sadie">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="sadie">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,0,127,0.15), rgba(255,80,80,0.1));"><i class="fa-solid fa-magnifying-glass-plus" style="color:#ff007f;"></i></div>
+                    </div>
+                    <div class="type-badge">AE</div>
+                    <div class="card-badge">New</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="zoom">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="zoom">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Logoless</span><span class="info-tag">Stranger Things</span></div>
-                    <h3 class="card-title">Sadie Sink 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Zoom</span></div>
+                    <h3 class="card-title">Zoom Presets</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 2.8 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 09:15 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 6 Presets</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('sadie','Sadie Sink 4K Scenepack','2.8 GB','4K UHD Ultra','60 FPS','SADIE_MEDIAFIRE_LINK','SADIE_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('zoom')">
+                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 3. Ronaldo -->
-            <div class="studio-card" data-id="ronaldo" data-category="sports trending" data-search="cristiano ronaldo cr7 football soccer al nassr real madrid 4k">
+            <!-- 3. Shake Presets -->
+            <div class="studio-card" data-id="shake" data-category="presets" data-search="shake camera hard flash velocity smooth ae after effects preset">
                 <div class="card-media">
-                    <img src="Cristiano Ronaldo manchester united wallpaper 4k hd for iphone.png" alt="Ronaldo">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K UHD</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="ronaldo">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="ronaldo">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,165,0,0.15), rgba(255,100,0,0.1));"><i class="fa-solid fa-wave-square" style="color:#ffaa00;"></i></div>
+                    </div>
+                    <div class="type-badge">AE</div>
+                    <div class="card-badge">Hot</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="shake">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="shake">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">CR7</span><span class="info-tag">Football</span></div>
-                    <h3 class="card-title">Ronaldo 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Camera</span></div>
+                    <h3 class="card-title">Shake Presets</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 4.1 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 12:00 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 5 Presets</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('ronaldo','Ronaldo 4K Scenepack','4.1 GB','4K UHD Ultra','60 FPS','RONALDO_MEDIAFIRE_LINK','RONALDO_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('shake')">
+                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 4. Iron Man -->
-            <div class="studio-card" data-id="ironman" data-category="movie trending" data-search="iron man tony stark robert downey jr marvel mcu avengers 4k">
+            <!-- 4. Transition Presets -->
+            <div class="studio-card" data-id="transition" data-category="presets trending" data-search="transition smooth glitch wipe slide ae after effects preset">
                 <div class="card-media">
-                    <img src="Ironman.png" alt="Iron Man">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K UHD</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="ironman">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="ironman">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(79,172,254,0.15), rgba(0,242,254,0.1));"><i class="fa-solid fa-film" style="color:#4facfe;"></i></div>
+                    </div>
+                    <div class="type-badge">AE</div>
+                    <div class="card-badge">Popular</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="transition">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="transition">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Logoless</span><span class="info-tag">Marvel MCU</span></div>
-                    <h3 class="card-title">Iron Man 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Transitions</span></div>
+                    <h3 class="card-title">Transition Presets</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 5.0 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 15:45 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 7 Presets</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('ironman','Iron Man 4K Scenepack','5.0 GB','4K UHD Ultra','60 FPS','IRONMAN_MEDIAFIRE_LINK','IRONMAN_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('transition')">
+                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 5. Robert Pattinson -->
-            <div class="studio-card" data-id="pattinson" data-category="movie trending" data-search="robert pattinson batman twilight good time topaz enhanced 4k">
+            <!-- 5. Text Animation Presets -->
+            <div class="studio-card" data-id="textanim" data-category="presets" data-search="text animation kinetic typewriter reveal ae after effects preset">
                 <div class="card-media">
-                    <img src="Robert pattinson.png" alt="Robert Pattinson">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K Topaz</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="pattinson">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="pattinson">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(150,0,255,0.15), rgba(100,0,200,0.1));"><i class="fa-solid fa-text-height" style="color:#b060ff;"></i></div>
+                    </div>
+                    <div class="type-badge">AE</div>
+                    <div class="card-badge">New</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="textanim">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="textanim">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Topaz Enhanced</span><span class="info-tag">The Batman</span></div>
-                    <h3 class="card-title">Robert Pattinson 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Typography</span></div>
+                    <h3 class="card-title">Text Animation Presets</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 4.4 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 13:20 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 6 Presets</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('pattinson','Robert Pattinson 4K Scenepack','4.4 GB','4K Topaz Enhanced','60 FPS','https://www.mediafire.com/file/9hbvi4997gziq67/Robert+Pattinson+4k+Upscaled.mov/file','PATTINSON_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('textanim')">
+                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 6. Spider-Man (Tom Holland) -->
-            <div class="studio-card" data-id="spiderman" data-category="movie trending" data-search="spider-man tom holland peter parker marvel mcu no way home 4k">
+            <!-- 6. Glow Presets -->
+            <div class="studio-card" data-id="glow" data-category="presets" data-search="glow neon light bloom lens flare ae after effects preset">
                 <div class="card-media">
-                    <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=600&q=80" alt="Spider-Man">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K UHD</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="spiderman">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="spiderman">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(0,255,150,0.15), rgba(0,200,100,0.1));"><i class="fa-solid fa-sun" style="color:#00ffaa;"></i></div>
+                    </div>
+                    <div class="type-badge">AE</div>
+                    <div class="card-badge">Popular</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="glow">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="glow">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Logoless</span><span class="info-tag">Marvel MCU</span></div>
-                    <h3 class="card-title">Spider-Man 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Neon</span></div>
+                    <h3 class="card-title">Glow Presets</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 4.7 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 14:10 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 6 Presets</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('spiderman','Spider-Man 4K Scenepack','4.7 GB','4K UHD Ultra','60 FPS','SPIDERMAN_MEDIAFIRE_LINK','SPIDERMAN_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('glow')">
+                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 7. Zendaya -->
-            <div class="studio-card" data-id="zendaya" data-category="movie series trending" data-search="zendaya euphoria rue mj spider-man dune 4k topaz">
+            <!-- 7. PNG Packs -->
+            <div class="studio-card" data-id="png" data-category="packs trending" data-search="png pack lightning fire smoke rain snow explosion blood energy transparent">
                 <div class="card-media">
-                    <img src="Zendaya.jpg" alt="Zendaya">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K Topaz</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="zendaya">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="zendaya">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,0,127,0.15), rgba(200,0,80,0.1));"><i class="fa-solid fa-image" style="color:#ff007f;"></i></div>
+                    </div>
+                    <div class="type-badge">PNG</div>
+                    <div class="card-badge">Popular</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="png">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="png">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Topaz Enhanced</span><span class="info-tag">Euphoria</span></div>
-                    <h3 class="card-title">Zendaya 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">Transparent</span><span class="info-tag">VFX</span></div>
+                    <h3 class="card-title">PNG Packs</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 1.4 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 11:40 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 8 Packs</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('zendaya','Zendaya 4K Scenepack','1.4 GB','4K Topaz Enhanced','60 FPS','zendayascp.html','ZENDAYA_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('png')">
+                        Browse Packs <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 8. Timothee Chalamet -->
-            <div class="studio-card" data-id="timothee" data-category="movie trending" data-search="timothee chalamet dune paul atreides willy wonka bones all 4k">
+            <!-- 9. Overlay Packs -->
+            <div class="studio-card" data-id="overlay" data-category="packs" data-search="overlay pack vhs grain dust film light leak cinematic">
                 <div class="card-media">
-                    <img src="download (1).png" alt="Timothee Chalamet">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K UHD</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="timothee">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="timothee">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,165,0,0.15), rgba(200,100,0,0.1));"><i class="fa-solid fa-layer-group" style="color:#ffaa00;"></i></div>
+                    </div>
+                    <div class="type-badge">Overlay</div>
+                    <div class="card-badge">New</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="overlay">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="overlay">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Logoless</span><span class="info-tag">Dune</span></div>
-                    <h3 class="card-title">Timothée Chalamet 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">VHS</span><span class="info-tag">Film</span></div>
+                    <h3 class="card-title">Overlay Packs</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 3.5 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 10:55 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 6 Overlays</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('timothee','Timothée Chalamet 4K Scenepack','3.5 GB','4K UHD Ultra','60 FPS','TIMOTHEE_MEDIAFIRE_LINK','TIMOTHEE_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('overlay')">
+                        Browse Packs <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 9. Captain America -->
-            <div class="studio-card" data-id="harry" data-category="movie trending" data-search="Captain america steve rogers chrish evans ghosted avengers ">
+            <!-- 10. Faisal Saber CC Packs -->
+            <div class="studio-card" data-id="cc" data-category="packs trending" data-search="cc color correction faisal saber main crimson bright dark cinematic film look premiere resolve">
                 <div class="card-media">
-                    <img src="captain.jpg" alt="Harry Styles">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K Topaz</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="harry">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="harry">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(100,200,255,0.15), rgba(50,150,255,0.1));"><i class="fa-solid fa-palette" style="color:#4facfe;"></i></div>
+                    </div>
+                    <div class="type-badge">CC</div>
+                    <div class="card-badge">Popular</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="cc">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="cc">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Topaz Enhanced</span><span class="info-tag">Logoless</span></div>
-                    <h3 class="card-title">Captain America 4k Upscaled</h3>
+                    <div class="card-info-tags"><span class="info-tag">Faisal Saber</span><span class="info-tag">Color Correction</span></div>
+                    <h3 class="card-title">Faisal Saber CC Packs</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 3.1 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 09:50 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 4 CC Presets</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('Captain America','Captain America 4k Upscaled','3.1 GB','4K Topaz Enhanced','60 FPS','HARRY_MEDIAFIRE_LINK','HARRY_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('cc')">
+                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 10. Thor Parallel Scenepack -->
-            <div class="studio-card" data-id="jungkook" data-category="trending" data-search="thor ragnarok avengers hammer avengers infiity war parallel">
+            <!-- 11. Sound Effects -->
+            <div class="studio-card" data-id="sfx" data-category="packs" data-search="sound effects sfx whoosh impact bass drop cinematic audio">
                 <div class="card-media">
-                    <img src="THOR.jpg" alt="Jungkook">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K Topaz</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="jungkook">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="jungkook">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,80,80,0.15), rgba(200,0,0,0.1));"><i class="fa-solid fa-music" style="color:#ff5050;"></i></div>
+                    </div>
+                    <div class="type-badge">Audio</div>
+                    <div class="card-badge">Hot</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="sfx">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="sfx">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Topaz Enhanced</span><span class="info-tag">Parallel</span></div>
-                    <h3 class="card-title">Thor Parallel Scenepack</h3>
+                    <div class="card-info-tags"><span class="info-tag">SFX</span><span class="info-tag">Royalty-Free</span></div>
+                    <h3 class="card-title">Sound Effects</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 2.9 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 09:00 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 8 SFX</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('Thor','Thor Parallel Scenepack','2.9 GB','4K Topaz Enhanced','60 FPS','JK_MEDIAFIRE_LINK','JK_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('sfx')">
+                        Browse SFX <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 11. Peaky Blinders (Cillian Murphy) -->
-            <div class="studio-card" data-id="cillian" data-category="series" data-search="cillian murphy peaky blinders tommy shelby oppenheimer 4k">
+            <!-- 12. Fonts -->
+            <div class="studio-card" data-id="fonts" data-category="tools" data-search="fonts typography display serif sans editing graphic design">
                 <div class="card-media">
-                    <img src="Peaky.jpg" alt="Cillian Murphy">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K UHD</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="cillian">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="cillian">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(200,100,255,0.15), rgba(150,50,200,0.1));"><i class="fa-solid fa-font" style="color:#d080ff;"></i></div>
+                    </div>
+                    <div class="type-badge">Fonts</div>
+                    <div class="card-badge">New</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="fonts">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="fonts">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Logoless</span><span class="info-tag">Peaky Blinders</span></div>
-                    <h3 class="card-title">Cillian Murphy 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">Typography</span><span class="info-tag">Display</span></div>
+                    <h3 class="card-title">Fonts</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 4.2 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 12:30 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 6 Fonts</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('cillian','Cillian Murphy 4K Scenepack','4.2 GB','4K UHD Ultra','60 FPS','CILLIAN_MEDIAFIRE_LINK','CILLIAN_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('fonts')">
+                        Browse Fonts <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 12. Black Widow (Scarlett Johansson) -->
-            <div class="studio-card" data-id="blackwidow" data-category="movie" data-search="scarlett johansson black widow natasha romanoff marvel mcu avengers 4k">
+            <!-- 13. AI Prompt Library -->
+            <div class="studio-card" data-id="aiprompt" data-category="ai trending" data-search="ai prompt chatgpt midjourney stable diffusion sora cinematic art">
                 <div class="card-media">
-                    <img src="Black.jpg" alt="Black Widow">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K UHD</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="blackwidow">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="blackwidow">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(0,242,254,0.15), rgba(0,150,200,0.1));"><i class="fa-solid fa-robot" style="color:#00f2fe;"></i></div>
+                    </div>
+                    <div class="type-badge">AI</div>
+                    <div class="card-badge">Hot</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="aiprompt">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="aiprompt">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Logoless</span><span class="info-tag">Marvel MCU</span></div>
-                    <h3 class="card-title">Black Widow 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">AI Prompts</span><span class="info-tag">Midjourney</span></div>
+                    <h3 class="card-title">AI Prompt Library</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 4.9 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 14:50 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 6 Prompts</span>
+                        <span><i class="fa-solid fa-star"></i> Copy & Use</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('blackwidow','Black Widow 4K Scenepack','4.9 GB','4K UHD Ultra','60 FPS','BLACKWIDOW_MEDIAFIRE_LINK','BLACKWIDOW_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('aiprompt')">
+                        Browse Prompts <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 13. Emma Watson -->
-            <div class="studio-card" data-id="emmawatson" data-category="movie trending" data-search="emma watson hermione granger harry potter beauty beast perks wallflower 4k">
+            <!-- 14. Icons -->
+            <div class="studio-card" data-id="icons" data-category="tools packs" data-search="icons ui svg vector editor graphic design pack free">
                 <div class="card-media">
-                    <img src="Emma.jpg" alt="Emma Watson">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K UHD</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="emmawatson">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="emmawatson">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(0,255,200,0.15), rgba(0,200,150,0.1));"><i class="fa-solid fa-icons" style="color:#00ffcc;"></i></div>
+                    </div>
+                    <div class="type-badge">Icons</div>
+                    <div class="card-badge">New</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="icons">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="icons">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Logoless</span><span class="info-tag">Harry Potter</span></div>
-                    <h3 class="card-title">Emma Watson 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">SVG</span><span class="info-tag">Vector</span></div>
+                    <h3 class="card-title">Icons</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 3.5 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 10:45 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 6 Packs</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('emmawatson','Emma Watson 4K Scenepack','3.5 GB','4K UHD Ultra','60 FPS','EMMAWATSON_MEDIAFIRE_LINK','EMMAWATSON_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('icons')">
+                        Browse Icons <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 14. Teagan Croft -->
-            <div class="studio-card" data-id="tegancroft" data-category="series trending" data-search="teagan croft dc titans alina starkov netflix 4k topaz enhanced">
+            <!-- 15. AE Scripts -->
+            <div class="studio-card" data-id="aescripts" data-category="tools trending" data-search="ae scripts after effects automation jsx script workflow">
                 <div class="card-media">
-                    <img src="tegan.jpg" alt="Teagan Croft">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K Topaz</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="tegancroft">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="tegancroft">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,200,0,0.15), rgba(200,130,0,0.1));"><i class="fa-solid fa-code" style="color:#ffd000;"></i></div>
+                    </div>
+                    <div class="type-badge">Script</div>
+                    <div class="card-badge">Popular</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="aescripts">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="aescripts">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Topaz Enhanced</span><span class="info-tag">Logoless</span></div>
-                    <h3 class="card-title">Teagan Croft 4K Enhanced</h3>
+                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">JSX</span></div>
+                    <h3 class="card-title">AE Scripts</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 3.0 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 09:50 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 5 Scripts</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('tegancroft','Teagan Croft 4K Enhanced Scenepack','3.0 GB','4K Topaz Enhanced','60 FPS','TEGANCROFT_MEDIAFIRE_LINK','TEGANCROFT_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('aescripts')">
+                        Browse Scripts <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 15. Attack on Titan (Levi) -->
-            <div class="studio-card" data-id="aot" data-category="anime trending" data-search="attack on titan aot levi ackerman eren mikasa shingeki no kyojin 4k anime">
+            <!-- 16. Plugins -->
+            <div class="studio-card" data-id="plugins" data-category="tools" data-search="plugins after effects premiere video editing free vfx motion">
                 <div class="card-media">
-                    <img src="titan.jpg" alt="Attack on Titan">
-                    <div class="fps-badge">60 FPS</div>
-                    <div class="card-badge">4K Anime</div>
-                <div class="card-stats-row"><span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="aot">0</span></span><span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="aot">0</span></span></div>
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,50,50,0.15), rgba(200,0,0,0.1));"><i class="fa-solid fa-plug" style="color:#ff5050;"></i></div>
+                    </div>
+                    <div class="type-badge">Plugin</div>
+                    <div class="card-badge">Hot</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="plugins">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="plugins">0</span></span>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Anime</span><span class="info-tag">AOT</span></div>
-                    <h3 class="card-title">Attack on Titan 4K</h3>
+                    <div class="card-info-tags"><span class="info-tag">VFX</span><span class="info-tag">Workflow</span></div>
+                    <h3 class="card-title">Plugins</h3>
                     <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-hard-drive"></i> 4.0 GB</span>
-                        <span><i class="fa-solid fa-clock"></i> 12:15 Min</span>
+                        <span><i class="fa-solid fa-cubes"></i> 5 Plugins</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
                     </div>
-                    <button class="card-action-btn" onclick="openDownloadModal('aot','Attack on Titan 4K Scenepack','4.0 GB','4K Anime Ultra','60 FPS','AOT_MEDIAFIRE_LINK','AOT_DRIVE_LINK')">
-                        Download Pack <i class="fa-solid fa-arrow-right-long"></i>
+                    <button class="card-action-btn" onclick="openResourceModal('plugins')">
+                        Browse Plugins <i class="fa-solid fa-arrow-right-long"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 17. Motion Graphics -->
+            <div class="studio-card" data-id="mograph" data-category="packs trending" data-search="motion graphics templates lower third title card ae premiere template">
+                <div class="card-media">
+                    <div class="card-icon-wrap">
+                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(80,100,255,0.15), rgba(40,50,200,0.1));"><i class="fa-solid fa-shapes" style="color:#8090ff;"></i></div>
+                    </div>
+                    <div class="type-badge">MOGRT</div>
+                    <div class="card-badge">New</div>
+                    <div class="card-stats-row">
+                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="mograph">0</span></span>
+                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="mograph">0</span></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-info-tags"><span class="info-tag">Templates</span><span class="info-tag">Lower Third</span></div>
+                    <h3 class="card-title">Motion Graphics</h3>
+                    <div class="card-meta-specs">
+                        <span><i class="fa-solid fa-cubes"></i> 6 Templates</span>
+                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
+                    </div>
+                    <button class="card-action-btn" onclick="openResourceModal('mograph')">
+                        Browse Templates <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
             </div>
@@ -948,61 +1159,26 @@
         </div>
     </main>
 
-    <!-- MODAL -->
-    <div class="modal-overlay" id="downloadModal">
+    <!-- RESOURCE MODAL -->
+    <div class="modal-overlay" id="resourceModal">
         <div class="modal-window">
-            <div class="modal-close-btn" onclick="closeDownloadModal()"><i class="fa-solid fa-xmark"></i></div>
+            <div class="modal-close-btn" onclick="closeResourceModal()"><i class="fa-solid fa-xmark"></i></div>
             <div class="modal-header-banner">
-                <h3 class="modal-title" id="modalTargetTitle">Asset Pipeline Access</h3>
+                <div class="modal-header-icon" id="modalHeaderIcon"></div>
+                <div>
+                    <h3 class="modal-title" id="modalTitle">Resource Pack</h3>
+                    <p class="modal-subtitle" id="modalSubtitle">Free download — no sign up required</p>
+                </div>
             </div>
             <div class="modal-body">
                 <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.4rem; background: linear-gradient(90deg, rgba(0,242,254,0.07), rgba(255,0,127,0.07)); border: 1px solid rgba(0,242,254,0.18); padding: 12px 18px; border-radius: 12px;">
                     <i class="fa-solid fa-pen-nib" style="color: var(--primary); font-size:1rem;"></i>
                     <div>
-                        <p style="margin:0; font-size:0.7rem; color:var(--text-sub); text-transform:uppercase; letter-spacing:1px;">Scenepack Creator</p>
-                        <p style="margin:0; font-family:var(--font-display); font-weight:700; font-size:0.95rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Created by Faisal Saber</p>
+                        <p style="margin:0; font-size:0.7rem; color:var(--text-sub); text-transform:uppercase; letter-spacing:1px;">Resource Creator</p>
+                        <p style="margin:0; font-family:var(--font-display); font-weight:700; font-size:0.95rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Curated by Faisal Saber</p>
                     </div>
                 </div>
-                <div class="modal-spec-grid">
-                    <div class="spec-box">
-                        <label>File Size</label>
-                        <span id="modalTargetSize">—</span>
-                    </div>
-                    <div class="spec-box">
-                        <label>Resolution</label>
-                        <span id="modalTargetRes">—</span>
-                    </div>
-                    <div class="spec-box">
-                        <label>Frame Rate</label>
-                        <span id="modalTargetFPS">—</span>
-                    </div>
-                    <div class="spec-box">
-                        <label>Format</label>
-                        <span>Logoless RAW</span>
-                    </div>
-                </div>
-                <div class="download-server-list">
-                    <a href="#" id="modalMediafireLink" target="_blank" class="server-link mediafire">
-                        <div class="server-info">
-                            <i class="fa-solid fa-fire"></i>
-                            <div>
-                                <p style="margin:0; font-weight:700; font-size:0.95rem;">Download via MediaFire</p>
-                                <p style="margin:0; font-size:0.75rem; color:var(--text-sub);">Fast Direct Cloud Access</p>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="#" id="modalDriveLink" target="_blank" class="server-link drive">
-                        <div class="server-info">
-                            <i class="fa-brands fa-google-drive"></i>
-                            <div>
-                                <p style="margin:0; font-weight:700; font-size:0.95rem;">Download via Google Drive</p>
-                                <p style="margin:0; font-size:0.75rem; color:var(--text-sub);">High Speed Backup Server</p>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                </div>
+                <div id="modalContent"></div>
             </div>
         </div>
     </div>
@@ -1010,7 +1186,7 @@
     <!-- PANEL OVERLAY -->
     <div class="panel-overlay" id="panelOverlay" onclick="closeAllPanels()"></div>
 
-    <!-- MENU PANEL (3-line hamburger) -->
+    <!-- MENU PANEL -->
     <div class="side-panel" id="menuPanel">
         <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
         <div class="panel-header">
@@ -1048,43 +1224,29 @@
     <!-- CONTACT PANEL -->
     <div class="side-panel" id="contactPanel">
         <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
-        <div class="panel-header">
-            <h2>Contact <span>Us</span></h2>
-        </div>
+        <div class="panel-header"><h2>Contact <span>Us</span></h2></div>
         <div class="panel-body">
-            <p>Have a request, feedback, or collaboration idea? Faisal Saber personally reads every message. Drop a message and we'll get back to you as soon as possible.</p>
+            <p>Have a request, feedback, or collaboration idea? Faisal Saber personally reads every message.</p>
             <h3>Send an Email</h3>
             <div class="contact-form-row">
                 <a href="mailto:ka9190430@gmail.com" class="contact-link-btn">
                     <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <div style="font-weight:700; font-size:0.95rem;">ka9190430@gmail.com</div>
-                        <div style="font-size:0.78rem; color:var(--text-sub);">Click to open your email app</div>
-                    </div>
+                    <div><div style="font-weight:700; font-size:0.95rem;">ka9190430@gmail.com</div><div style="font-size:0.78rem; color:var(--text-sub);">Click to open your email app</div></div>
                 </a>
             </div>
             <h3>Social Media</h3>
             <div class="contact-form-row">
                 <a href="https://www.instagram.com/faisal_saber__?igsh=d2s3YW5qZmdlMTdz" target="_blank" class="contact-link-btn">
                     <i class="fa-brands fa-instagram" style="color:#e1306c;"></i>
-                    <div>
-                        <div style="font-weight:700;">Instagram</div>
-                        <div style="font-size:0.78rem; color:var(--text-sub);">@faisal_saber__</div>
-                    </div>
+                    <div><div style="font-weight:700;">Instagram</div><div style="font-size:0.78rem; color:var(--text-sub);">@faisal_saber__</div></div>
                 </a>
                 <a href="https://youtube.com/@faisal_saber?si=j4rFSB24CGbHPx0_" target="_blank" class="contact-link-btn">
                     <i class="fa-brands fa-youtube" style="color:#ff0000;"></i>
-                    <div>
-                        <div style="font-weight:700;">YouTube</div>
-                        <div style="font-size:0.78rem; color:var(--text-sub);">@faisal_saber</div>
-                    </div>
+                    <div><div style="font-weight:700;">YouTube</div><div style="font-size:0.78rem; color:var(--text-sub);">@faisal_saber</div></div>
                 </a>
                 <a href="https://discord.gg/cQ4wPCRmF" target="_blank" class="contact-link-btn">
                     <i class="fa-brands fa-discord" style="color:#5865f2;"></i>
-                    <div>
-                        <div style="font-weight:700;">Discord Server</div>
-                        <div style="font-size:0.78rem; color:var(--text-sub);">Join our community</div>
-                    </div>
+                    <div><div style="font-weight:700;">Discord Server</div><div style="font-size:0.78rem; color:var(--text-sub);">Join our community</div></div>
                 </a>
             </div>
         </div>
@@ -1093,54 +1255,46 @@
     <!-- ABOUT PANEL -->
     <div class="side-panel" id="aboutPanel">
         <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
-        <div class="panel-header">
-            <h2>About <span>Us</span></h2>
-        </div>
+        <div class="panel-header"><h2>About <span>Us</span></h2></div>
         <div class="panel-body">
-            <p>Welcome to <strong style="color:var(--primary);">Faisal Saber Scenepacks</strong> — the internet's most premium destination for high-quality, logoless, 4K scenepack downloads built specifically for video editors.</p>
-            <p>This platform was created by <strong style="color:var(--text-main);">Faisal Saber</strong>, a passionate video editor and content creator who understands exactly what editors need — clean clips, high bitrate, perfectly color-graded footage with no watermarks or logos.</p>
+            <p>Welcome to <strong style="color:var(--primary);">Faisal Saber Editing Resources</strong> — the internet's most premium destination for free, high-quality editing assets built specifically for video editors and motion designers.</p>
+            <p>This platform was created by <strong style="color:var(--text-main);">Faisal Saber</strong>, a passionate video editor and content creator who understands exactly what editors need.</p>
             <h3>What We Offer</h3>
-            <p>Every scenepack on this platform is carefully selected, upscaled where needed using <strong style="color:var(--text-main);">Topaz Video AI</strong>, and optimized for smooth Twixtor slow-motion effects at <strong style="color:var(--primary);">60 FPS</strong>. We cover trending movies, iconic TV series, beloved anime, and world-famous sports stars.</p>
+            <p>Every resource on this platform is carefully curated and tested — from After Effects presets and LUTs to PNG packs, AI prompts, and motion graphics templates. Everything is 100% free.</p>
             <h3>Our Mission</h3>
-            <p>To give every editor — beginner or pro — access to the same quality footage used in top YouTube edits and AMVs, completely free, with both MediaFire and Google Drive backup links so you never hit a dead end.</p>
+            <p>To give every editor — beginner or pro — access to the same premium tools used in top YouTube edits and AMVs, completely free.</p>
             <h3>Community</h3>
-            <p>Join thousands of editors on our Discord server to share your edits, request new scenepacks, and connect with fellow creators from around the world.</p>
+            <p>Join thousands of editors on our Discord server to share your edits, request new resources, and connect with fellow creators.</p>
             <div style="margin-top:1.5rem; padding:16px; background:rgba(0,242,254,0.05); border:1px solid rgba(0,242,254,0.15); border-radius:12px;">
                 <p style="margin:0; font-family:var(--font-display); font-weight:700; color:var(--primary); font-size:0.9rem;">⚡ Built with passion by Faisal Saber</p>
             </div>
         </div>
     </div>
 
-    <!-- PRIVACY POLICY PANEL -->
+    <!-- PRIVACY PANEL -->
     <div class="side-panel" id="privacyPanel">
         <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
-        <div class="panel-header">
-            <h2>Privacy <span>Policy</span></h2>
-        </div>
+        <div class="panel-header"><h2>Privacy <span>Policy</span></h2></div>
         <div class="panel-body">
             <p style="font-size:0.8rem; color:var(--text-sub);">Last updated: June 2026</p>
             <div class="privacy-section">
                 <h3>1. Information We Collect</h3>
-                <p>This website does not collect any personal information from visitors. We do not use cookies for tracking purposes. Download counts and view counts are stored locally in your browser using localStorage and are never transmitted to any server.</p>
+                <p>This website does not collect any personal information from visitors. We do not use cookies for tracking purposes.</p>
             </div>
             <div class="privacy-section">
                 <h3>2. Third-Party Links</h3>
-                <p>Our scenepacks are hosted on third-party platforms including MediaFire and Google Drive. When you click a download link, you will be redirected to these platforms. Please review their respective privacy policies as we are not responsible for their data practices.</p>
+                <p>Resources are hosted on third-party platforms including MediaFire and Google Drive. Please review their respective privacy policies.</p>
             </div>
             <div class="privacy-section">
                 <h3>3. Analytics</h3>
-                <p>We may use basic analytics to understand how many people visit our website. This data is aggregated and anonymous — no personally identifiable information is collected or stored.</p>
+                <p>We may use basic analytics to understand how many people visit our website. This data is aggregated and anonymous.</p>
             </div>
             <div class="privacy-section">
                 <h3>4. Content & Copyright</h3>
-                <p>All scenepacks are provided for fan-editing and non-commercial creative purposes. Clips are sourced from publicly available media. All original content rights belong to their respective studios and creators. If you believe any content infringes on your rights, please contact us at ka9190430@gmail.com and we will remove it promptly.</p>
+                <p>All resources are provided for non-commercial creative purposes. If you believe any content infringes on your rights, please contact us at ka9190430@gmail.com.</p>
             </div>
             <div class="privacy-section">
-                <h3>5. Changes to This Policy</h3>
-                <p>We may update this Privacy Policy occasionally. Any changes will be reflected on this page with an updated date. Continued use of the site after changes constitutes your acceptance of the updated policy.</p>
-            </div>
-            <div class="privacy-section">
-                <h3>6. Contact</h3>
+                <h3>5. Contact</h3>
                 <p>For any privacy-related concerns, email us at <a href="mailto:ka9190430@gmail.com" style="color:var(--primary);">ka9190430@gmail.com</a>.</p>
             </div>
         </div>
@@ -1153,13 +1307,13 @@
                     <img src="13905.png" alt="Faisal Saber Footer Logo" class="footer-logo-img-asset">
                     <span style="font-size: 18px; font-family: var(--font-display); font-weight: 700;">FAISAL SABER</span>
                 </div>
-                <p>Premium logoless scenepack library — high-bitrate, 4K ultra footage optimized for Twixtor, AMVs, movie edits and cinematic sequences.</p>
+                <p>Premium free editing resources — AE presets, PNG packs, LUTs, overlays, AI prompts, transitions and more. Updated weekly.</p>
             </div>
             <div class="footer-links">
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#catalog">Scenepack Vault</a></li>
+                    <li><a href="#catalog">Resource Vault</a></li>
                     <li><a onclick="openPanel('aboutPanel')" style="cursor:pointer;">About Us</a></li>
                     <li><a onclick="openPanel('contactPanel')" style="cursor:pointer;">Contact Us</a></li>
                     <li><a onclick="openPanel('privacyPanel')" style="cursor:pointer;">Privacy Policy</a></li>
@@ -1181,6 +1335,256 @@
     </footer>
 
     <script>
+        // ===== RESOURCE DATA =====
+        // ✅ HOW TO UPDATE LINKS:
+        // Har item mein "mediafire" field hai.
+        // MediaFire par file upload karo, share link copy karo,
+        // aur neeche us item ka "mediafire": "YOUR_LINK_HERE" replace kar do.
+        // Example: mediafire: 'https://www.mediafire.com/file/abc123/SmoothTwixtor.zip/file'
+
+        const RESOURCES = {
+            twixtor: {
+                title: 'AE Twixtor Presets',
+                subtitle: '6 After Effects presets for cinematic slow-motion',
+                icon: '<i class="fa-solid fa-bolt" style="color:#00f2fe;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(0,242,254,0.2), rgba(79,172,254,0.15))',
+                type: 'preset',
+                items: [
+                    { name: 'Smooth Twixtor',    desc: 'Ultra-smooth slow-motion ramp, perfect for cinematic edits',        badge: 'popular', dl: '3.2K', mediafire: 'https://en.wikipedia.org/wiki/MediaFire' },
+                    { name: 'Slow Twixtor',      desc: 'Deep slow-mo preset with natural motion blur',                      badge: 'hot',     dl: '2.8K', mediafire: 'https://www.mediafire.com/file/SLOW_TWIXTOR/file' },
+                    { name: 'Fast Twixtor',      desc: 'Quick velocity ramp for fast-paced action sequences',               badge: 'new',     dl: '1.5K', mediafire: 'https://www.mediafire.com/file/FAST_TWIXTOR/file' },
+                    { name: 'Velocity Twixtor',  desc: 'Smooth in/out velocity curves for dynamic flow',                   badge: 'popular', dl: '2.1K', mediafire: 'https://www.mediafire.com/file/VELOCITY_TWIXTOR/file' },
+                    { name: 'Microwave Twixtor', desc: 'Signature microwave-style stuttered slow-motion effect',            badge: 'hot',     dl: '4.0K', mediafire: 'https://www.mediafire.com/file/MICROWAVE_TWIXTOR/file' },
+                    { name: 'Cinematic Twixtor', desc: 'Film-grade slow-motion with cinematic easing curves',               badge: 'new',     dl: '1.9K', mediafire: 'https://www.mediafire.com/file/CINEMATIC_TWIXTOR/file' },
+                ]
+            },
+            zoom: {
+                title: 'Zoom Presets',
+                subtitle: '6 smooth zoom presets for dynamic transitions',
+                icon: '<i class="fa-solid fa-magnifying-glass-plus" style="color:#ff007f;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(255,0,127,0.2), rgba(255,80,80,0.15))',
+                type: 'preset',
+                items: [
+                    { name: 'Smooth Zoom In',  desc: 'Elegant slow zoom-in with ease curves',                              badge: 'popular', dl: '2.4K', mediafire: 'https://www.mediafire.com/file/SMOOTH_ZOOM_IN/file' },
+                    { name: 'Smooth Zoom Out', desc: 'Fluid zoom-out perfect for dramatic reveals',                        badge: 'new',     dl: '1.8K', mediafire: 'https://www.mediafire.com/file/SMOOTH_ZOOM_OUT/file' },
+                    { name: 'Fast Zoom In',    desc: 'Punchy rapid zoom-in for high-energy cuts',                         badge: 'hot',     dl: '3.1K', mediafire: 'https://www.mediafire.com/file/FAST_ZOOM_IN/file' },
+                    { name: 'Fast Zoom Out',   desc: 'Snappy zoom-out for impact moments',                                badge: 'popular', dl: '2.0K', mediafire: 'https://www.mediafire.com/file/FAST_ZOOM_OUT/file' },
+                    { name: 'Camera Zoom',     desc: 'Realistic camera lens zoom simulation',                             badge: 'new',     dl: '1.6K', mediafire: 'https://www.mediafire.com/file/CAMERA_ZOOM/file' },
+                    { name: 'Whip Zoom',       desc: 'Aggressive whip-pan zoom for AMV-style transitions',                badge: 'hot',     dl: '3.7K', mediafire: 'https://www.mediafire.com/file/WHIP_ZOOM/file' },
+                ]
+            },
+            shake: {
+                title: 'Shake Presets',
+                subtitle: '5 camera shake presets for raw cinematic energy',
+                icon: '<i class="fa-solid fa-wave-square" style="color:#ffaa00;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(255,165,0,0.2), rgba(255,100,0,0.15))',
+                type: 'preset',
+                items: [
+                    { name: 'Smooth Shake',   desc: 'Subtle hand-held camera feel for organic motion',                     badge: 'popular', dl: '2.2K', mediafire: 'https://www.mediafire.com/file/SMOOTH_SHAKE/file' },
+                    { name: 'Hard Shake',     desc: 'Intense impact shake for explosions and hits',                        badge: 'hot',     dl: '3.5K', mediafire: 'https://www.mediafire.com/file/HARD_SHAKE/file' },
+                    { name: 'Camera Shake',   desc: 'Realistic handheld camera shake simulation',                         badge: 'popular', dl: '2.8K', mediafire: 'https://www.mediafire.com/file/CAMERA_SHAKE/file' },
+                    { name: 'Flash Shake',    desc: 'Quick flash-shake combo for beat drops',                             badge: 'new',     dl: '1.9K', mediafire: 'https://www.mediafire.com/file/FLASH_SHAKE/file' },
+                    { name: 'Velocity Shake', desc: 'Speed-synced shake that reacts to motion velocity',                  badge: 'hot',     dl: '4.1K', mediafire: 'https://www.mediafire.com/file/VELOCITY_SHAKE/file' },
+                ]
+            },
+            transition: {
+                title: 'Transition Presets',
+                subtitle: '7 cinematic transition presets for seamless cuts',
+                icon: '<i class="fa-solid fa-film" style="color:#4facfe;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(79,172,254,0.2), rgba(0,242,254,0.15))',
+                type: 'preset',
+                items: [
+                    { name: 'Glitch Transition', desc: 'Digital glitch effect for edgy scene cuts',                       badge: 'hot',     dl: '4.5K', mediafire: 'https://www.mediafire.com/file/GLITCH_TRANSITION/file' },
+                    { name: 'Whip Pan',          desc: 'Classic whip-pan transition with motion blur',                   badge: 'popular', dl: '3.2K', mediafire: 'https://www.mediafire.com/file/WHIP_PAN/file' },
+                    { name: 'Light Leak',        desc: 'Organic film light-leak transition overlay',                     badge: 'new',     dl: '2.1K', mediafire: 'https://www.mediafire.com/file/LIGHT_LEAK/file' },
+                    { name: 'Zoom Blur',         desc: 'Zoom-blur push-in/pull-out transition',                          badge: 'hot',     dl: '3.8K', mediafire: 'https://www.mediafire.com/file/ZOOM_BLUR/file' },
+                    { name: 'Flash Cut',         desc: 'White flash cut for high-impact moments',                        badge: 'popular', dl: '2.6K', mediafire: 'https://www.mediafire.com/file/FLASH_CUT/file' },
+                    { name: 'Slide Transition',  desc: 'Smooth directional slide with motion blur',                      badge: 'new',     dl: '1.7K', mediafire: 'https://www.mediafire.com/file/SLIDE_TRANSITION/file' },
+                    { name: 'Spin Transition',   desc: '360-degree spin transition with depth blur',                     badge: 'popular', dl: '2.9K', mediafire: 'https://www.mediafire.com/file/SPIN_TRANSITION/file' },
+                ]
+            },
+            textanim: {
+                title: 'Text Animation Presets',
+                subtitle: '6 kinetic typography presets for After Effects',
+                icon: '<i class="fa-solid fa-text-height" style="color:#b060ff;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(150,0,255,0.2), rgba(100,0,200,0.15))',
+                type: 'image',
+                items: [
+                    { name: 'Typewriter Reveal', desc: 'Classic typewriter character-by-character reveal',                badge: 'popular', dl: '2.1K', image: 'textanim-typewriter.jpg',   mediafire: 'https://www.mediafire.com/file/TYPEWRITER_REVEAL/file' },
+                    { name: 'Word Bounce',       desc: 'Elastic word-bounce with overshoot easing',                      badge: 'new',     dl: '1.4K', image: 'textanim-word-bounce.jpg',  mediafire: 'https://www.mediafire.com/file/WORD_BOUNCE/file' },
+                    { name: 'Glitch Text',       desc: 'Digital glitch-style text scramble animation',                   badge: 'hot',     dl: '3.0K', image: 'textanim-glitch-text.jpg',  mediafire: 'https://www.mediafire.com/file/GLITCH_TEXT/file' },
+                    { name: 'Fade Rise',         desc: 'Clean fade-up reveal for professional titles',                   badge: 'popular', dl: '2.5K', image: 'textanim-fade-rise.jpg',    mediafire: 'https://www.mediafire.com/file/FADE_RISE/file' },
+                    { name: 'Kinetic Slide',     desc: 'Fast-sliding kinetic text with tracking animation',              badge: 'new',     dl: '1.2K', image: 'textanim-kinetic-slide.jpg',mediafire: 'https://www.mediafire.com/file/KINETIC_SLIDE/file' },
+                    { name: 'Blur Reveal',       desc: 'Gaussian blur-to-sharp dramatic text reveal',                    badge: 'hot',     dl: '2.8K', image: 'textanim-blur-reveal.jpg',  mediafire: 'https://www.mediafire.com/file/BLUR_REVEAL/file' },
+                ]
+            },
+            glow: {
+                title: 'Glow Presets',
+                subtitle: '6 neon glow and bloom presets for cinematic flair',
+                icon: '<i class="fa-solid fa-sun" style="color:#00ffaa;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(0,255,150,0.2), rgba(0,200,100,0.15))',
+                type: 'preset',
+                items: [
+                    { name: 'Neon Glow',      desc: 'Vivid neon-edge glow for futuristic aesthetics',                    badge: 'hot',     dl: '3.3K', mediafire: 'https://www.mediafire.com/file/NEON_GLOW/file' },
+                    { name: 'Soft Bloom',     desc: 'Cinematic soft bloom for dreamy highlights',                        badge: 'popular', dl: '2.7K', mediafire: 'https://www.mediafire.com/file/SOFT_BLOOM/file' },
+                    { name: 'Lens Flare Glow',desc: 'Optical lens flare with anamorphic glow',                          badge: 'new',     dl: '1.9K', mediafire: 'https://www.mediafire.com/file/LENS_FLARE_GLOW/file' },
+                    { name: 'Pulse Glow',     desc: 'Rhythmic pulsing glow synced to beats',                            badge: 'hot',     dl: '2.5K', mediafire: 'https://www.mediafire.com/file/PULSE_GLOW/file' },
+                    { name: 'Edge Glow',      desc: 'Subject edge-detection glow highlight',                            badge: 'popular', dl: '2.0K', mediafire: 'https://www.mediafire.com/file/EDGE_GLOW/file' },
+                    { name: 'Dream Glow',     desc: 'Ethereal dreamy glow with chromatic shift',                        badge: 'new',     dl: '1.5K', mediafire: 'https://www.mediafire.com/file/DREAM_GLOW/file' },
+                ]
+            },
+            png: {
+                title: 'PNG Packs',
+                subtitle: '8 transparent VFX PNG asset packs',
+                icon: '<i class="fa-solid fa-image" style="color:#ff007f;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(255,0,127,0.2), rgba(200,0,80,0.15))',
+                type: 'image',
+                items: [
+                    { name: 'Lightning PNG',  desc: 'High-res transparent lightning bolt VFX assets',                   badge: 'popular', dl: '5.1K', image: 'png-lightning.png',  mediafire: 'https://www.mediafire.com/file/LIGHTNING_PNG/file' },
+                    { name: 'Fire PNG',       desc: 'Realistic fire and ember transparent overlays',                    badge: 'hot',     dl: '4.8K', image: 'png-fire.png',       mediafire: 'https://www.mediafire.com/file/FIRE_PNG/file' },
+                    { name: 'Smoke PNG',      desc: 'Cinematic smoke and fog transparent assets',                       badge: 'popular', dl: '3.9K', image: 'png-smoke.png',      mediafire: 'https://www.mediafire.com/file/SMOKE_PNG/file' },
+                    { name: 'Rain PNG',       desc: 'Realistic rain streaks and droplet overlays',                      badge: 'new',     dl: '2.2K', image: 'png-rain.png',       mediafire: 'https://www.mediafire.com/file/RAIN_PNG/file' },
+                    { name: 'Snow PNG',       desc: 'Soft snowfall and bokeh snow transparent PNGs',                   badge: 'new',     dl: '2.0K', image: 'png-snow.png',       mediafire: 'https://www.mediafire.com/file/SNOW_PNG/file' },
+                    { name: 'Explosion PNG',  desc: 'Cinematic explosion and shockwave VFX PNGs',                       badge: 'hot',     dl: '4.3K', image: 'png-explosion.png',  mediafire: 'https://www.mediafire.com/file/EXPLOSION_PNG/file' },
+                    { name: 'Blood PNG',      desc: 'Action-style blood splatter transparent assets',                   badge: 'popular', dl: '3.5K', image: 'png-blood.png',      mediafire: 'https://www.mediafire.com/file/BLOOD_PNG/file' },
+                    { name: 'Energy PNG',     desc: 'Anime-style energy aura and ki blast PNGs',                        badge: 'hot',     dl: '6.2K', image: 'png-energy.png',     mediafire: 'https://www.mediafire.com/file/ENERGY_PNG/file' },
+                ]
+            },
+            overlay: {
+                title: 'Overlay Packs',
+                subtitle: '6 cinematic overlay packs for premium aesthetics',
+                icon: '<i class="fa-solid fa-layer-group" style="color:#ffaa00;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(255,165,0,0.2), rgba(200,100,0,0.15))',
+                type: 'pack',
+                items: [
+                    { name: 'VHS Overlay',       desc: 'Retro VHS scanlines, noise, and color bleed effect',             badge: 'hot',     dl: '4.2K', mediafire: 'https://www.mediafire.com/file/VHS_OVERLAY/file' },
+                    { name: 'Film Grain',         desc: 'Authentic 35mm analog film grain texture overlay',              badge: 'popular', dl: '3.8K', mediafire: 'https://www.mediafire.com/file/FILM_GRAIN/file' },
+                    { name: 'Dust & Scratches',   desc: 'Old film dust particles and scratch overlay',                   badge: 'new',     dl: '2.1K', mediafire: 'https://www.mediafire.com/file/DUST_SCRATCHES/file' },
+                    { name: 'Light Leaks',        desc: 'Organic film light-leak bokeh overlays',                        badge: 'popular', dl: '3.0K', mediafire: 'https://www.mediafire.com/file/LIGHT_LEAKS/file' },
+                    { name: 'Lens Flare Overlay', desc: 'Anamorphic and optical lens flare overlays',                   badge: 'hot',     dl: '3.5K', mediafire: 'https://www.mediafire.com/file/LENS_FLARE_OVERLAY/file' },
+                    { name: 'Rain on Lens',       desc: 'Realistic rain droplets on camera lens overlay',               badge: 'new',     dl: '1.8K', mediafire: 'https://www.mediafire.com/file/RAIN_ON_LENS/file' },
+                ]
+            },
+            cc: {
+                title: 'Faisal Saber CC Packs',
+                subtitle: '4 signature color correction presets by Faisal Saber',
+                icon: '<i class="fa-solid fa-palette" style="color:#4facfe;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(79,172,254,0.2), rgba(0,242,254,0.15))',
+                type: 'image',
+                items: [
+                    { name: 'Faisal Saber Main CC',    desc: 'Signature all-purpose cinematic color correction',     badge: 'popular', dl: '6.8K', image: 'Millie.png',    mediafire: 'https://www.mediafire.com/file/MAIN_CC/file' },
+                    { name: 'Faisal Saber Crimson CC', desc: 'Bold red-toned cinematic grade for intense scenes',    badge: 'hot',     dl: '5.1K', image: 'iron.png', mediafire: 'https://www.mediafire.com/file/CRIMSON_CC/file' },
+                    { name: 'Faisal Saber Bright CC',  desc: 'Vibrant high-key bright correction for clean footage', badge: 'new',     dl: '3.9K', image: 'cc-bright.jpg',  mediafire: 'https://www.mediafire.com/file/BRIGHT_CC/file' },
+                    { name: 'Faisal Saber Dark CC',    desc: 'Deep moody dark correction for dramatic tone',         badge: 'popular', dl: '4.5K', image: 'cc-dark.jpg',    mediafire: 'https://www.mediafire.com/file/DARK_CC/file' },
+                ]
+            },
+            sfx: {
+                title: 'Sound Effects',
+                subtitle: '8 royalty-free cinematic SFX packs',
+                icon: '<i class="fa-solid fa-music" style="color:#ff5050;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(255,80,80,0.2), rgba(200,0,0,0.15))',
+                type: 'audio',
+                items: [
+                    { name: 'Whoosh Pack',     desc: 'Fast air whoosh and swipe transition sounds',                      badge: 'popular', dl: '4.0K', audio: 'whoosh-sfx.mp3',          mediafire: 'https://www.mediafire.com/file/dnlgsenf3v89gag/whoosh-sfx.mp3/file' },
+                    { name: 'Impact Hit Pack', desc: 'Heavy punch and impact hit sound effects',                         badge: 'hot',     dl: '4.8K', audio: 'IMPACT.mp3',       mediafire: 'https://www.mediafire.com/file/0wg6hxkldw81cel/IMPACT.mp3/file' },
+                    { name: 'Bass Drop SFX',   desc: 'Deep bass drops for high-energy beat drops',                      badge: 'popular', dl: '3.5K', audio: 'bass-drop-edit_mixdown.mp3',        mediafire: 'https://www.mediafire.com/file/wjqtw9ncx58m13y/bass-drop-edit_mixdown.mp3/file' },
+                    { name: 'Cinematic Booms', desc: 'Huge cinematic explosion and boom sounds',                        badge: 'hot',     dl: '3.9K', audio: 'cinematicboom.mp3',  mediafire: 'https://www.mediafire.com/file/xxdfs06aixdimqz/cinematicboom.mp3/file' },
+                    { name: 'UI Sounds',       desc: 'Clean UI interaction and notification sounds',                    badge: 'new',     dl: '1.6K', audio: 'pop.mp3',        mediafire: 'https://www.mediafire.com/file/30j1hnkggnqdlhs/pop.mp3/file' },
+                    { name: 'Glitch SFX',      desc: 'Digital glitch and electronic distortion sounds',                 badge: 'new',     dl: '2.2K', audio: 'error-glitch.mp3',           mediafire: 'https://www.mediafire.com/file/31wv0rrs4byddb0/error-glitch.mp3/file' },
+                    { name: 'Tension Rises',   desc: 'Cinematic tension-building and riser sounds',                     badge: 'popular', dl: '2.8K', audio: 'riser.mp3',    mediafire: 'https://www.mediafire.com/file/7b3y16x447i4p7x/riser.mp3/file' },
+                    { name: 'Heartbeat SFX',   desc: 'Dramatic heartbeat and pulse sound effects',                      badge: 'hot',     dl: '3.1K', audio: 'heartbeat.mp3',        mediafire: 'https://www.mediafire.com/file/sigv5zbax9dywm0/heartbeat.mp3/file' },
+                ]
+            },
+            fonts: {
+                title: 'Fonts',
+                subtitle: '6 premium display fonts for video editors',
+                icon: '<i class="fa-solid fa-font" style="color:#d080ff;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(200,100,255,0.2), rgba(150,50,200,0.15))',
+                type: 'pack',
+                items: [
+                    { name: 'Futura Bold',     desc: 'Clean geometric sans-serif for modern titles',                     badge: 'popular', dl: '3.2K', mediafire: 'https://www.mediafire.com/file/r7eyf3cl5iy9ze1/futura-bold_BsXRo.zip/file' },
+                    { name: 'Cinematic Serif', desc: 'Elegant high-contrast serif for drama/thriller',                   badge: 'new',     dl: '1.9K', mediafire: 'https://www.mediafire.com/file/CINEMATIC_SERIF/file' },
+                    { name: 'Grunge Display',  desc: 'Rough-textured grunge font for edgy content',                     badge: 'hot',     dl: '3.7K', mediafire: 'https://www.mediafire.com/file/GRUNGE_DISPLAY/file' },
+                    { name: 'Neon Script',     desc: 'Fluid neon-style cursive script font',                            badge: 'popular', dl: '2.5K', mediafire: 'https://www.mediafire.com/file/NEON_SCRIPT/file' },
+                    { name: 'Minimal Sans',    desc: 'Ultra-clean minimal sans-serif for captions',                     badge: 'new',     dl: '2.0K', mediafire: 'https://www.mediafire.com/file/MINIMAL_SANS/file' },
+                    { name: 'Anime Bold',      desc: 'Thick impactful font inspired by anime titles',                   badge: 'hot',     dl: '4.1K', mediafire: 'https://www.mediafire.com/file/ANIME_BOLD/file' },
+                ]
+            },
+            aiprompt: {
+                title: 'AI Prompt Library',
+                subtitle: '6 powerful AI prompts for editors and creators',
+                icon: '<i class="fa-solid fa-robot" style="color:#00f2fe;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(0,242,254,0.2), rgba(0,150,200,0.15))',
+                type: 'ai',
+                items: [
+                    { name: 'Comic Art AI Prompt',   desc: 'Make this comic art type with same background and height and width + High-detail comic book illustration, monochrome or limited colorful palette, bold colorful linework, precise inking, cinematic lighting and composition, cel-shaded shadows, detailed textures, clean edges, moody atmosphere, graphic-novel tone, dramatic contrast, realistic proportions but stylized like comic art, smooth gradients, 4K ink illustration quality.', badge: 'hot' },
+                    { name: 'Ai Sunglasses Prompt',      desc: 'subject wearing realistic, dark, reflective aviator sunglasses, identical to user request. The lenses must have specular highlights and slight reflections of the ambient lighting conditions, and the arms of the sunglasses must rest naturally on the ears. Facial features and expression must remain untouched. Natural, matching directional light and shadows, integrated realistically. 4k resolution, extreme detail..', badge: 'popular' },
+                    { name: 'Realistic 3d text ai prompt', desc: 'Highly detailed, hyper-realistic cinematic landscape Text Faisal Saber prominently carved/built into environment (not an overlay). 8k quality, dramatic lighting, absolutely no humans.', badge: 'new' },
+                    { name: 'Futuristic City Prompt',   desc: 'Blade Runner-inspired futuristic city at night, neon reflections on wet streets, flying vehicles, dense urban cyberpunk skyline. Cinematic rain, volumetric fog, ultra-detailed, 8K render.', badge: 'hot' },
+                    { name: 'Portrait Lighting Prompt', desc: 'Cinematic portrait with dramatic Rembrandt lighting, rich bokeh background, emotional expression. Shot on ARRI Alexa, anamorphic lens, film-grain aesthetic, professional color grade.', badge: 'popular' },
+                    { name: 'AMV Thumbnail Prompt',     desc: 'Eye-catching AMV YouTube thumbnail with a dramatic anime character in the foreground, explosive energy effects, bold color contrast, glowing accents, cinematic aspect ratio composition.', badge: 'new' },
+                ]
+            },
+            icons: {
+                title: 'Icons',
+                subtitle: '6 premium icon packs in SVG and PNG format',
+                icon: '<i class="fa-solid fa-icons" style="color:#00ffcc;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(0,255,200,0.2), rgba(0,200,150,0.15))',
+                type: 'image',
+                items: [
+                    { name: 'Social Media Icons',    desc: 'All major social platform icons in clean vector SVG',        badge: 'popular', dl: '3.8K', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/SOCIAL_MEDIA_ICONS/file' },
+                    { name: 'UI Interface Icons',    desc: 'Clean minimal UI/UX icon set for motion graphics',           badge: 'new',     dl: '2.2K', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/UI_INTERFACE_ICONS/file' },
+                    { name: 'Emoji Icon Pack',       desc: 'Flat-style animated emoji icon collection',                  badge: 'hot',     dl: '4.0K', image: 'https://images.unsplash.com/photo-1493707553966-283afac8c358?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/EMOJI_ICON_PACK/file' },
+                    { name: 'Gaming Icons',          desc: 'Gaming-themed icon pack for streamer content',               badge: 'popular', dl: '3.3K', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/GAMING_ICONS/file' },
+                    { name: 'Nature & Weather Icons',desc: 'Weather and nature icon set for intros and overlays',       badge: 'new',     dl: '1.5K', image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/NATURE_WEATHER_ICONS/file' },
+                    { name: 'Arrow & Shape Icons',   desc: 'Bold directional arrows and geometric shape icons',          badge: 'hot',     dl: '2.9K', image: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/ARROW_SHAPE_ICONS/file' },
+                ]
+            },
+            aescripts: {
+                title: 'AE Scripts',
+                subtitle: '5 automation scripts to supercharge After Effects',
+                icon: '<i class="fa-solid fa-code" style="color:#ffd000;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(255,200,0,0.2), rgba(200,130,0,0.15))',
+                type: 'pack',
+                items: [
+                    { name: 'Auto Ease Script',      desc: 'Instantly converts all keyframes to smooth cubic eases',    badge: 'popular', dl: '4.2K', mediafire: 'https://www.mediafire.com/file/AUTO_EASE_SCRIPT/file' },
+                    { name: 'Layer Organizer',       desc: 'Auto-names, color-codes and groups layers instantly',       badge: 'hot',     dl: '3.6K', mediafire: 'https://www.mediafire.com/file/LAYER_ORGANIZER/file' },
+                    { name: 'Text Animator Pro',     desc: 'One-click text animation rig with 20+ presets built in',   badge: 'popular', dl: '3.1K', mediafire: 'https://www.mediafire.com/file/TEXT_ANIMATOR_PRO/file' },
+                    { name: 'Render Queue Manager',  desc: 'Batch render with custom settings and notifications',      badge: 'new',     dl: '1.8K', mediafire: 'https://www.mediafire.com/file/RENDER_QUEUE_MANAGER/file' },
+                    { name: 'Motion Bro Companion',  desc: 'Companion script for managing preset libraries fast',      badge: 'hot',     dl: '2.7K', mediafire: 'https://www.mediafire.com/file/MOTION_BRO_COMPANION/file' },
+                ]
+            },
+            plugins: {
+                title: 'Plugins',
+                subtitle: '5 essential free plugins for AE and Premiere',
+                icon: '<i class="fa-solid fa-plug" style="color:#ff5050;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(255,50,50,0.2), rgba(200,0,0,0.15))',
+                type: 'icon',
+                items: [
+                    { name: 'Video Copilot Element 3D Lite', desc: 'Lite version of the legendary 3D object plugin for AE', badge: 'hot',     dl: '5.5K', icon: '<i class="fa-solid fa-cube" style="color:#ff5050;"></i>',          mediafire: 'https://www.videocopilot.net/products/element2' },
+                    { name: 'Twitch by Video Copilot',       desc: 'Randomize AE layers with flicker, shake, and color',   badge: 'popular', dl: '4.1K', icon: '<i class="fa-solid fa-bolt" style="color:#ffaa00;"></i>',          mediafire: 'https://www.videocopilot.net/products/twitch/' },
+                    { name: 'Rsmb Motion Blur',              desc: 'Real Smart Motion Blur plugin for smooth velocity',    badge: 'hot',     dl: '6.0K', icon: '<i class="fa-solid fa-gauge-high" style="color:#4facfe;"></i>',    mediafire: 'https://revisionfx.com/products/rsmb/' },
+                    { name: 'Saber by Video Copilot',        desc: 'Create realistic lightsaber and energy beam effects',  badge: 'popular', dl: '4.8K', icon: '<i class="fa-solid fa-wand-sparkles" style="color:#00f2fe;"></i>', mediafire: 'https://www.videocopilot.net/blog/2016/03/new-plug-in-saber-now-available-100-free/' },
+                    { name: 'Optical Flares Starter',        desc: 'Starter edition optical lens flare generator for AE', badge: 'new',     dl: '3.2K', icon: '<i class="fa-solid fa-sun" style="color:#ffd000;"></i>',           mediafire: 'https://www.videocopilot.net/products/opticalflares' },
+                ]
+            },
+            mograph: {
+                title: 'Motion Graphics',
+                subtitle: '6 editable MOGRT and AE motion graphic templates',
+                icon: '<i class="fa-solid fa-shapes" style="color:#8090ff;font-size:1.5rem;"></i>',
+                iconBg: 'linear-gradient(135deg, rgba(80,100,255,0.2), rgba(40,50,200,0.15))',
+                type: 'pack',
+                items: [
+                    { name: 'Lower Third Pack',  desc: 'Clean animated lower-third title templates',                    badge: 'popular', dl: '3.5K', mediafire: 'https://www.mediafire.com/file/LOWER_THIRD_PACK/file' },
+                    { name: 'Intro Logo Sting',  desc: 'Dynamic logo reveal intro with particle effects',              badge: 'hot',     dl: '4.2K', mediafire: 'https://www.mediafire.com/file/INTRO_LOGO_STING/file' },
+                    { name: 'Social Media Pack', desc: 'Instagram, YouTube and TikTok motion graphic assets',         badge: 'popular', dl: '3.9K', mediafire: 'https://www.mediafire.com/file/SOCIAL_MEDIA_PACK/file' },
+                    { name: 'Countdown Timer',   desc: 'Customizable animated countdown for livestreams',             badge: 'new',     dl: '2.0K', mediafire: 'https://www.mediafire.com/file/COUNTDOWN_TIMER/file' },
+                    { name: 'Stats & Numbers',   desc: 'Animated statistics and counter graphic templates',           badge: 'new',     dl: '1.7K', mediafire: 'https://www.mediafire.com/file/STATS_NUMBERS/file' },
+                    { name: 'Cinematic Titles',  desc: 'Epic cinematic film title card templates in AE',              badge: 'hot',     dl: '4.6K', mediafire: 'https://www.mediafire.com/file/CINEMATIC_TITLES/file' },
+                ]
+            },
+        };
+
         // ===== PANEL SYSTEM =====
         function openPanel(id) {
             closeAllPanels();
@@ -1212,7 +1616,6 @@
             mobileMenuBtn.querySelector('i').className = navLinks.classList.contains('active')
                 ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered';
         });
-        // Close menu on link click
         navLinks.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -1231,7 +1634,7 @@
                 card.style.display = match ? 'flex' : 'none';
                 if (match) visible++;
             });
-            document.getElementById('packCount').textContent = visible + ' Packs Available';
+            document.getElementById('packCount').textContent = visible + ' Resources Available';
         });
 
         // Filter tabs
@@ -1248,55 +1651,60 @@
                     card.style.display = show ? 'flex' : 'none';
                     if (show) visible++;
                 });
-                document.getElementById('packCount').textContent = visible + ' Packs Available';
+                document.getElementById('packCount').textContent = visible + ' Resources Available';
             });
         });
 
-        // ===== VIEW / DOWNLOAD COUNTER SYSTEM =====
-        // Uses a free public counter API (countapi.mileshilliard.com) so the
-        // numbers are shared across every visitor, not just stored locally.
+        // ===== COUNTER API =====
         const COUNTER_API = 'https://countapi.mileshilliard.com/api/v1';
-        const COUNTER_PREFIX = 'faisalsaberscenepacks-v1';
+        const COUNTER_PREFIX = 'faisalsaber-resources-v1';
 
-        function counterKey(cardId, type) {
-            return `${COUNTER_PREFIX}-${cardId}-${type}`;
-        }
-        function formatStatCount(n) {
+        // Fallback shown for image-type items until the real preview file is uploaded
+        // (matching filename in the RESOURCES object below) replaces it automatically.
+        const PLACEHOLDER_IMG = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">' +
+            '<rect width="100%" height="100%" fill="#11131a"/>' +
+            '<rect x="1" y="1" width="398" height="398" fill="none" stroke="#23262f" stroke-width="2"/>' +
+            '<text x="50%" y="47%" font-family="Arial, sans-serif" font-size="20" fill="#4facfe" text-anchor="middle">PREVIEW</text>' +
+            '<text x="50%" y="58%" font-family="Arial, sans-serif" font-size="12" fill="#84899e" text-anchor="middle">Coming Soon</text>' +
+            '</svg>'
+        );
+
+        function counterKey(id, type) { return `${COUNTER_PREFIX}-${id}-${type}`; }
+        function formatCount(n) {
             n = Number(n) || 0;
             if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
             if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
             return String(n);
         }
-        async function getCounter(cardId, type) {
+        async function getCounter(id, type) {
             try {
-                const res = await fetch(`${COUNTER_API}/get/${counterKey(cardId, type)}`);
+                const res = await fetch(`${COUNTER_API}/get/${counterKey(id, type)}`);
                 if (!res.ok) return 0;
                 const data = await res.json();
                 return parseInt(data.value) || 0;
             } catch (e) { return 0; }
         }
-        async function hitCounter(cardId, type) {
+        async function hitCounter(id, type) {
             try {
-                const res = await fetch(`${COUNTER_API}/hit/${counterKey(cardId, type)}`);
+                const res = await fetch(`${COUNTER_API}/hit/${counterKey(id, type)}`);
                 if (!res.ok) return null;
                 const data = await res.json();
                 return parseInt(data.value);
             } catch (e) { return null; }
         }
-        function setStatDisplay(cardId, type, value) {
+        function setStatDisplay(id, type, value) {
             const el = document.querySelector(
-                type === 'views' ? `[data-views="${cardId}"]` : `[data-downloads="${cardId}"]`
+                type === 'views' ? `[data-views="${id}"]` : `[data-downloads="${id}"]`
             );
-            if (el) el.textContent = formatStatCount(value);
+            if (el) el.textContent = formatCount(value);
         }
-        // Load existing counts for every card on page load (without incrementing)
         async function loadAllStats() {
             const cards = document.querySelectorAll('.studio-card[data-id]');
             await Promise.all(Array.from(cards).map(async (card) => {
                 const id = card.getAttribute('data-id');
                 const [views, downloads] = await Promise.all([
-                    getCounter(id, 'views'),
-                    getCounter(id, 'downloads')
+                    getCounter(id, 'views'), getCounter(id, 'downloads')
                 ]);
                 setStatDisplay(id, 'views', views);
                 setStatDisplay(id, 'downloads', downloads);
@@ -1304,42 +1712,235 @@
         }
         loadAllStats();
 
-        // Modal
-        const modal = document.getElementById('downloadModal');
-        let currentCardId = null;
-        function openDownloadModal(cardId, title, size, res, fps, mediafireLink, driveLink) {
-            currentCardId = cardId;
-            document.getElementById('modalTargetTitle').innerText = title;
-            document.getElementById('modalTargetSize').innerText = size;
-            document.getElementById('modalTargetRes').innerText = res;
-            document.getElementById('modalTargetFPS').innerText = fps;
-            document.getElementById('modalMediafireLink').href = mediafireLink;
-            document.getElementById('modalDriveLink').href = driveLink;
+        // ===== RESOURCE MODAL =====
+        const modal = document.getElementById('resourceModal');
+        let currentModalId = null;
+
+        // ===== LOCAL DOWNLOAD HELPER =====
+        // Saari files apke VS Code project ke "files" folder se direct download hongi.
+        // Bas folder structure ye rakhna: files/<category-id>/<file-name>
+        // Example: files/twixtor/smooth-twixtor.zip , files/sfx/whoosh-sfx.mp3
+        // Agar kisi item ka asli filename alag rakhna ho to us item mein "file: 'apna-naam.zip'" add kar do,
+        // wahi use ho jayega (category id ke andar se).
+        function slugify(str) {
+            return String(str).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+        }
+        function getDownloadAttrs(categoryId, item) {
+            // PLUGINS hamesha external official site par hi redirect honge (jaise pehle se ho raha tha)
+            if (categoryId === 'plugins') {
+                return `href="${item.mediafire}" target="_blank" rel="noopener noreferrer"`;
+            }
+            // Baaki sab -> local file jo aap VS Code me "files" folder ke andar daalenge
+            let fileName = item.file;
+            if (!fileName) {
+                fileName = item.audio ? item.audio : `${slugify(item.name)}.zip`;
+            }
+            const filePath = `files/${categoryId}/${fileName}`;
+            return `href="${filePath}" download="${fileName}"`;
+        }
+
+        function openResourceModal(id) {
+            const data = RESOURCES[id];
+            if (!data) return;
+            currentModalId = id;
+
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalSubtitle').textContent = data.subtitle;
+
+            const iconEl = document.getElementById('modalHeaderIcon');
+            iconEl.innerHTML = data.icon;
+            iconEl.style.background = data.iconBg;
+
+            const content = document.getElementById('modalContent');
+
+            if (data.type === 'ai') {
+                content.innerHTML = '<div class="resource-list" id="promptList"></div>';
+                const list = document.getElementById('promptList');
+                data.items.forEach((item) => {
+                    const el = document.createElement('div');
+                    el.className = 'prompt-item';
+                    el.innerHTML = `
+                        <div class="prompt-item-header">
+                            <span class="prompt-item-title">${item.name}</span>
+                            <span class="res-badge ${item.badge}">${item.badge.charAt(0).toUpperCase() + item.badge.slice(1)}</span>
+                        </div>
+                        <p class="prompt-item-desc">${item.desc}</p>
+                        <button class="copy-prompt-btn" onclick="copyPrompt(this, \`${item.desc.replace(/`/g, '\\`')}\`)">
+                            <i class="fa-solid fa-copy"></i> Copy Prompt
+                        </button>
+                    `;
+                    list.appendChild(el);
+                });
+            } else if (data.type === 'image') {
+                // CC, PNG, Icons, Text Animation -> show the actual preview image with a download button below
+                content.innerHTML = '<div class="media-grid" id="mediaGrid"></div>';
+                const grid = document.getElementById('mediaGrid');
+                data.items.forEach((item) => {
+                    const el = document.createElement('div');
+                    el.className = 'media-card';
+                    el.innerHTML = `
+                        <div class="media-thumb">
+                            <img src="${item.image}" alt="${item.name}" loading="lazy"
+                                 onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">
+                        </div>
+                        <div class="media-info">
+                            <span class="media-name">${item.name}</span>
+                            <span class="res-badge ${item.badge}">${item.badge.charAt(0).toUpperCase() + item.badge.slice(1)}</span>
+                        </div>
+                        <a ${getDownloadAttrs(id, item)} class="media-download-btn" onclick="trackDownload('${id}')">
+                            <i class="fa-solid fa-download"></i> Download
+                        </a>
+                    `;
+                    grid.appendChild(el);
+                });
+            } else if (data.type === 'icon') {
+                // Plugins -> show a distinct icon per item with a download button below
+                content.innerHTML = '<div class="media-grid" id="mediaGrid"></div>';
+                const grid = document.getElementById('mediaGrid');
+                data.items.forEach((item) => {
+                    const el = document.createElement('div');
+                    el.className = 'media-card';
+                    el.innerHTML = `
+                        <div class="media-thumb-icon" style="background:${data.iconBg};">${item.icon}</div>
+                        <div class="media-info">
+                            <span class="media-name">${item.name}</span>
+                            <span class="res-badge ${item.badge}">${item.badge.charAt(0).toUpperCase() + item.badge.slice(1)}</span>
+                        </div>
+                        <a href="${item.mediafire}" target="_blank" rel="noopener noreferrer" class="media-download-btn" onclick="trackDownload('${id}')">
+                            <i class="fa-brands fa-mediafire"></i> Download
+                        </a>
+                    `;
+                    grid.appendChild(el);
+                });
+            } else if (data.type === 'audio') {
+                // Sound Effects -> play-to-preview button, then download if they like it
+                content.innerHTML = '<div class="resource-list" id="audioList"></div>';
+                const list = document.getElementById('audioList');
+                data.items.forEach((item, idx) => {
+                    const audioId = `audio-${id}-${idx}`;
+                    const el = document.createElement('div');
+                    el.className = 'audio-item';
+                    el.innerHTML = `
+                        <button class="audio-play-btn" type="button" onclick="toggleAudio('${audioId}', this)">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <div class="audio-info">
+                            <span class="audio-name">${item.name}</span>
+                            <span class="audio-desc">${item.desc}</span>
+                        </div>
+                        <span class="res-dl-count"><i class="fa-solid fa-download"></i> ${item.dl}</span>
+                        <a ${getDownloadAttrs(id, item)} class="res-download-btn" onclick="trackDownload('${id}')">
+                            <i class="fa-solid fa-download"></i> Download
+                        </a>
+                        <audio id="${audioId}" src="files/${id}/${item.audio}" preload="none"></audio>
+                    `;
+                    list.appendChild(el);
+                });
+            } else {
+                content.innerHTML = '<div class="resource-list" id="resList"></div>';
+                const list = document.getElementById('resList');
+                data.items.forEach((item) => {
+                    const el = document.createElement('div');
+                    el.className = 'resource-item';
+                    el.innerHTML = `
+                        <div class="resource-item-icon" style="background:${data.iconBg};">${data.icon}</div>
+                        <div class="resource-item-info">
+                            <div class="resource-item-name">${item.name}</div>
+                            <div class="resource-item-desc">${item.desc}</div>
+                        </div>
+                        <div class="resource-item-right">
+                            <span class="res-badge ${item.badge}">${item.badge.charAt(0).toUpperCase() + item.badge.slice(1)}</span>
+                            <span class="res-dl-count"><i class="fa-solid fa-download"></i> ${item.dl}</span>
+                            <a ${getDownloadAttrs(id, item)} class="res-download-btn" onclick="trackDownload('${id}')">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    `;
+                    list.appendChild(el);
+                });
+            }
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
 
-            // Opening the pack details counts as a VIEW (not a download yet)
-            hitCounter(cardId, 'views').then((val) => {
-                if (val !== null) setStatDisplay(cardId, 'views', val);
+            hitCounter(id, 'views').then((val) => {
+                if (val !== null) setStatDisplay(id, 'views', val);
             });
         }
-        function closeDownloadModal() {
+
+        function closeResourceModal() {
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeDownloadModal(); });
 
-        // Only an actual click on a download server link counts as a DOWNLOAD
-        function trackActualDownload() {
-            if (!currentCardId) return;
-            hitCounter(currentCardId, 'downloads').then((val) => {
-                if (val !== null) setStatDisplay(currentCardId, 'downloads', val);
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeResourceModal(); });
+
+        function trackDownload(id) {
+            hitCounter(id, 'downloads').then((val) => {
+                if (val !== null) setStatDisplay(id, 'downloads', val);
             });
         }
-        document.getElementById('modalMediafireLink').addEventListener('click', trackActualDownload);
-        document.getElementById('modalDriveLink').addEventListener('click', trackActualDownload);
 
-        // 3D Tilt (only on non-touch devices)
+        // ===== AUDIO PREVIEW PLAYER (Sound Effects) =====
+        let currentlyPlayingAudio = null;
+        function toggleAudio(audioId, btn) {
+            const audio = document.getElementById(audioId);
+            if (!audio) return;
+
+            // Stop whatever else is currently playing first
+            if (currentlyPlayingAudio && currentlyPlayingAudio !== audio) {
+                currentlyPlayingAudio.pause();
+                currentlyPlayingAudio.currentTime = 0;
+            }
+            document.querySelectorAll('.audio-play-btn').forEach((b) => {
+                if (b !== btn) {
+                    b.innerHTML = '<i class="fa-solid fa-play"></i>';
+                    b.classList.remove('playing');
+                }
+            });
+
+            if (audio.paused) {
+                audio.play().catch(() => {});
+                btn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+                btn.classList.add('playing');
+                currentlyPlayingAudio = audio;
+            } else {
+                audio.pause();
+                btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+                btn.classList.remove('playing');
+                currentlyPlayingAudio = null;
+            }
+            audio.onended = () => {
+                btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+                btn.classList.remove('playing');
+                currentlyPlayingAudio = null;
+            };
+        }
+
+        function copyPrompt(btn, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Prompt';
+                    btn.classList.remove('copied');
+                }, 2200);
+            }).catch(() => {
+                // Fallback
+                const ta = document.createElement('textarea');
+                ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+                document.body.appendChild(ta); ta.select();
+                document.execCommand('copy'); document.body.removeChild(ta);
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Prompt';
+                    btn.classList.remove('copied');
+                }, 2200);
+            });
+        }
+
+        // ===== 3D TILT =====
         if (window.matchMedia('(hover: hover)').matches) {
             allCards.forEach(card => {
                 card.addEventListener('mousemove', (e) => {
