@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAISAL SABER // FREE EDITING RESOURCES</title>
+    <title>Faisal Saber – Free Video Editing Resources | AE Presets, LUTs, Overlays & More</title>
+    <meta name="description" content="Download 100% free premium video editing resources — After Effects presets, LUTs, PNG overlays, transitions, sound effects, AI prompts, fonts and motion graphics templates. Curated by Faisal Saber for editors and content creators.">
+    <meta name="keywords" content="free after effects presets, free LUTs download, free video editing resources, twixtor presets, free transitions, camera shake presets, motion graphics templates, free sound effects, AI prompts for editors, free fonts for editors, Faisal Saber">
+    <meta name="author" content="Faisal Saber">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Faisal Saber – Free Video Editing Resources">
+    <meta property="og:description" content="Premium free editing resources for video editors — AE presets, LUTs, overlays, transitions and more. 100% free, updated weekly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.faisalsaber.xyz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -577,6 +585,43 @@
         .privacy-section h3 { font-family: var(--font-display); font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; }
         .privacy-section p { color: var(--text-sub); font-size: 0.88rem; line-height: 1.75; }
 
+        /* ===== BLOG / TUTORIALS SECTION ===== */
+        .blog-section { max-width: 1440px; margin: 0 auto; padding: 4rem 1.5rem 2rem; }
+        .section-title-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 2.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1.2rem; }
+        .section-title-row h2 { font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; letter-spacing: -1px; }
+        .section-title-row h2 span { color: var(--primary); }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 24px; }
+        .blog-card { background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.8rem; display: flex; flex-direction: column; gap: 14px; transition: var(--transition-smooth); cursor: pointer; }
+        .blog-card:hover { border-color: rgba(0,242,254,0.3); transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .blog-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); background: rgba(0,242,254,0.08); border: 1px solid rgba(0,242,254,0.2); padding: 4px 12px; border-radius: 50px; width: fit-content; }
+        .blog-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; line-height: 1.4; color: var(--text-main); }
+        .blog-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.75; flex: 1; }
+        .blog-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 6px; }
+        .blog-card-footer span { font-size: 0.78rem; color: var(--text-sub); }
+        .blog-read-btn { font-size: 0.8rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 6px; transition: var(--transition-fast); background: none; border: none; cursor: pointer; font-family: var(--font-display); padding: 0; }
+        .blog-read-btn:hover { gap: 10px; }
+        /* ===== BLOG ARTICLE MODAL ===== */
+        .article-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.88); z-index: 4000; display: flex; align-items: flex-start; justify-content: center; padding: 2rem 1rem; overflow-y: auto; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(8px); }
+        .article-modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .article-modal-window { background: var(--bg-surface); border: 1px solid var(--glass-border); border-radius: 20px; max-width: 780px; width: 100%; padding: 3rem; position: relative; transform: translateY(30px); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 40px 100px rgba(0,0,0,0.8); margin: auto; }
+        .article-modal-overlay.active .article-modal-window { transform: translateY(0); }
+        .article-close-btn { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); width: 38px; height: 38px; border-radius: 50%; color: var(--text-main); display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 1rem; transition: var(--transition-fast); }
+        .article-close-btn:hover { background: var(--accent); }
+        .article-content { color: var(--text-sub); line-height: 1.9; font-size: 0.95rem; }
+        .article-content h1 { font-family: var(--font-display); font-size: 1.7rem; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.3; }
+        .article-content .article-meta { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 1.8rem; display: flex; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem; }
+        .article-content h2 { font-family: var(--font-display); font-size: 1.15rem; color: var(--primary); margin: 2rem 0 0.8rem; }
+        .article-content p { margin-bottom: 1.2rem; }
+        .article-content ul { padding-left: 1.4rem; margin-bottom: 1.2rem; }
+        .article-content ul li { margin-bottom: 0.5rem; }
+        .article-content strong { color: var(--text-main); }
+        .article-content .tip-box { background: rgba(0,242,254,0.06); border: 1px solid rgba(0,242,254,0.2); border-radius: 12px; padding: 1rem 1.2rem; margin: 1.5rem 0; }
+        .article-content .tip-box strong { color: var(--primary); }
+        /* ===== DISCLAIMER BANNER ===== */
+        .disclaimer-bar { background: rgba(255,165,0,0.05); border-top: 1px solid rgba(255,165,0,0.12); padding: 1rem 1.5rem; text-align: center; }
+        .disclaimer-bar p { font-size: 0.8rem; color: var(--text-sub); max-width: 1000px; margin: 0 auto; line-height: 1.6; }
+        .disclaimer-bar strong { color: #ffaa00; }
+
         /* ===== HAMBURGER (3-line) BUTTON ===== */
         .hamburger-btn {
             display: flex; flex-direction: column; justify-content: center; gap: 5px;
@@ -664,6 +709,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#catalog">Resources</a></li>
+                <li><a href="#tutorials">Tutorials</a></li>
                 <li><a href="#catalog" class="nav-btn">Browse Free</a></li>
             </ul>
             <div class="nav-social-icons">
@@ -1162,6 +1208,92 @@
         </div>
     </main>
 
+    <!-- ===== TUTORIALS / BLOG SECTION ===== -->
+    <section id="tutorials">
+        <div class="blog-section">
+            <div class="section-title-row">
+                <h2>Editing <span>Tutorials</span> & Guides</h2>
+                <span class="catalog-count">6 Articles</span>
+            </div>
+            <div class="blog-grid">
+
+                <div class="blog-card" onclick="openArticle('twixtor-guide')">
+                    <span class="blog-tag">After Effects</span>
+                    <h3>How to Use Twixtor Presets in After Effects — Complete Beginner Guide</h3>
+                    <p>Twixtor is one of the most powerful slow-motion tools available for video editors. In this guide, we break down exactly how to install and apply Twixtor presets in After Effects to create cinematic slow-motion sequences.</p>
+                    <div class="blog-card-footer">
+                        <span><i class="fa-regular fa-clock"></i> 5 min read &nbsp;·&nbsp; June 2026</span>
+                        <button class="blog-read-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openArticle('luts-guide')">
+                    <span class="blog-tag">Color Grading</span>
+                    <h3>Top 5 Free LUTs for Cinematic Color Grading in 2026</h3>
+                    <p>LUTs (Look-Up Tables) are the fastest way to achieve a professional cinematic look in your videos. This guide covers the best free LUTs for video editors in 2026 and how to apply them in Premiere Pro and DaVinci Resolve.</p>
+                    <div class="blog-card-footer">
+                        <span><i class="fa-regular fa-clock"></i> 6 min read &nbsp;·&nbsp; June 2026</span>
+                        <button class="blog-read-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openArticle('presets-guide')">
+                    <span class="blog-tag">Presets</span>
+                    <h3>What Are After Effects Presets and How Do You Install Them?</h3>
+                    <p>If you are new to After Effects, presets can feel confusing. This beginner-friendly guide explains what AE presets are, the difference between .ffx and .aep files, and a step-by-step installation tutorial that anyone can follow.</p>
+                    <div class="blog-card-footer">
+                        <span><i class="fa-regular fa-clock"></i> 4 min read &nbsp;·&nbsp; May 2026</span>
+                        <button class="blog-read-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openArticle('transitions-guide')">
+                    <span class="blog-tag">Transitions</span>
+                    <h3>Best Free Transition Presets for After Effects — 2026 Edition</h3>
+                    <p>Smooth transitions are what separate amateur edits from professional ones. We have handpicked the best free transition packs available for After Effects editors in 2026, including glitch, zoom, whip, and cinematic wipe transitions.</p>
+                    <div class="blog-card-footer">
+                        <span><i class="fa-regular fa-clock"></i> 5 min read &nbsp;·&nbsp; May 2026</span>
+                        <button class="blog-read-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openArticle('sfx-guide')">
+                    <span class="blog-tag">Sound Design</span>
+                    <h3>How to Add Sound Effects to Your Edits — A Complete Guide for Video Editors</h3>
+                    <p>Sound effects are often the most underrated part of a video edit. In this guide, we explain how to layer SFX, how to sync them with your cuts, and where to find high-quality free sound effects for your projects.</p>
+                    <div class="blog-card-footer">
+                        <span><i class="fa-regular fa-clock"></i> 7 min read &nbsp;·&nbsp; April 2026</span>
+                        <button class="blog-read-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openArticle('ai-prompts-guide')">
+                    <span class="blog-tag">AI Tools</span>
+                    <h3>How to Write AI Prompts for Cinematic Visuals — Midjourney & Sora Guide</h3>
+                    <p>AI image and video generation tools like Midjourney and Sora have changed what is possible for solo creators. This guide teaches you how to write effective prompts to generate cinematic visuals for your video projects and thumbnails.</p>
+                    <div class="blog-card-footer">
+                        <span><i class="fa-regular fa-clock"></i> 8 min read &nbsp;·&nbsp; June 2026</span>
+                        <button class="blog-read-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCLAIMER BAR -->
+    <div class="disclaimer-bar">
+        <p><strong>Disclaimer:</strong> All resources provided on this website are shared for free educational and creative purposes. We do not claim ownership of any third-party software names or brand names mentioned. Resources are curated by Faisal Saber and are intended for personal, non-commercial use only. If you believe any content violates your copyright, please <a href="mailto:ka9190430@gmail.com" style="color:#ffaa00;">contact us</a> and we will take immediate action.</p>
+    </div>
+
+    <!-- ARTICLE MODAL -->
+    <div class="article-modal-overlay" id="articleModal">
+        <div class="article-modal-window">
+            <div class="article-close-btn" onclick="closeArticle()"><i class="fa-solid fa-xmark"></i></div>
+            <div class="article-content" id="articleContent"></div>
+        </div>
+    </div>
+
     <!-- RESOURCE MODAL -->
     <div class="modal-overlay" id="resourceModal">
         <div class="modal-window">
@@ -1210,6 +1342,11 @@
                 <a class="contact-link-btn" onclick="switchPanel('privacyPanel')" style="cursor:pointer;">
                     <i class="fa-solid fa-shield-halved"></i>
                     <div><div style="font-weight:700;">Privacy Policy</div><div style="font-size:0.78rem;color:var(--text-sub);">How we handle your data</div></div>
+                    <i class="fa-solid fa-chevron-right" style="margin-left:auto; color:var(--text-sub); font-size:0.8rem;"></i>
+                </a>
+                <a class="contact-link-btn" onclick="switchPanel('termsPanel')" style="cursor:pointer;">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <div><div style="font-weight:700;">Terms of Service</div><div style="font-size:0.78rem;color:var(--text-sub);">Rules for using this platform</div></div>
                     <i class="fa-solid fa-chevron-right" style="margin-left:auto; color:var(--text-sub); font-size:0.8rem;"></i>
                 </a>
             </div>
@@ -1282,23 +1419,68 @@
             <p style="font-size:0.8rem; color:var(--text-sub);">Last updated: June 2026</p>
             <div class="privacy-section">
                 <h3>1. Information We Collect</h3>
-                <p>This website does not collect any personal information from visitors. We do not use cookies for tracking purposes.</p>
+                <p>This website does not collect any personally identifiable information from visitors. We do not require registration or account creation to access our resources.</p>
             </div>
             <div class="privacy-section">
-                <h3>2. Third-Party Links</h3>
-                <p>Resources are hosted on third-party platforms including MediaFire and Google Drive. Please review their respective privacy policies.</p>
+                <h3>2. Cookies & Advertising</h3>
+                <p>This website uses <strong style="color:var(--text-main);">Google AdSense</strong>, a third-party advertising service provided by Google LLC. Google AdSense uses cookies to serve personalized advertisements based on your prior visits to this and other websites. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--primary);">Google Ads Settings</a>. We may also use basic analytics cookies to understand aggregate traffic patterns on this site. No personal data is sold to any third party.</p>
             </div>
             <div class="privacy-section">
-                <h3>3. Analytics</h3>
-                <p>We may use basic analytics to understand how many people visit our website. This data is aggregated and anonymous.</p>
+                <h3>3. Third-Party Links</h3>
+                <p>Resources on this platform are hosted on third-party services including MediaFire and Google Drive. Please review their respective privacy policies, as we are not responsible for their data practices.</p>
             </div>
             <div class="privacy-section">
-                <h3>4. Content & Copyright</h3>
-                <p>All resources are provided for non-commercial creative purposes. If you believe any content infringes on your rights, please contact us at ka9190430@gmail.com.</p>
+                <h3>4. Analytics</h3>
+                <p>We may use anonymized, aggregated analytics data to understand how visitors interact with our website. This data does not identify any individual user.</p>
             </div>
             <div class="privacy-section">
-                <h3>5. Contact</h3>
+                <h3>5. Content & Copyright</h3>
+                <p>All resources are shared for free, non-commercial creative purposes. If you believe any content infringes on your rights, please contact us immediately at <a href="mailto:ka9190430@gmail.com" style="color:var(--primary);">ka9190430@gmail.com</a> and we will take prompt action.</p>
+            </div>
+            <div class="privacy-section">
+                <h3>6. Contact</h3>
                 <p>For any privacy-related concerns, email us at <a href="mailto:ka9190430@gmail.com" style="color:var(--primary);">ka9190430@gmail.com</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TERMS OF SERVICE PANEL -->
+    <div class="side-panel" id="termsPanel">
+        <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
+        <div class="panel-header"><h2>Terms of <span>Service</span></h2></div>
+        <div class="panel-body">
+            <p style="font-size:0.8rem; color:var(--text-sub);">Last updated: June 2026</p>
+            <div class="privacy-section">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using faisalsaber.xyz, you accept and agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use this website.</p>
+            </div>
+            <div class="privacy-section">
+                <h3>2. Use of Resources</h3>
+                <p>All resources provided on this platform — including presets, LUTs, overlays, sound effects, fonts, and templates — are shared for personal, non-commercial, creative use only. You may not resell, redistribute, or claim ownership of any resources obtained from this platform.</p>
+            </div>
+            <div class="privacy-section">
+                <h3>3. Intellectual Property</h3>
+                <p>The design, branding, and content of this website are the property of Faisal Saber. Any third-party software, brand names, or trademarks mentioned are the property of their respective owners. We make no claim of ownership over such names.</p>
+            </div>
+            <div class="privacy-section">
+                <h3>4. Disclaimer of Warranties</h3>
+                <p>All resources are provided "as is" without warranty of any kind. We do not guarantee that resources will be compatible with every version of every software. We are not responsible for any damage or data loss that results from downloading or using resources from this platform.</p>
+            </div>
+            <div class="privacy-section">
+                <h3>5. Third-Party Services</h3>
+                <p>Downloads are hosted on third-party platforms such as MediaFire and Google Drive. We are not responsible for the availability, content, or policies of these external services.</p>
+            </div>
+            <div class="privacy-section">
+                <h3>6. Advertising</h3>
+                <p>This website displays advertisements served by Google AdSense. We are not responsible for the content of third-party advertisements. Clicking on ads may redirect you to external websites.</p>
+            </div>
+            <div class="privacy-section">
+                <h3>7. Changes to Terms</h3>
+                <p>We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to the website. Continued use of the site constitutes acceptance of the updated terms.</p>
+            </div>
+            <div class="privacy-section">
+                <h3>8. Contact</h3>
+                <p>For any questions about these Terms of Service, contact us at <a href="mailto:ka9190430@gmail.com" style="color:var(--primary);">ka9190430@gmail.com</a>.</p>
             </div>
         </div>
     </div>
@@ -1317,9 +1499,11 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#catalog">Resource Vault</a></li>
+                    <li><a href="#tutorials">Tutorials</a></li>
                     <li><a onclick="openPanel('aboutPanel')" style="cursor:pointer;">About Us</a></li>
                     <li><a onclick="openPanel('contactPanel')" style="cursor:pointer;">Contact Us</a></li>
                     <li><a onclick="openPanel('privacyPanel')" style="cursor:pointer;">Privacy Policy</a></li>
+                    <li><a onclick="openPanel('termsPanel')" style="cursor:pointer;">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -1942,6 +2126,223 @@
                 }, 2200);
             });
         }
+
+        // ===== ARTICLE MODAL =====
+        const ARTICLES = {
+            'twixtor-guide': {
+                title: 'How to Use Twixtor Presets in After Effects — Complete Beginner Guide',
+                date: 'June 2026',
+                readTime: '5 min read',
+                category: 'After Effects',
+                html: `
+                    <h1>How to Use Twixtor Presets in After Effects — Complete Beginner Guide</h1>
+                    <div class="article-meta"><span><i class="fa-regular fa-clock"></i> 5 min read</span><span><i class="fa-regular fa-calendar"></i> June 2026</span><span><i class="fa-solid fa-tag"></i> After Effects</span></div>
+                    <p>Twixtor is one of the most powerful and widely used slow-motion plugins available for video editors. Whether you want buttery-smooth cinematic slow-motion or a dramatic velocity ramp that syncs to a beat, Twixtor presets can save you hours of manual keyframing.</p>
+                    <p>In this guide, we will walk you through everything you need to know about using Twixtor presets in Adobe After Effects — from installation to applying them to your footage.</p>
+                    <h2>What is Twixtor?</h2>
+                    <p>Twixtor is a plugin made by RE:Vision Effects that uses advanced optical flow technology to create ultra-smooth slow-motion effects. Unlike standard frame blending in After Effects, Twixtor actually creates new frames by analyzing the motion between existing frames, which produces a much smoother result.</p>
+                    <p>Twixtor <strong>presets</strong> are pre-configured settings files (.ffx) that apply specific speed curve animations, motion blur settings, and timing configurations to your footage automatically. Instead of setting up all the parameters yourself, you simply apply the preset and it does the work for you.</p>
+                    <h2>What You Need Before You Start</h2>
+                    <ul>
+                        <li><strong>Adobe After Effects</strong> (CS6 or newer)</li>
+                        <li><strong>Twixtor plugin</strong> installed (RE:Vision Effects — free trial available)</li>
+                        <li><strong>Your video footage</strong> (60fps or higher recommended for best results)</li>
+                        <li><strong>A Twixtor preset file</strong> (.ffx) — download ours from the Resource Vault above for free</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Pro Tip:</strong> Twixtor works best with footage shot at 60fps, 120fps, or higher. The more frames your source video has, the smoother the slow-motion result will be.</div>
+                    <h2>Step-by-Step: How to Install Twixtor Presets</h2>
+                    <p><strong>Step 1:</strong> Download the Twixtor preset pack from our Resource Vault. The file will be a .zip archive containing .ffx preset files.</p>
+                    <p><strong>Step 2:</strong> Extract the .zip file. You will find individual .ffx files like "Smooth Twixtor.ffx", "Velocity Twixtor.ffx" etc.</p>
+                    <p><strong>Step 3:</strong> Place these .ffx files in your After Effects Presets folder. The default location is: <strong>C:/Users/YourName/Documents/Adobe/After Effects [version]/User Presets/</strong> on Windows, or <strong>~/Documents/Adobe/After Effects [version]/User Presets/</strong> on Mac.</p>
+                    <p><strong>Step 4:</strong> Restart After Effects. Open the Effects & Presets panel (Window > Effects & Presets). You should now see your Twixtor presets listed under User Presets.</p>
+                    <h2>How to Apply a Twixtor Preset to Your Footage</h2>
+                    <p><strong>Step 1:</strong> Import your footage into After Effects and place it on a new composition timeline.</p>
+                    <p><strong>Step 2:</strong> Select the footage layer in your timeline.</p>
+                    <p><strong>Step 3:</strong> In the Effects & Presets panel, double-click the Twixtor preset you want to apply (e.g., "Smooth Twixtor"). After Effects will automatically apply the effect and all its settings to your layer.</p>
+                    <p><strong>Step 4:</strong> Preview your clip. The footage should now play back in slow motion with the settings configured by the preset.</p>
+                    <h2>Tips for Getting the Best Results</h2>
+                    <ul>
+                        <li>Use the <strong>Smooth Twixtor</strong> preset for cinematic, natural-feeling slow motion</li>
+                        <li>Use the <strong>Velocity Twixtor</strong> preset for edits that ramp from normal speed into slow motion</li>
+                        <li>Use the <strong>Microwave Twixtor</strong> for that popular stuttered slow-motion style seen in AMV and gaming edits</li>
+                        <li>Always render at your source frame rate for the cleanest output</li>
+                    </ul>
+                    <p>Download all 6 of our Twixtor presets for free from the Resource Vault at the top of this page. Each preset is ready to use and fully compatible with After Effects CS6 and newer.</p>
+                `
+            },
+            'luts-guide': {
+                title: 'Top 5 Free LUTs for Cinematic Color Grading in 2026',
+                html: `
+                    <h1>Top 5 Free LUTs for Cinematic Color Grading in 2026</h1>
+                    <div class="article-meta"><span><i class="fa-regular fa-clock"></i> 6 min read</span><span><i class="fa-regular fa-calendar"></i> June 2026</span><span><i class="fa-solid fa-tag"></i> Color Grading</span></div>
+                    <p>Color grading is one of the most powerful ways to transform ordinary footage into something that looks cinematic and professional. LUTs — or Look-Up Tables — are the fastest tool in a video editor's color grading workflow. In just one click, a LUT can apply a complete color grade to your footage.</p>
+                    <p>In this guide, we cover what LUTs are, how to use them, and our top 5 free LUTs that every video editor should have in 2026.</p>
+                    <h2>What is a LUT?</h2>
+                    <p>A LUT (Look-Up Table) is a file that maps one set of colors to another. When you apply a LUT to your footage, every pixel's color value is transformed according to the LUT's formula. The result is a consistent, stylistic color grade applied to your entire clip instantly.</p>
+                    <p>LUTs come in two main types: <strong>Technical LUTs</strong> (used to convert between color spaces, like Log to Rec.709) and <strong>Creative LUTs</strong> (used for artistic looks like film emulation, teal-and-orange, or cinematic desaturation).</p>
+                    <h2>How to Apply LUTs in Premiere Pro</h2>
+                    <p><strong>Step 1:</strong> Go to the Lumetri Color panel (Window > Lumetri Color).</p>
+                    <p><strong>Step 2:</strong> Under Basic Correction, click the Browse button next to "Input LUT" OR go to the Creative tab and click Browse under Look.</p>
+                    <p><strong>Step 3:</strong> Navigate to your downloaded .cube or .3dl LUT file and select it. The grade will be applied instantly.</p>
+                    <h2>How to Apply LUTs in DaVinci Resolve</h2>
+                    <p>Right-click on your clip in the Color page, select LUTs, and browse to your LUT file. You can also drag and drop LUT files directly into the LUTs panel for permanent access.</p>
+                    <h2>Our Top 5 Free LUTs for Cinematic Looks</h2>
+                    <ul>
+                        <li><strong>Cinematic Teal & Orange LUT</strong> — The most popular Hollywood color grade. Gives skin tones a warm orange hue and pushes shadows into teal. Perfect for action and drama.</li>
+                        <li><strong>Film Emulation LUT</strong> — Mimics the look of classic 35mm film with slight grain simulation, lifted shadows, and desaturated greens. Great for travel and documentary content.</li>
+                        <li><strong>Moody Dark LUT</strong> — Crushes blacks, desaturates midtones, and gives footage a brooding, dramatic look. Ideal for music videos and short films.</li>
+                        <li><strong>Bright & Airy LUT</strong> — Lifts shadows, boosts highlights, and gives a clean, fresh look. Great for lifestyle, fashion, and vlog content.</li>
+                        <li><strong>Vintage Fade LUT</strong> — Adds a retro, faded look reminiscent of old photographs. Colors become slightly muted and the overall contrast is reduced.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Pro Tip:</strong> Always adjust the LUT intensity (opacity/strength) to 50-80% rather than 100%. This blends the grade with your original footage for a more natural result.</div>
+                    <p>You can download all of our free LUTs from the Resource Vault section at the top of this page. All LUTs are provided in .cube format, compatible with Premiere Pro, DaVinci Resolve, After Effects, and Final Cut Pro.</p>
+                `
+            },
+            'presets-guide': {
+                title: 'What Are After Effects Presets and How Do You Install Them?',
+                html: `
+                    <h1>What Are After Effects Presets and How Do You Install Them?</h1>
+                    <div class="article-meta"><span><i class="fa-regular fa-clock"></i> 4 min read</span><span><i class="fa-regular fa-calendar"></i> May 2026</span><span><i class="fa-solid fa-tag"></i> Presets</span></div>
+                    <p>If you are new to Adobe After Effects, you may have heard the term "preset" but are not sure exactly what it means or how to use one. This beginner guide breaks everything down clearly so you can start using presets immediately.</p>
+                    <h2>What is an After Effects Preset?</h2>
+                    <p>An After Effects preset is a file (usually with the extension .ffx) that stores a collection of effects, keyframes, and animation settings. When you apply a preset to a layer, it automatically adds all those settings to your layer without you having to set each one manually.</p>
+                    <p>Presets can contain anything from simple color corrections to complex multi-effect animations. For example, a "Camera Shake" preset might include a wiggle expression on the position property with specific values that create a realistic handheld camera feel.</p>
+                    <h2>Types of After Effects Presets</h2>
+                    <ul>
+                        <li><strong>Animation Presets (.ffx)</strong> — These are the most common. They apply effects and keyframes to your layer.</li>
+                        <li><strong>Project Files (.aep)</strong> — These are full After Effects project files that contain pre-built compositions you can use or reference.</li>
+                        <li><strong>Motion Bro Presets</strong> — These require the Motion Bro plugin and provide a library-style interface for managing presets.</li>
+                    </ul>
+                    <h2>How to Install After Effects Presets (.ffx)</h2>
+                    <p><strong>Step 1:</strong> Download and extract the preset pack. You should have one or more .ffx files.</p>
+                    <p><strong>Step 2:</strong> Find your After Effects User Presets folder. The path is:</p>
+                    <ul>
+                        <li><strong>Windows:</strong> C:/Users/[YourName]/Documents/Adobe/After Effects [version]/User Presets/</li>
+                        <li><strong>Mac:</strong> ~/Documents/Adobe/After Effects [version]/User Presets/</li>
+                    </ul>
+                    <p><strong>Step 3:</strong> Copy your .ffx files into this folder.</p>
+                    <p><strong>Step 4:</strong> Restart After Effects. Open Effects & Presets panel (Window > Effects & Presets). Your presets will appear under "User Presets".</p>
+                    <p><strong>Step 5:</strong> Select a layer in your timeline, then double-click a preset to apply it.</p>
+                    <div class="tip-box"><strong>💡 Quick Tip:</strong> You can also drag and drop a preset directly from the Effects & Presets panel onto your layer in the timeline.</div>
+                    <h2>Where to Find Free Presets?</h2>
+                    <p>Our Resource Vault (at the top of this page) offers completely free, premium-quality presets for After Effects — including Twixtor, Zoom, Shake, Transition, and Text Animation presets. All are tested and ready to use.</p>
+                `
+            },
+            'transitions-guide': {
+                title: 'Best Free Transition Presets for After Effects — 2026 Edition',
+                html: `
+                    <h1>Best Free Transition Presets for After Effects — 2026 Edition</h1>
+                    <div class="article-meta"><span><i class="fa-regular fa-clock"></i> 5 min read</span><span><i class="fa-regular fa-calendar"></i> May 2026</span><span><i class="fa-solid fa-tag"></i> Transitions</span></div>
+                    <p>Transitions are one of the most important elements in video editing. A well-timed transition can make your edit feel energetic, cinematic, or emotional depending on the style you choose. This guide covers the best types of transitions for After Effects and how to use them effectively.</p>
+                    <h2>Why Use Transition Presets?</h2>
+                    <p>Creating smooth transitions from scratch in After Effects requires knowledge of keyframing, expressions, and timing. Transition presets do all of this work for you automatically. You simply place your clips, apply the preset between them, and the transition plays perfectly.</p>
+                    <h2>Types of Transitions Every Editor Should Know</h2>
+                    <ul>
+                        <li><strong>Glitch Transition</strong> — Creates a digital corruption effect between clips. Popular in gaming content, music videos, and tech-themed edits.</li>
+                        <li><strong>Smooth Slide Transition</strong> — Slides one clip out while sliding the next in. Clean, professional, and works in almost any type of content.</li>
+                        <li><strong>Whip Pan Transition</strong> — Mimics a fast camera pan movement. Creates an exciting, fast-paced feel between scenes.</li>
+                        <li><strong>Zoom Transition</strong> — The camera appears to zoom in dramatically, then cut to the next scene. Very popular in modern YouTube and short-form content.</li>
+                        <li><strong>Light Leak Transition</strong> — A bright flash of light covers the screen during the cut, creating a cinematic and elegant feel.</li>
+                        <li><strong>Color Split Transition</strong> — The clip splits into separate color channels (RGB) before cutting to the next scene. Great for energetic, stylized edits.</li>
+                    </ul>
+                    <h2>How to Apply Transition Presets in After Effects</h2>
+                    <p>Most transition presets work on a dedicated transition layer placed between your two clips. Here is the standard workflow:</p>
+                    <p><strong>Step 1:</strong> Place your two video clips on the timeline with a short overlap (about 10-15 frames).</p>
+                    <p><strong>Step 2:</strong> Create a new solid layer (Layer > New > Solid) at the point where the clips overlap. This will be your transition layer.</p>
+                    <p><strong>Step 3:</strong> Select the solid layer and apply the transition preset from your Effects & Presets panel.</p>
+                    <p><strong>Step 4:</strong> Adjust the timing and duration of the solid layer to match the overlap between your clips.</p>
+                    <div class="tip-box"><strong>💡 Tip:</strong> The most common mistake with transitions is making them too long. For punchy, energetic edits, keep transitions between 8-15 frames. For cinematic, slower edits, 20-30 frames feels more natural.</div>
+                    <p>Download our complete Transition Preset pack for free from the Resource Vault. It includes 7 professionally crafted transitions compatible with After Effects CS6 and above.</p>
+                `
+            },
+            'sfx-guide': {
+                title: 'How to Add Sound Effects to Your Edits — A Complete Guide',
+                html: `
+                    <h1>How to Add Sound Effects to Your Edits — A Complete Guide for Video Editors</h1>
+                    <div class="article-meta"><span><i class="fa-regular fa-clock"></i> 7 min read</span><span><i class="fa-regular fa-calendar"></i> April 2026</span><span><i class="fa-solid fa-tag"></i> Sound Design</span></div>
+                    <p>Most beginner video editors focus entirely on the visuals and treat audio as an afterthought. But experienced editors know that sound is at least 50% of the emotional impact of any video. The right sound effect at the right moment can transform a good edit into a great one.</p>
+                    <p>This guide covers the fundamentals of adding sound effects to your video edits, including how to layer SFX, how to sync them to your cuts, and where to find high-quality free sound effects.</p>
+                    <h2>Types of Sound Effects for Video Editing</h2>
+                    <ul>
+                        <li><strong>Whoosh / Swish SFX</strong> — Used on transitions, text animations, and fast camera movements. These are probably the most commonly used SFX in modern YouTube editing.</li>
+                        <li><strong>Impact / Hit SFX</strong> — Used when something appears on screen with force, or during fight scene cuts. Creates a punchy, satisfying feel.</li>
+                        <li><strong>Glitch SFX</strong> — Digital distortion sounds used with glitch transitions or text effects.</li>
+                        <li><strong>Cinematic Boom / Rise SFX</strong> — Deep, resonant sounds used for dramatic moments, reveals, or title cards.</li>
+                        <li><strong>UI Click SFX</strong> — Small click and pop sounds often used in tech, tutorial, or product videos when elements appear on screen.</li>
+                        <li><strong>Ambient / Background SFX</strong> — Room tone, crowd noise, city sounds etc. Used to create atmosphere in a scene.</li>
+                    </ul>
+                    <h2>How to Sync SFX to Your Cuts</h2>
+                    <p>The most important rule in sound design for editing: <strong>SFX should land exactly on the cut frame, not before or after it</strong>. Even a 2-3 frame offset can make a transition feel wrong even if the viewer cannot consciously identify why.</p>
+                    <p>In Premiere Pro, enable snapping and place your SFX audio clip so its start point aligns exactly with the edit point of your video cut. In After Effects, use the RAM Preview to check the sync at the frame level.</p>
+                    <h2>How to Layer SFX Like a Pro</h2>
+                    <p>Professional sound designers rarely use a single SFX — they layer multiple sounds together to create a richer, more complex result. For example, a great "whoosh" effect might actually be:</p>
+                    <ul>
+                        <li>A high-frequency air whoosh at 100% volume</li>
+                        <li>A low-frequency rumble at 40% volume beneath it</li>
+                        <li>A subtle sparkle/shimmer at 20% volume on top</li>
+                    </ul>
+                    <p>Combining these three layers creates a whoosh that feels full, weighty, and professional compared to using a single sound.</p>
+                    <div class="tip-box"><strong>💡 Pro Tip:</strong> Always slightly duck (lower) your background music during important SFX moments using keyframes. This gives the SFX more presence without having to increase its volume to a distorting level.</div>
+                    <h2>Get Free Sound Effects</h2>
+                    <p>We offer a curated pack of 8 royalty-free sound effects on this platform, including whoosh, impact, glitch, and cinematic boom SFX. Download them for free from the Resource Vault above — no sign-up required.</p>
+                `
+            },
+            'ai-prompts-guide': {
+                title: 'How to Write AI Prompts for Cinematic Visuals — Midjourney & Sora Guide',
+                html: `
+                    <h1>How to Write AI Prompts for Cinematic Visuals — Midjourney & Sora Guide</h1>
+                    <div class="article-meta"><span><i class="fa-regular fa-clock"></i> 8 min read</span><span><i class="fa-regular fa-calendar"></i> June 2026</span><span><i class="fa-solid fa-tag"></i> AI Tools</span></div>
+                    <p>AI image and video generation tools have fundamentally changed what is possible for solo video editors and content creators. With the right prompts, you can generate cinematic visuals, custom thumbnails, abstract backgrounds, and even short video sequences without a camera or a production budget.</p>
+                    <p>This guide focuses on writing effective prompts for Midjourney (image generation) and Sora (video generation) to produce cinematic, high-quality results for your video projects.</p>
+                    <h2>The Anatomy of a Great AI Visual Prompt</h2>
+                    <p>A strong prompt for cinematic visuals typically includes these elements:</p>
+                    <ul>
+                        <li><strong>Subject</strong> — What is the main focus? (person, landscape, object, abstract concept)</li>
+                        <li><strong>Setting / Environment</strong> — Where is it? What is the atmosphere? (neon-lit street, foggy mountain, abandoned warehouse)</li>
+                        <li><strong>Camera / Lens Style</strong> — What kind of shot? (close-up portrait, wide establishing shot, drone aerial view)</li>
+                        <li><strong>Lighting</strong> — How is it lit? (golden hour sunlight, blue moonlight, dramatic side lighting)</li>
+                        <li><strong>Color Palette</strong> — What are the dominant colors? (teal and orange, monochromatic blue, warm amber tones)</li>
+                        <li><strong>Film / Art Style</strong> — What style references? (shot on 35mm film, cyberpunk aesthetic, photorealistic, anime style)</li>
+                        <li><strong>Technical Modifiers</strong> — Quality boosters (8K, ultra detailed, sharp focus, depth of field)</li>
+                    </ul>
+                    <h2>Example Prompts for Cinematic Visuals</h2>
+                    <p><strong>Cinematic Portrait:</strong> "Close-up portrait of a young man in a dark hooded jacket, standing in rain on a neon-lit city street at night, dramatic side lighting, teal and orange color palette, 35mm film grain, depth of field, ultra detailed, photorealistic, 8K"</p>
+                    <p><strong>Dramatic Landscape:</strong> "Wide cinematic establishing shot of an ancient abandoned city in a dense jungle, golden hour sunlight breaking through fog, moody atmospheric haze, warm amber and deep green color palette, shot on RED camera, ultra sharp, cinematic aspect ratio 2.39:1"</p>
+                    <p><strong>Abstract Background:</strong> "Abstract fluid motion of glowing neon particles in deep space, dark background, electric blue and violet colors, long exposure photography style, ultra detailed, 4K, perfect for video overlay"</p>
+                    <div class="tip-box"><strong>💡 Tip for Midjourney:</strong> Add "--ar 16:9" to the end of your prompt to get a widescreen aspect ratio perfect for video thumbnails and backgrounds. Add "--style raw" for more photorealistic results.</div>
+                    <h2>Using AI Prompts for Video Thumbnails</h2>
+                    <p>AI-generated images are excellent for custom YouTube thumbnails. For thumbnails, make sure your prompt specifies:</p>
+                    <ul>
+                        <li>High contrast to stand out at small sizes</li>
+                        <li>Bold, simple composition with a clear focal point</li>
+                        <li>Bright or unusual colors that catch the eye</li>
+                        <li>16:9 aspect ratio (add "--ar 16:9" in Midjourney)</li>
+                    </ul>
+                    <h2>Get Ready-Made AI Prompts for Free</h2>
+                    <p>Writing great prompts takes practice. To get you started immediately, our Resource Vault includes a curated library of 6 ready-made AI prompts for cinematic visuals, portrait photography styles, abstract backgrounds, and more. Download them for free and copy them directly into Midjourney or your AI tool of choice.</p>
+                `
+            }
+        };
+
+        const articleModal = document.getElementById('articleModal');
+        const articleContent = document.getElementById('articleContent');
+
+        function openArticle(id) {
+            const article = ARTICLES[id];
+            if (!article) return;
+            articleContent.innerHTML = `<div class="article-content">${article.html}</div>`;
+            articleModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArticle() {
+            articleModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        articleModal.addEventListener('click', (e) => {
+            if (e.target === articleModal) closeArticle();
+        });
 
         // ===== 3D TILT =====
         if (window.matchMedia('(hover: hover)').matches) {
