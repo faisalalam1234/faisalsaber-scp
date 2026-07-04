@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editing Tutorials & Guides — Faisal Saber</title>
+    <meta name="description" content="Free video editing tutorials by Faisal Saber — After Effects presets, LUTs, transitions, sound effects, AI prompts and more. Step-by-step guides for all skill levels.">
+    <meta name="keywords" content="video editing tutorials, after effects guides, free editing tutorials, LUT tutorial, twixtor guide, transition presets tutorial, sound effects for editors">
+    <meta name="author" content="Faisal Saber">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="13905.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3347144158462397" crossorigin="anonymous"></script>
+    <style>
+        :root{--bg-deep:#030305;--bg-surface:#0a0b0f;--bg-card:#11131a;--primary:#00f2fe;--accent:#ff007f;--text-main:#f5f6fa;--text-sub:#84899e;--glass-border:rgba(255,255,255,0.06);--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;}
+        *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+        body{background:var(--bg-deep);color:var(--text-main);font-family:var(--font-body);}
+        body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(255,255,255,0.005) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.005) 1px,transparent 1px);background-size:50px 50px;z-index:-1;pointer-events:none;}
+        header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(3,3,5,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);}
+        nav{max-width:1200px;margin:0 auto;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+        .logo{font-family:var(--font-display);font-weight:700;font-size:1.1rem;text-decoration:none;display:flex;align-items:center;gap:10px;}
+        .logo img{width:36px;height:36px;border-radius:50%;border:2px solid var(--primary);padding:2px;}
+        .logo span{background:linear-gradient(45deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .nav-right{display:flex;align-items:center;gap:16px;}
+        .nav-right a{color:var(--text-sub);text-decoration:none;font-size:0.85rem;font-weight:600;transition:color 0.2s;}
+        .nav-right a:hover,.nav-right a.active{color:var(--primary);}
+        .nav-home-btn{background:linear-gradient(45deg,var(--primary),#4facfe);color:#000!important;padding:8px 20px;border-radius:50px;font-weight:700!important;}
+        .page-hero{padding:120px 1.5rem 60px;max-width:1200px;margin:0 auto;text-align:center;}
+        .page-hero h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;margin-bottom:1rem;}
+        .page-hero h1 span{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .page-hero p{color:var(--text-sub);font-size:1.05rem;max-width:600px;margin:0 auto;}
+        .tutorials-grid-section{max-width:1200px;margin:0 auto;padding:2rem 1.5rem 6rem;}
+        .filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2.5rem;}
+        .filter-btn{background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);color:var(--text-sub);padding:8px 18px;border-radius:50px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:var(--font-body);}
+        .filter-btn.active,.filter-btn:hover{background:rgba(0,242,254,0.1);border-color:rgba(0,242,254,0.3);color:var(--primary);}
+        .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;}
+        .article-card{background:var(--bg-card);border:1px solid var(--glass-border);border-radius:18px;padding:2rem;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--text-main);transition:all 0.3s;}
+        .article-card:hover{border-color:rgba(0,242,254,0.3);transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.5);}
+        .article-card-tag{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);padding:4px 12px;border-radius:50px;width:fit-content;}
+        .article-card h2{font-family:var(--font-display);font-size:1.1rem;font-weight:700;line-height:1.4;}
+        .article-card p{font-size:0.88rem;color:var(--text-sub);line-height:1.75;flex:1;}
+        .article-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--glass-border);}
+        .article-card-footer span{font-size:0.78rem;color:var(--text-sub);}
+        .read-more{font-size:0.82rem;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:6px;}
+        footer{background:var(--bg-surface);border-top:1px solid var(--glass-border);padding:2rem 1.5rem;text-align:center;}
+        footer p{font-size:0.85rem;color:var(--text-sub);}
+        footer a{color:var(--primary);text-decoration:none;}
+        @media(max-width:640px){.page-hero h1{font-size:2rem;}.nav-right .hide-mobile{display:none;}}
+    </style>
+</head>
+<body>
+<header><nav>
+    <a href="index.html" class="logo"><img src="13905.png" alt="Faisal Saber"><span>FAISAL SABER</span></a>
+    <div class="nav-right">
+        <a href="index.html" class="hide-mobile">Home</a>
+        <a href="index.html#catalog" class="hide-mobile">Resources</a>
+        <a href="tutorials.html" class="active hide-mobile">Tutorials</a>
+        <a href="index.html#catalog" class="nav-home-btn">Browse Free</a>
+    </div>
+</nav></header>
+
+<div class="page-hero">
+    <h1>Editing <span>Tutorials</span> & Guides</h1>
+    <p>Step-by-step guides to help you master After Effects, color grading, transitions, sound design, and AI tools for video editing.</p>
+</div>
+
+<div class="tutorials-grid-section">
+    <div class="filter-row">
+        <button class="filter-btn active">All Articles</button>
+        <button class="filter-btn">After Effects</button>
+        <button class="filter-btn">Color Grading</button>
+        <button class="filter-btn">Sound Design</button>
+        <button class="filter-btn">AI Tools</button>
+    </div>
+    <div class="articles-grid">
+
+        <a href="twixtor-guide.html" class="article-card">
+            <span class="article-card-tag">After Effects</span>
+            <h2>How to Use Twixtor Presets in After Effects — Complete Beginner Guide</h2>
+            <p>Learn how to install and apply Twixtor presets to create ultra-smooth cinematic slow motion in After Effects. Step-by-step guide with troubleshooting tips.</p>
+            <div class="article-card-footer">
+                <span><i class="fa-regular fa-clock"></i> 5 min &nbsp;·&nbsp; June 2026</span>
+                <span class="read-more">Read <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <a href="luts-guide.html" class="article-card">
+            <span class="article-card-tag">Color Grading</span>
+            <h2>Top 5 Free LUTs for Cinematic Color Grading in 2026</h2>
+            <p>Discover the best free LUTs for cinematic color grading and learn how to apply them in Premiere Pro, DaVinci Resolve, and After Effects.</p>
+            <div class="article-card-footer">
+                <span><i class="fa-regular fa-clock"></i> 6 min &nbsp;·&nbsp; June 2026</span>
+                <span class="read-more">Read <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <a href="presets-guide.html" class="article-card">
+            <span class="article-card-tag">Presets</span>
+            <h2>What Are After Effects Presets and How Do You Install Them?</h2>
+            <p>Complete beginner guide explaining .ffx presets, project files, and Motion Bro presets with a step-by-step installation tutorial anyone can follow.</p>
+            <div class="article-card-footer">
+                <span><i class="fa-regular fa-clock"></i> 4 min &nbsp;·&nbsp; May 2026</span>
+                <span class="read-more">Read <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <a href="transitions-guide.html" class="article-card">
+            <span class="article-card-tag">Transitions</span>
+            <h2>Best Free Transition Presets for After Effects — 2026 Edition</h2>
+            <p>7 essential transition types every video editor should know — glitch, zoom, whip pan, light leak and more, with a guide on how to apply each one.</p>
+            <div class="article-card-footer">
+                <span><i class="fa-regular fa-clock"></i> 5 min &nbsp;·&nbsp; May 2026</span>
+                <span class="read-more">Read <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <a href="sfx-guide.html" class="article-card">
+            <span class="article-card-tag">Sound Design</span>
+            <h2>How to Add Sound Effects to Your Edits — A Complete Guide</h2>
+            <p>Learn professional SFX techniques — frame-perfect sync, layering multiple sounds, audio ducking, and the 6 types of SFX every video editor needs.</p>
+            <div class="article-card-footer">
+                <span><i class="fa-regular fa-clock"></i> 7 min &nbsp;·&nbsp; April 2026</span>
+                <span class="read-more">Read <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <a href="ai-prompts-guide.html" class="article-card">
+            <span class="article-card-tag">AI Tools</span>
+            <h2>How to Write AI Prompts for Cinematic Visuals — Midjourney & Sora</h2>
+            <p>Master the anatomy of a great AI prompt and generate stunning cinematic visuals for your videos, thumbnails, and backgrounds using Midjourney and Sora.</p>
+            <div class="article-card-footer">
+                <span><i class="fa-regular fa-clock"></i> 8 min &nbsp;·&nbsp; June 2026</span>
+                <span class="read-more">Read <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+<footer><p>&copy; 2026 Faisal Saber Studios. All Rights Reserved. &nbsp;|&nbsp; <a href="index.html">Home</a> &nbsp;|&nbsp; <a href="index.html#catalog">Resources</a></p></footer>
+</body>
+</html>

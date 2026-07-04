@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Twixtor Presets in After Effects — Faisal Saber</title>
+    <meta name="description" content="Complete beginner guide on how to install and use Twixtor presets in Adobe After Effects to create cinematic slow-motion video effects. Free presets included.">
+    <meta name="keywords" content="twixtor presets after effects, twixtor tutorial, slow motion after effects, twixtor install guide, free twixtor presets, cinematic slow motion">
+    <meta name="author" content="Faisal Saber">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="13905.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3347144158462397" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg-deep: #030305; --bg-surface: #0a0b0f; --bg-card: #11131a;
+            --primary: #00f2fe; --primary-glow: rgba(0,242,254,0.3);
+            --accent: #ff007f; --text-main: #f5f6fa; --text-sub: #84899e;
+            --glass-border: rgba(255,255,255,0.06);
+            --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); line-height: 1.7; }
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(255,255,255,0.005) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.005) 1px, transparent 1px);
+            background-size: 50px 50px; z-index: -1; pointer-events: none;
+        }
+        /* NAV */
+        header { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; background: rgba(3,3,5,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); }
+        nav { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+        .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--primary); padding: 2px; }
+        .logo span { background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-right { display: flex; align-items: center; gap: 16px; }
+        .nav-right a { color: var(--text-sub); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.2s; }
+        .nav-right a:hover { color: var(--primary); }
+        .nav-home-btn { background: linear-gradient(45deg, var(--primary), #4facfe); color: #000 !important; padding: 8px 20px; border-radius: 50px; font-weight: 700 !important; font-size: 0.82rem !important; }
+        /* HERO BANNER */
+        .article-hero { padding: 120px 1.5rem 60px; max-width: 900px; margin: 0 auto; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-sub); margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .article-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); background: rgba(0,242,254,0.08); border: 1px solid rgba(0,242,254,0.2); padding: 5px 14px; border-radius: 50px; margin-bottom: 1.2rem; }
+        .article-hero h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.25; margin-bottom: 1rem; }
+        .article-hero h1 .highlight { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .article-meta { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-sub); padding: 1rem 0; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); margin-top: 1.2rem; }
+        .article-meta span { display: flex; align-items: center; gap: 6px; }
+        /* CONTENT */
+        .article-body { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+        .article-body p { color: var(--text-sub); margin-bottom: 1.4rem; font-size: 1rem; line-height: 1.85; }
+        .article-body h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--text-main); margin: 2.5rem 0 1rem; padding-left: 14px; border-left: 3px solid var(--primary); }
+        .article-body h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--primary); margin: 1.8rem 0 0.6rem; }
+        .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.4rem; }
+        .article-body li { color: var(--text-sub); margin-bottom: 0.6rem; font-size: 1rem; line-height: 1.8; }
+        .article-body strong { color: var(--text-main); }
+        .tip-box { background: rgba(0,242,254,0.05); border: 1px solid rgba(0,242,254,0.2); border-radius: 14px; padding: 1.2rem 1.5rem; margin: 2rem 0; }
+        .tip-box .tip-title { font-family: var(--font-display); font-weight: 700; color: var(--primary); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .tip-box p { margin: 0; font-size: 0.92rem; }
+        .step-box { background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 14px; padding: 1.5rem; margin: 1rem 0; }
+        .step-num { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 0.4rem; }
+        .step-box p { margin: 0; }
+        .code-path { background: rgba(0,242,254,0.06); border: 1px solid rgba(0,242,254,0.15); border-radius: 8px; padding: 10px 16px; font-family: monospace; font-size: 0.88rem; color: var(--primary); margin: 0.5rem 0 1rem; display: block; word-break: break-all; }
+        /* CTA */
+        .cta-box { background: linear-gradient(135deg, rgba(0,242,254,0.07), rgba(255,0,127,0.07)); border: 1px solid rgba(0,242,254,0.2); border-radius: 18px; padding: 2rem; text-align: center; margin: 3rem 0; }
+        .cta-box h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.6rem; }
+        .cta-box p { font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(45deg, var(--primary), #4facfe); color: #000; font-family: var(--font-display); font-weight: 700; padding: 13px 32px; border-radius: 50px; text-decoration: none; font-size: 0.9rem; transition: all 0.3s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px var(--primary-glow); }
+        /* RELATED */
+        .related-section { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 5rem; }
+        .related-section h2 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--glass-border); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+        .related-card { background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 14px; padding: 1.4rem; text-decoration: none; display: flex; flex-direction: column; gap: 8px; transition: all 0.3s; }
+        .related-card:hover { border-color: rgba(0,242,254,0.3); transform: translateY(-4px); }
+        .related-tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); }
+        .related-card h4 { font-family: var(--font-display); font-size: 0.95rem; color: var(--text-main); line-height: 1.4; }
+        .related-card span { font-size: 0.78rem; color: var(--text-sub); margin-top: auto; }
+        /* FOOTER */
+        footer { background: var(--bg-surface); border-top: 1px solid var(--glass-border); padding: 2rem 1.5rem; text-align: center; }
+        footer p { font-size: 0.85rem; color: var(--text-sub); }
+        footer a { color: var(--primary); text-decoration: none; }
+        @media (max-width: 640px) {
+            .article-hero h1 { font-size: 1.7rem; }
+            .nav-right .hide-mobile { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="13905.png" alt="Faisal Saber">
+            <span>FAISAL SABER</span>
+        </a>
+        <div class="nav-right">
+            <a href="index.html#catalog" class="hide-mobile">Resources</a>
+            <a href="tutorials.html" class="hide-mobile">Tutorials</a>
+            <a href="index.html#catalog" class="nav-home-btn">Browse Free</a>
+        </div>
+    </nav>
+</header>
+
+<div class="article-hero">
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i>
+        <a href="tutorials.html">Tutorials</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i>
+        <span>Twixtor Presets Guide</span>
+    </div>
+    <div class="article-tag"><i class="fa-solid fa-bolt"></i> &nbsp;After Effects</div>
+    <h1>How to Use <span class="highlight">Twixtor Presets</span> in After Effects — Complete Beginner Guide</h1>
+    <div class="article-meta">
+        <span><i class="fa-solid fa-user"></i> Faisal Saber</span>
+        <span><i class="fa-regular fa-calendar"></i> June 2026</span>
+        <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+        <span><i class="fa-solid fa-tag"></i> After Effects · Slow Motion</span>
+    </div>
+</div>
+
+<div class="article-body">
+
+    <p>Twixtor is one of the most powerful slow-motion tools available for video editors. Whether you want buttery-smooth cinematic slow motion or a dramatic velocity ramp that syncs perfectly to a beat drop, Twixtor presets can save you hours of manual keyframing. In this guide, we walk you through everything you need to know — from installation to applying presets to your footage.</p>
+
+    <h2>What is Twixtor?</h2>
+    <p>Twixtor is a plugin made by RE:Vision Effects that uses advanced optical flow technology to create ultra-smooth slow-motion effects. Unlike standard frame blending in After Effects, Twixtor actually synthesizes new frames by analyzing the motion between existing ones — producing a result that looks fluid and professional even at extreme slow speeds.</p>
+    <p><strong>Twixtor presets</strong> are pre-configured settings files (.ffx) that automatically apply specific speed curves, motion blur settings, and timing to your footage. Instead of manually setting every parameter, you apply the preset and it handles everything in seconds.</p>
+
+    <h2>What You Need Before You Start</h2>
+    <ul>
+        <li><strong>Adobe After Effects</strong> — CS6 or any newer version</li>
+        <li><strong>Twixtor plugin</strong> — Available from RE:Vision Effects (free trial available)</li>
+        <li><strong>High frame rate footage</strong> — 60fps, 120fps, or 240fps recommended</li>
+        <li><strong>Twixtor preset files (.ffx)</strong> — Download our free pack from the Resource Vault on the homepage</li>
+    </ul>
+
+    <div class="tip-box">
+        <div class="tip-title">💡 Pro Tip — Frame Rate Matters</div>
+        <p>Twixtor produces the best results with footage shot at 60fps or higher. The more source frames your video has, the smoother the synthesized slow motion will look. 120fps or 240fps footage gives you the most cinematic results.</p>
+    </div>
+
+    <h2>Step-by-Step: How to Install Twixtor Presets</h2>
+
+    <div class="step-box">
+        <div class="step-num">Step 1</div>
+        <p>Download the Twixtor preset pack from our Resource Vault. You will receive a <strong>.zip file</strong> containing multiple .ffx preset files such as "Smooth Twixtor.ffx", "Velocity Twixtor.ffx", and more.</p>
+    </div>
+
+    <div class="step-box">
+        <div class="step-num">Step 2</div>
+        <p>Extract the .zip file. You should now have a folder with individual .ffx files inside it.</p>
+    </div>
+
+    <div class="step-box">
+        <div class="step-num">Step 3</div>
+        <p>Copy all the .ffx files into your After Effects User Presets folder. The default location depends on your operating system:</p>
+        <code class="code-path">Windows: C:\Users\YourName\Documents\Adobe\After Effects [version]\User Presets\</code>
+        <code class="code-path">Mac: ~/Documents/Adobe/After Effects [version]/User Presets/</code>
+    </div>
+
+    <div class="step-box">
+        <div class="step-num">Step 4</div>
+        <p>Restart Adobe After Effects. Open the <strong>Effects & Presets panel</strong> (go to Window → Effects & Presets). You will now see your Twixtor presets listed under the "User Presets" section.</p>
+    </div>
+
+    <h2>How to Apply a Twixtor Preset to Your Footage</h2>
+
+    <div class="step-box">
+        <div class="step-num">Step 1</div>
+        <p>Import your video footage into After Effects. Go to File → Import → File and select your video clip. Then drag it onto a new composition in the timeline.</p>
+    </div>
+
+    <div class="step-box">
+        <div class="step-num">Step 2</div>
+        <p>Click on your footage layer in the timeline to select it.</p>
+    </div>
+
+    <div class="step-box">
+        <div class="step-num">Step 3</div>
+        <p>In the Effects & Presets panel, locate your desired preset under User Presets. <strong>Double-click</strong> the preset (for example, "Smooth Twixtor") to apply it. After Effects will automatically add the Twixtor effect with all the preset's settings to your selected layer.</p>
+    </div>
+
+    <div class="step-box">
+        <div class="step-num">Step 4</div>
+        <p>Hit the <strong>Spacebar</strong> or press <strong>0 on the numpad</strong> to RAM preview your clip. Your footage should now play back in slow motion with the preset's configuration applied.</p>
+    </div>
+
+    <h2>Which Preset Should You Use?</h2>
+    <p>Each preset in our free Twixtor pack is designed for a specific editing style. Here is a quick guide to help you choose the right one:</p>
+    <ul>
+        <li><strong>Smooth Twixtor</strong> — Best for cinematic, natural-feeling slow motion. Good for travel vlogs and cinematic edits.</li>
+        <li><strong>Slow Twixtor</strong> — Deep slow motion at maximum stretch. Use for dramatic reveals and emotional moments.</li>
+        <li><strong>Fast Twixtor</strong> — Quick velocity ramp. Great for high-energy sports and action sequences.</li>
+        <li><strong>Velocity Twixtor</strong> — Gradually ramps from normal speed into slow motion. Perfect for beat sync edits.</li>
+        <li><strong>Microwave Twixtor</strong> — The popular stuttered slow-motion style seen in AMV and gaming edits. Very trendy in 2026.</li>
+        <li><strong>Cinematic Twixtor</strong> — Film-grade slow motion with smooth easing curves. Looks closest to professional film camera footage.</li>
+    </ul>
+
+    <div class="tip-box">
+        <div class="tip-title">💡 Twixtor Rendering Tip</div>
+        <p>Twixtor is a processor-heavy effect. When previewing, set your composition resolution to Half or Quarter in the bottom left of the preview window. Only switch to Full resolution when you are ready to do your final render — this will save you a lot of time.</p>
+    </div>
+
+    <h2>Common Twixtor Problems and How to Fix Them</h2>
+    <h3>Ghosting / Smearing Effect</h3>
+    <p>If your slow motion footage has ghosting or blurry trails, it usually means Twixtor is having difficulty tracking motion between frames. Fix this by increasing the <strong>"Motion Sensitivity"</strong> value in the Twixtor effect controls, or by using higher frame rate source footage.</p>
+
+    <h3>The Preset Is Not Showing in Effects & Presets</h3>
+    <p>Make sure you placed the .ffx files in the correct User Presets folder and that you fully restarted After Effects (not just refreshed). Also check that the Twixtor plugin itself is installed — the preset requires the plugin to be present to work correctly.</p>
+
+    <h3>Footage Looks Choppy Instead of Smooth</h3>
+    <p>This usually happens when your source footage is 24fps or 30fps. Twixtor works best with 60fps+ footage. Consider shooting at a higher frame rate if your camera supports it.</p>
+
+    <h2>Final Thoughts</h2>
+    <p>Twixtor presets are one of the fastest ways to level up your editing quality. Once installed, you can achieve professional-level slow motion in just a few clicks. Download our free 6-preset Twixtor pack from the Resource Vault and start experimenting with different styles to find what works best for your content.</p>
+
+    <div class="cta-box">
+        <h3>🎬 Get the Free Twixtor Preset Pack</h3>
+        <p>6 professional Twixtor presets — Smooth, Velocity, Microwave, Cinematic and more. 100% free, no sign-up required.</p>
+        <a href="index.html#catalog" class="cta-btn"><i class="fa-solid fa-download"></i> Download Free Presets</a>
+    </div>
+
+</div>
+
+<div class="related-section">
+    <h2>More Tutorials You Might Like</h2>
+    <div class="related-grid">
+        <a href="presets-guide.html" class="related-card">
+            <span class="related-tag">Presets</span>
+            <h4>What Are After Effects Presets and How Do You Install Them?</h4>
+            <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+        </a>
+        <a href="transitions-guide.html" class="related-card">
+            <span class="related-tag">Transitions</span>
+            <h4>Best Free Transition Presets for After Effects — 2026 Edition</h4>
+            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+        </a>
+        <a href="luts-guide.html" class="related-card">
+            <span class="related-tag">Color Grading</span>
+            <h4>Top 5 Free LUTs for Cinematic Color Grading in 2026</h4>
+            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Faisal Saber Studios. All Rights Reserved. &nbsp;|&nbsp; <a href="index.html">Home</a> &nbsp;|&nbsp; <a href="tutorials.html">Tutorials</a></p>
+</footer>
+
+</body>
+</html>

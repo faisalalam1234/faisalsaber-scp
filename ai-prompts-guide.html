@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Write AI Prompts for Cinematic Visuals — Midjourney & Sora Guide — Faisal Saber</title>
+    <meta name="description" content="Learn how to write effective AI prompts for cinematic visuals using Midjourney and Sora. Complete guide with example prompts for video editors and content creators.">
+    <meta name="keywords" content="AI prompts for video editors, midjourney cinematic prompts, sora prompts guide, AI image generation tutorial, free AI prompts, how to write midjourney prompts, cinematic AI art prompts 2026">
+    <meta name="author" content="Faisal Saber">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="13905.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3347144158462397" crossorigin="anonymous"></script>
+    <style>
+        :root{--bg-deep:#030305;--bg-surface:#0a0b0f;--bg-card:#11131a;--primary:#00f2fe;--primary-glow:rgba(0,242,254,0.3);--accent:#ff007f;--text-main:#f5f6fa;--text-sub:#84899e;--glass-border:rgba(255,255,255,0.06);--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;}
+        *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+        body{background:var(--bg-deep);color:var(--text-main);font-family:var(--font-body);line-height:1.7;}
+        body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(255,255,255,0.005) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.005) 1px,transparent 1px);background-size:50px 50px;z-index:-1;pointer-events:none;}
+        header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(3,3,5,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);}
+        nav{max-width:1100px;margin:0 auto;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+        .logo{font-family:var(--font-display);font-weight:700;font-size:1.1rem;text-decoration:none;display:flex;align-items:center;gap:10px;}
+        .logo img{width:36px;height:36px;border-radius:50%;border:2px solid var(--primary);padding:2px;}
+        .logo span{background:linear-gradient(45deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .nav-right{display:flex;align-items:center;gap:16px;}
+        .nav-right a{color:var(--text-sub);text-decoration:none;font-size:0.85rem;font-weight:600;transition:color 0.2s;}
+        .nav-right a:hover{color:var(--primary);}
+        .nav-home-btn{background:linear-gradient(45deg,var(--primary),#4facfe);color:#000!important;padding:8px 20px;border-radius:50px;font-weight:700!important;}
+        .article-hero{padding:120px 1.5rem 60px;max-width:900px;margin:0 auto;}
+        .breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-sub);margin-bottom:1.5rem;flex-wrap:wrap;}
+        .breadcrumb a{color:var(--primary);text-decoration:none;}
+        .article-tag{display:inline-block;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);padding:5px 14px;border-radius:50px;margin-bottom:1.2rem;}
+        .article-hero h1{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.7rem);font-weight:700;line-height:1.25;margin-bottom:1rem;}
+        .highlight{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .article-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:0.82rem;color:var(--text-sub);padding:1rem 0;border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);margin-top:1.2rem;}
+        .article-meta span{display:flex;align-items:center;gap:6px;}
+        .article-body{max-width:900px;margin:0 auto;padding:3rem 1.5rem 5rem;}
+        .article-body p{color:var(--text-sub);margin-bottom:1.4rem;font-size:1rem;line-height:1.85;}
+        .article-body h2{font-family:var(--font-display);font-size:1.4rem;color:var(--text-main);margin:2.5rem 0 1rem;padding-left:14px;border-left:3px solid var(--primary);}
+        .article-body ul{padding-left:1.5rem;margin-bottom:1.4rem;}
+        .article-body li{color:var(--text-sub);margin-bottom:0.6rem;font-size:1rem;line-height:1.8;}
+        .article-body strong{color:var(--text-main);}
+        .tip-box{background:rgba(0,242,254,0.05);border:1px solid rgba(0,242,254,0.2);border-radius:14px;padding:1.2rem 1.5rem;margin:2rem 0;}
+        .tip-box .tip-title{font-family:var(--font-display);font-weight:700;color:var(--primary);font-size:0.9rem;margin-bottom:0.5rem;}
+        .tip-box p{margin:0;font-size:0.92rem;}
+        .prompt-example{background:var(--bg-card);border:1px solid rgba(0,242,254,0.2);border-radius:14px;padding:1.4rem;margin:1rem 0;}
+        .prompt-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--primary);margin-bottom:0.6rem;display:flex;align-items:center;gap:6px;}
+        .prompt-text{font-family:monospace;font-size:0.88rem;color:var(--text-main);line-height:1.7;background:rgba(0,0,0,0.3);padding:12px 14px;border-radius:8px;border-left:3px solid var(--primary);}
+        .element-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:1.5rem 0;}
+        .element-card{background:var(--bg-card);border:1px solid var(--glass-border);border-radius:12px;padding:1rem;}
+        .element-card h4{font-family:var(--font-display);font-size:0.85rem;color:var(--primary);margin-bottom:0.3rem;}
+        .element-card p{font-size:0.82rem;color:var(--text-sub);margin:0;line-height:1.6;}
+        .cta-box{background:linear-gradient(135deg,rgba(0,242,254,0.07),rgba(255,0,127,0.07));border:1px solid rgba(0,242,254,0.2);border-radius:18px;padding:2rem;text-align:center;margin:3rem 0;}
+        .cta-box h3{font-family:var(--font-display);font-size:1.3rem;margin-bottom:0.6rem;}
+        .cta-box p{font-size:0.9rem;margin-bottom:1.5rem;}
+        .cta-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(45deg,var(--primary),#4facfe);color:#000;font-family:var(--font-display);font-weight:700;padding:13px 32px;border-radius:50px;text-decoration:none;font-size:0.9rem;transition:all 0.3s;}
+        .cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px var(--primary-glow);}
+        .related-section{max-width:900px;margin:0 auto;padding:0 1.5rem 5rem;}
+        .related-section h2{font-family:var(--font-display);font-size:1.4rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--glass-border);}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+        .related-card{background:var(--bg-card);border:1px solid var(--glass-border);border-radius:14px;padding:1.4rem;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:all 0.3s;}
+        .related-card:hover{border-color:rgba(0,242,254,0.3);transform:translateY(-4px);}
+        .related-tag{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--primary);}
+        .related-card h4{font-family:var(--font-display);font-size:0.95rem;color:var(--text-main);line-height:1.4;}
+        .related-card span{font-size:0.78rem;color:var(--text-sub);margin-top:auto;}
+        footer{background:var(--bg-surface);border-top:1px solid var(--glass-border);padding:2rem 1.5rem;text-align:center;}
+        footer p{font-size:0.85rem;color:var(--text-sub);}
+        footer a{color:var(--primary);text-decoration:none;}
+        @media(max-width:640px){.article-hero h1{font-size:1.6rem;}.nav-right .hide-mobile{display:none;}.element-grid{grid-template-columns:1fr 1fr;}}
+    </style>
+</head>
+<body>
+<header><nav>
+    <a href="index.html" class="logo"><img src="13905.png" alt="Faisal Saber"><span>FAISAL SABER</span></a>
+    <div class="nav-right">
+        <a href="index.html#catalog" class="hide-mobile">Resources</a>
+        <a href="tutorials.html" class="hide-mobile">Tutorials</a>
+        <a href="index.html#catalog" class="nav-home-btn">Browse Free</a>
+    </div>
+</nav></header>
+
+<div class="article-hero">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i><a href="tutorials.html">Tutorials</a><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i><span>AI Prompts Guide</span></div>
+    <div class="article-tag"><i class="fa-solid fa-robot"></i> &nbsp;AI Tools</div>
+    <h1>How to Write <span class="highlight">AI Prompts</span> for Cinematic Visuals — Midjourney & Sora Guide</h1>
+    <div class="article-meta">
+        <span><i class="fa-solid fa-user"></i> Faisal Saber</span>
+        <span><i class="fa-regular fa-calendar"></i> June 2026</span>
+        <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+        <span><i class="fa-solid fa-tag"></i> AI Tools · Midjourney</span>
+    </div>
+</div>
+
+<div class="article-body">
+    <p>AI image and video generation tools have fundamentally changed what is possible for solo video editors and content creators in 2026. With Midjourney, Sora, and similar tools, you can generate cinematic visuals, custom YouTube thumbnails, abstract background footage, and even short video sequences — without a camera, a set, or a production budget.</p>
+    <p>But here is the truth: most people using these tools get mediocre results because they do not know how to write effective prompts. The difference between a generic-looking AI image and a genuinely cinematic, professional-quality result usually comes down entirely to the quality of the prompt. This guide teaches you exactly how to write prompts that produce stunning cinematic visuals.</p>
+
+    <h2>The Anatomy of a Great Cinematic AI Prompt</h2>
+    <p>Think of an AI image prompt like a brief for a film director of photography. The more specific and visual your language is, the better the output will be. A strong cinematic prompt contains most or all of these elements:</p>
+
+    <div class="element-grid">
+        <div class="element-card"><h4>Subject</h4><p>Who or what is the main focus? Be specific — not just "a person" but "a young woman in a leather jacket"</p></div>
+        <div class="element-card"><h4>Environment</h4><p>Where is it? What is around? "neon-lit alley", "foggy mountain peak", "abandoned warehouse"</p></div>
+        <div class="element-card"><h4>Camera Style</h4><p>What kind of shot? "close-up portrait", "wide establishing shot", "low-angle drone view"</p></div>
+        <div class="element-card"><h4>Lighting</h4><p>How is it lit? "golden hour backlight", "blue moonlight", "dramatic single key light"</p></div>
+        <div class="element-card"><h4>Color Palette</h4><p>What are the dominant colors? "teal and orange", "monochromatic blue", "warm amber and deep shadow"</p></div>
+        <div class="element-card"><h4>Film Style</h4><p>"shot on 35mm film", "IMAX quality", "cinematic anamorphic lens", "anime cel shading"</p></div>
+        <div class="element-card"><h4>Mood / Tone</h4><p>"melancholic", "tense and foreboding", "euphoric", "mysterious and ethereal"</p></div>
+        <div class="element-card"><h4>Quality Tags</h4><p>"8K", "ultra detailed", "sharp focus", "depth of field", "photorealistic", "award-winning photography"</p></div>
+    </div>
+
+    <h2>Example Prompts — Copy and Use These</h2>
+
+    <div class="prompt-example">
+        <div class="prompt-label"><i class="fa-solid fa-person"></i> Cinematic Portrait</div>
+        <div class="prompt-text">Close-up portrait of a young man in a dark hooded jacket, standing in heavy rain on a neon-lit city street at night, dramatic blue and pink neon light reflecting on wet pavement, teal and orange color grade, shallow depth of field, shot on 35mm Kodak film with visible grain, cinematic, ultra detailed, photorealistic, 8K resolution --ar 16:9 --style raw</div>
+    </div>
+
+    <div class="prompt-example">
+        <div class="prompt-label"><i class="fa-solid fa-mountain"></i> Dramatic Landscape</div>
+        <div class="prompt-text">Ultra-wide cinematic establishing shot of an ancient abandoned stone city deep inside a dense tropical jungle, golden hour sunlight breaking through fog and canopy, atmospheric haze, warm amber and deep emerald green color palette, shot on RED Dragon camera, anamorphic lens flare, hyperdetailed, cinematic aspect ratio 2.39:1, award-winning nature photography --ar 21:9</div>
+    </div>
+
+    <div class="prompt-example">
+        <div class="prompt-label"><i class="fa-solid fa-star"></i> Abstract Background</div>
+        <div class="prompt-text">Abstract fluid motion of glowing neon energy particles and light streams flowing through deep space, pitch black background, electric blue and violet color palette, long exposure photography style, ultra sharp, 4K, high contrast, perfect seamless loop background for video overlay, cinematic, ethereal --ar 16:9</div>
+    </div>
+
+    <div class="prompt-example">
+        <div class="prompt-label"><i class="fa-solid fa-city"></i> Cyberpunk Scene</div>
+        <div class="prompt-text">Street-level view of a futuristic Asian megacity at night in 2087, towering holographic advertisements reflecting in puddles, crowds of people with augmented reality glasses, flying vehicles overhead, teal and magenta neon light everywhere, rain falling, cinematic depth of field, blade runner aesthetic, photorealistic, 8K, shot on anamorphic lens, ultra detailed --ar 16:9 --style raw</div>
+    </div>
+
+    <h2>Midjourney-Specific Tips</h2>
+    <ul>
+        <li><strong>--ar 16:9</strong> — Always add this for widescreen results perfect for video thumbnails and backgrounds</li>
+        <li><strong>--ar 9:16</strong> — Use this for vertical format content (Reels, TikTok, YouTube Shorts)</li>
+        <li><strong>--style raw</strong> — Produces more photorealistic, less "AI-looking" images</li>
+        <li><strong>--v 6</strong> — Use the latest version for the best quality results</li>
+        <li><strong>--q 2</strong> — Higher quality rendering (takes longer but produces better results)</li>
+        <li><strong>--no text, watermark, logo</strong> — Use the --no parameter to exclude elements you do not want</li>
+    </ul>
+
+    <div class="tip-box">
+        <div class="tip-title">💡 The Most Common Prompt Mistake</div>
+        <p>Writing prompts that are too short and vague. "A city at night" will produce a generic result. "Street-level view of a rain-soaked neon-lit cyberpunk city at midnight, reflected light in puddles, cinematic teal and orange color grade, 35mm film" will produce something remarkable. Add detail everywhere — the AI rewards specificity.</p>
+    </div>
+
+    <h2>Using AI Prompts for YouTube Thumbnails</h2>
+    <p>AI-generated images are excellent for custom YouTube thumbnails, especially for cinematic or editorial content. For thumbnails specifically, make sure your prompt emphasizes:</p>
+    <ul>
+        <li><strong>High contrast and bold colors</strong> — Thumbnails need to stand out at very small sizes in a crowded feed</li>
+        <li><strong>Simple, clear composition</strong> — One clear focal point that reads instantly at thumbnail size</li>
+        <li><strong>16:9 aspect ratio</strong> — Add "--ar 16:9" to every thumbnail prompt in Midjourney</li>
+        <li><strong>No text in the image</strong> — Add your text overlay in Photoshop, Canva, or Premiere Pro after generating the image, for better control over font and placement</li>
+    </ul>
+
+    <h2>Using Sora for Short Video Clips</h2>
+    <p>Sora (OpenAI's video generation model) uses similar prompt logic to Midjourney but produces short video clips instead of still images. For Sora prompts, describe motion explicitly. Instead of just describing what is in the scene, describe how the camera moves and how objects move within the scene.</p>
+    <p>Example: "Slow cinematic drone shot slowly rising above a foggy mountain range at sunrise, golden light breaking through clouds, camera tilting upward, photorealistic, cinematic, 4K quality." Notice how the prompt describes the camera movement (rising, tilting upward) as well as the visual environment — this is crucial for getting good video results from Sora.</p>
+
+    <div class="cta-box">
+        <h3>🤖 Get 6 Ready-Made AI Prompts — Free</h3>
+        <p>Download our curated AI Prompt Library — cinematic portraits, dramatic landscapes, abstract backgrounds, and more. Copy and paste directly into Midjourney or Sora.</p>
+        <a href="index.html#catalog" class="cta-btn"><i class="fa-solid fa-download"></i> Download Free AI Prompts</a>
+    </div>
+</div>
+
+<div class="related-section">
+    <h2>More Tutorials You Might Like</h2>
+    <div class="related-grid">
+        <a href="luts-guide.html" class="related-card"><span class="related-tag">Color Grading</span><h4>Top 5 Free LUTs for Cinematic Color Grading in 2026</h4><span><i class="fa-regular fa-clock"></i> 6 min read</span></a>
+        <a href="sfx-guide.html" class="related-card"><span class="related-tag">Sound Design</span><h4>How to Add Sound Effects to Your Edits — Complete Guide</h4><span><i class="fa-regular fa-clock"></i> 7 min read</span></a>
+        <a href="transitions-guide.html" class="related-card"><span class="related-tag">Transitions</span><h4>Best Free Transition Presets for After Effects — 2026 Edition</h4><span><i class="fa-regular fa-clock"></i> 5 min read</span></a>
+    </div>
+</div>
+<footer><p>&copy; 2026 Faisal Saber Studios. All Rights Reserved. &nbsp;|&nbsp; <a href="index.html">Home</a> &nbsp;|&nbsp; <a href="tutorials.html">Tutorials</a></p></footer>
+</body>
+</html>
