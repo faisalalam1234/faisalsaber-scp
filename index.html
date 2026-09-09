@@ -6,7 +6,7 @@
 <title>Faisal Saber — Video Editor</title>
 <meta name="description" content="Faisal Saber — video editor crafting cinematic fan-edits (GTA 6, Marvel, and more), montage, beat-synced cuts, and building After Effects extensions.">
 <meta name="theme-color" content="#0a0c10">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232bb673'/%3E%3Cstop offset='1' stop-color='%23e0b04c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230a0c10'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='34' fill='url(%23g)' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="13905.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -73,6 +73,7 @@
   .ambient span:nth-child(1){width:44vw;height:44vw;background:var(--teal);top:-14vw;left:-10vw;}
   .ambient span:nth-child(2){width:38vw;height:38vw;background:var(--amber);bottom:-16vw;right:-8vw;animation-delay:-9s;animation-duration:26s;}
   .ambient span:nth-child(3){width:22vw;height:22vw;background:var(--teal);top:40%;right:10%;opacity:0.12;animation-delay:-4s;animation-duration:19s;}
+  .ambient span:nth-child(4){width:26vw;height:26vw;background:#7d6fd8;top:58%;left:6%;opacity:0.1;animation-delay:-14s;animation-duration:24s;}
 
   @keyframes drift{
     0%,100%{transform:translate(0,0) scale(1);}
@@ -120,7 +121,14 @@
   .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
   .brand{display:flex;align-items:center;gap:0.6rem;font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.01em;}
   .brand em{font-style:normal;background:linear-gradient(120deg,var(--teal),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent;}
-  .brand-logo{width:36px;height:36px;border-radius:10px;object-fit:cover;flex:none;border:1px solid var(--line);}
+  .brand-logo{
+    width:38px;height:38px;border-radius:11px;object-fit:cover;flex:none;
+    border:1px solid var(--line);
+    background:linear-gradient(160deg,#181c23,#101318);
+    box-shadow:0 4px 14px rgba(0,0,0,0.35),0 0 0 1px rgba(255,255,255,0.02) inset;
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+  }
+  .brand:hover .brand-logo{transform:scale(1.06) rotate(-2deg);box-shadow:0 6px 20px rgba(43,182,115,0.25),0 0 0 1px rgba(255,255,255,0.04) inset;}
 
   nav.links ul{display:flex;gap:2.4rem;list-style:none;}
   nav.links a{
@@ -245,7 +253,12 @@
 
   /* ============ SECTION HEADS ============ */
   .head{max-width:640px;margin-bottom:3rem;}
-  .head h2{font-size:clamp(2rem,4.4vw,2.9rem);}
+  .head h2{font-size:clamp(2rem,4.4vw,2.9rem);position:relative;padding-top:1.1rem;}
+  .head h2::before{
+    content:'';position:absolute;top:0;left:0;width:44px;height:3px;border-radius:3px;
+    background:linear-gradient(90deg,var(--teal),var(--amber));
+  }
+  .head.center h2::before{left:50%;transform:translateX(-50%);}
   .head p{margin-top:0.9rem;color:var(--muted);font-size:1.02rem;max-width:52ch;}
   .head.center{margin-left:auto;margin-right:auto;text-align:center;}
 
@@ -343,6 +356,11 @@
       radial-gradient(circle at 20% 15%,var(--teal),transparent 55%),
       radial-gradient(circle at 85% 90%,var(--amber),transparent 55%);
     opacity:0.16;filter:blur(40px);
+    animation:panelGlow 10s ease-in-out infinite;
+  }
+  @keyframes panelGlow{
+    0%,100%{opacity:0.14;}
+    50%{opacity:0.24;}
   }
   .about-panel .stat{position:relative;}
   .about-panel .stat b{font-family:'Fraunces';font-size:2.6rem;font-weight:500;display:block;}
@@ -358,7 +376,7 @@
     border-radius:20px;padding:1.6rem;display:flex;align-items:center;gap:1rem;
     transition:transform .35s var(--ease),border-color .35s var(--ease);
   }
-  .tile:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.22);}
+  .tile:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.22);box-shadow:0 18px 40px rgba(0,0,0,0.35);}
   .tile-icon{
     width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
     background:linear-gradient(120deg,var(--teal),var(--amber));color:#0a0c10;font-size:1.05rem;flex:none;
@@ -455,7 +473,13 @@
   .reel-card:hover video{transform:scale(1.035);}
 
   .reel-card::after{
-    display:none;
+    content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06);
+    opacity:0;transition:opacity .4s var(--ease),box-shadow .4s var(--ease);
+  }
+  .reel-card:hover::after{
+    opacity:1;
+    box-shadow:inset 0 0 0 1.5px var(--accent),0 0 30px -6px var(--accent);
   }
 
   .cap-row{
@@ -545,21 +569,14 @@
 <body>
 
 <div class="grain"></div>
-<div class="ambient"><span></span><span></span><span></span></div>
+<div class="ambient"><span></span><span></span><span></span><span></span></div>
 <div class="vignette"></div>
 <div class="progress" id="progress"></div>
 
 <header id="siteHeader">
   <div class="container nav-inner">
     <a href="#home" class="brand">
-      <svg class="brand-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs><linearGradient id="navLogoGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" style="stop-color:var(--teal)"/>
-          <stop offset="1" style="stop-color:var(--amber)"/>
-        </linearGradient></defs>
-        <rect width="64" height="64" rx="16" fill="#0a0c10"></rect>
-        <text x="32" y="43" font-family="Georgia,serif" font-size="34" fill="url(#navLogoGrad)" text-anchor="middle">F</text>
-      </svg>
+      <img class="brand-logo" src="13905.png" alt="Faisal Saber logo">
       Faisal <em>Saber</em>
     </a>
     <nav class="links">
