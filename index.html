@@ -1,2028 +1,774 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAISAL SABER // FREE EDITING RESOURCES</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faisal Saber — Video Editor</title>
+<meta name="description" content="Faisal Saber — video editor crafting cinematic fan-edits (GTA 6, Marvel, and more), montage, beat-synced cuts, and building After Effects extensions.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233fe0c9'/%3E%3Cstop offset='1' stop-color='%23ff8a4c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230a0c10'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='34' fill='url(%23g)' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --bg:#0a0c10;
+    --bg-soft:#12151b;
+    --panel:#151920;
+    --text:#ece9e2;
+    --muted:#8d949c;
+    --faint:#565c64;
+    --teal:#3fe0c9;
+    --amber:#ff8a4c;
+    --line:rgba(255,255,255,0.09);
+    --line-soft:rgba(255,255,255,0.05);
+    --glass-top:rgba(255,255,255,0.10);
+    --shadow:0 30px 70px rgba(0,0,0,0.5),0 8px 22px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.06);
+    --ease:cubic-bezier(.22,1,.36,1);
+    --nav-h:76px;
+  }
 
-    <!-- FAVICON -->
-    <link rel="icon" href="13905.png" type="image/png">
-    <link rel="shortcut icon" href="13905.png" type="image/png">
-    <link rel="apple-touch-icon" href="13905.png">
+  *{margin:0;padding:0;box-sizing:border-box;}
 
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#a855f7">
+  html{scroll-behavior:smooth;}
 
-        <meta name="description" content="Download 100% free premium video editing resources — After Effects presets, LUTs, PNG overlays, transitions, sound effects, AI prompts and fonts. Curated by Faisal Saber.">
-    <meta name="keywords" content="free after effects presets, free LUTs download, free video editing resources, twixtor presets, free transitions, camera shake presets, free sound effects, AI prompts for editors, Faisal Saber">
-    <meta name="author" content="Faisal Saber">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Faisal Saber – Free Video Editing Resources">
-    <meta property="og:description" content="Premium free editing resources — AE presets, LUTs, overlays, transitions and more. 100% free, updated regularly.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.faisalsaber.xyz">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3347144158462397"
-     crossorigin="anonymous"></script>
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
 
-    <style>
-        :root {
-            --bg-deep: #030305;
-            --bg-surface: #0a0b0f;
-            --bg-card: #11131a;
-            --primary: #00f2fe;
-            --primary-glow: rgba(0, 242, 254, 0.35);
-            --secondary: #4facfe;
-            --accent: #ff007f;
-            --accent-glow: rgba(255, 0, 127, 0.35);
-            --text-main: #f5f6fa;
-            --text-sub: #84899e;
-            --glass-border: rgba(255, 255, 255, 0.06);
-            --font-display: 'Space Grotesk', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            --transition-fast: all 0.25s ease;
-        }
+  section{scroll-margin-top:var(--nav-h);}
 
-        html { scroll-behavior: smooth; }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-0.01em;}
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-deep); }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(var(--primary), var(--secondary)); border-radius: 20px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+  a{color:inherit;text-decoration:none;}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
+  img,video{max-width:100%;display:block;}
 
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            overflow-x: hidden;
-            position: relative;
-        }
+  ::selection{background:var(--teal);color:#04120f;}
 
-        .ambient-glow-1 {
-            position: fixed; width: 700px; height: 700px;
-            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-            top: -250px; left: -200px; z-index: -1;
-            animation: floatGlow 18s infinite alternate ease-in-out; pointer-events: none;
-        }
-        .ambient-glow-2 {
-            position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            bottom: -150px; right: -100px; z-index: -1;
-            animation: floatGlow 22s infinite alternate-reverse ease-in-out; pointer-events: none;
-        }
-        @keyframes floatGlow {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(120px, 90px) scale(1.15); }
-        }
-        body::before {
-            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(255,255,255,0.006) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.006) 1px, transparent 1px);
-            background-size: 50px 50px; z-index: -1; pointer-events: none;
-        }
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px;}
 
-        /* ===== NAVBAR ===== */
-        header {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: rgba(3, 3, 5, 0.75); backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border);
-            transition: var(--transition-smooth);
-        }
-        header.scrolled {
-            background: rgba(10, 11, 15, 0.97); padding: 4px 0;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
-        }
-        .navbar {
-            max-width: 1440px; margin: 0 auto; padding: 1.1rem 1.5rem;
-            display: flex; justify-content: space-between; align-items: center; gap: 12px;
-        }
-        .logo {
-            font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
-            text-decoration: none; color: var(--text-main); letter-spacing: 1px;
-            display: flex; align-items: center; gap: 10px; flex-shrink: 0;
-        }
-        .logo-img-asset {
-            width: 42px; height: 42px; border-radius: 50%;
-            border: 2px solid var(--primary); padding: 2px;
-            background: var(--bg-card); box-shadow: 0 0 15px var(--primary-glow);
-            transition: var(--transition-smooth);
-        }
-        .logo:hover .logo-img-asset {
-            border-color: var(--accent); box-shadow: 0 0 25px var(--accent-glow);
-            transform: scale(1.08) rotate(15deg);
-        }
-        .logo span {
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .nav-links {
-            display: flex; list-style: none; gap: 32px; align-items: center;
-        }
-        .nav-links a {
-            text-decoration: none; color: var(--text-sub); font-weight: 600;
-            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
-            transition: var(--transition-fast); position: relative; padding: 5px 0;
-        }
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            transition: var(--transition-fast);
-        }
-        .nav-links a:hover { color: var(--text-main); }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-btn {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: #000 !important; padding: 10px 22px !important;
-            border-radius: 50px; font-weight: 700 !important;
-            box-shadow: 0 4px 15px var(--primary-glow);
-        }
-        .nav-btn::after { display: none !important; }
-        .nav-btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 8px 25px var(--primary); color: #000 !important; }
+  .container{max-width:1180px;margin:0 auto;padding:0 6vw;}
 
-        .nav-social-icons { display: flex; align-items: center; gap: 10px; }
-        .nav-social-icons a {
-            display: flex; align-items: center; justify-content: center;
-            width: 38px; height: 38px; border-radius: 50%;
-            border: 1px solid var(--glass-border); background: rgba(255,255,255,0.03);
-            color: var(--text-sub); font-size: 0.95rem; text-decoration: none;
-            transition: var(--transition-smooth);
-        }
-        .nav-social-icons a:hover { transform: translateY(-3px) scale(1.1); border-color: transparent; }
-        .nav-social-icons a.insta:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; box-shadow: 0 6px 20px rgba(225, 48, 108, 0.5); }
-        .nav-social-icons a.yt:hover { background: #ff0000; color: #fff; box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5); }
-        .nav-social-icons a.discord:hover { background: #5865f2; color: #fff; box-shadow: 0 6px 20px rgba(88, 101, 242, 0.5); }
+  @media(min-width:1000px){.container{padding:0 4vw;}}
 
-        .menu-toggle { display: none; font-size: 1.4rem; color: var(--text-main); cursor: pointer; transition: var(--transition-fast); }
+  /* ============ FILM-GRAIN + AMBIENT BG ============ */
+  .grain{
+    position:fixed;inset:0;z-index:2;pointer-events:none;opacity:0.045;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 70vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center;
-            padding: 130px 1.5rem 50px 1.5rem; position: relative;
-        }
-        .hero-badge {
-            background: rgba(0, 242, 254, 0.06); border: 1px solid rgba(0, 242, 254, 0.2);
-            padding: 8px 22px; border-radius: 50px; font-size: 0.75rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 2px; color: var(--primary);
-            margin-bottom: 1.8rem; animation: fadeInUp 0.8s ease-out;
-        }
-        .hero h1 {
-            font-family: var(--font-display); font-size: 3.8rem; font-weight: 700;
-            line-height: 1.1; letter-spacing: -2px; max-width: 1000px;
-            margin-bottom: 1.2rem; animation: fadeInUp 1s ease-out 0.2s both;
-        }
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero p {
-            font-size: 1.05rem; color: var(--text-sub); max-width: 650px;
-            margin-bottom: 2.5rem; animation: fadeInUp 1.2s ease-out 0.4s both; line-height: 1.7;
-        }
+  .ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  .ambient span{
+    position:absolute;border-radius:50%;filter:blur(90px);opacity:0.22;
+    animation:drift 22s ease-in-out infinite;
+  }
+  .ambient span:nth-child(1){width:44vw;height:44vw;background:var(--teal);top:-14vw;left:-10vw;}
+  .ambient span:nth-child(2){width:38vw;height:38vw;background:var(--amber);bottom:-16vw;right:-8vw;animation-delay:-9s;animation-duration:26s;}
+  .ambient span:nth-child(3){width:22vw;height:22vw;background:var(--teal);top:40%;right:10%;opacity:0.12;animation-delay:-4s;animation-duration:19s;}
 
-        /* Stats Row */
-        .hero-stats {
-            display: flex; gap: 40px; margin-bottom: 2.5rem;
-            animation: fadeInUp 1.3s ease-out 0.5s both;
-        }
-        .stat-item { text-align: center; }
-        .stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--primary); }
-        .stat-label { font-size: 0.75rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; }
+  @keyframes drift{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(3vw,-4vw) scale(1.08);}
+  }
 
-        .search-container { width: 100%; max-width: 680px; position: relative; animation: fadeInUp 1.4s ease-out 0.6s both; z-index: 10; }
-        .search-wrapper {
-            display: flex; align-items: center; background: rgba(17, 19, 26, 0.8);
-            border: 2px solid var(--glass-border); border-radius: 100px;
-            padding: 7px 8px 7px 22px; backdrop-filter: blur(20px);
-            transition: var(--transition-smooth); box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-        .search-wrapper:focus-within { border-color: var(--primary); box-shadow: 0 0 35px var(--primary-glow); }
-        .search-wrapper i { color: var(--text-sub); font-size: 1.1rem; margin-right: 12px; }
-        .search-wrapper input { flex: 1; background: none; border: none; color: var(--text-main); font-size: 1rem; font-family: var(--font-body); min-width: 0; }
-        .search-wrapper input::placeholder { color: #4a4e63; }
-        .search-btn {
-            background: linear-gradient(45deg, var(--primary), var(--secondary)); border: none;
-            padding: 12px 30px; border-radius: 100px; color: #000; font-weight: 700;
-            font-family: var(--font-display); cursor: pointer; transition: var(--transition-smooth);
-            text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; white-space: nowrap;
-        }
-        .search-btn:hover { box-shadow: 0 0 20px var(--primary); }
+  /* ============ SCROLL PROGRESS ============ */
+  .progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:1001;
+    background:linear-gradient(90deg,var(--teal),var(--amber));
+    box-shadow:0 0 14px rgba(63,224,201,0.6);
+    transition:width 0.08s linear;
+  }
 
-        /* ===== FILTER TABS ===== */
-        .filter-section {
-            max-width: 1440px; margin: 0 auto; padding: 0 1.5rem;
-            display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 3rem;
-        }
-        .filter-btn {
-            background: var(--bg-card); border: 1px solid var(--glass-border); color: var(--text-sub);
-            padding: 10px 24px; border-radius: 50px; cursor: pointer;
-            font-family: var(--font-display); font-weight: 600; font-size: 0.88rem;
-            letter-spacing: 0.5px; transition: var(--transition-smooth);
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: #000; border-color: transparent;
-            box-shadow: 0 8px 22px var(--primary-glow); transform: translateY(-2px);
-        }
+  /* ============ VIGNETTE ============ */
+  .vignette{
+    position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,0.55) 100%);
+  }
 
-        /* ===== CATALOG GRID ===== */
-        .main-catalog { max-width: 1440px; margin: 0 auto; padding: 1.5rem; }
-        .catalog-header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1.2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-        .catalog-header h2 { font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; letter-spacing: -1px; }
-        .catalog-header h2 span { color: var(--accent); }
-        .catalog-count { font-size: 0.85rem; color: var(--text-sub); background: var(--bg-card); border: 1px solid var(--glass-border); padding: 6px 16px; border-radius: 50px; }
+  /* ============ GLASS ============ */
+  .glass{
+    background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
+    border:1px solid var(--line);
+    border-top-color:var(--glass-top);
+    backdrop-filter:blur(20px) saturate(160%);
+    -webkit-backdrop-filter:blur(20px) saturate(160%);
+    box-shadow:var(--shadow);
+  }
 
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-            gap: 28px;
-        }
+  /* ============ NAV ============ */
+  header{
+    position:fixed;top:0;left:0;width:100%;z-index:900;
+    height:var(--nav-h);
+    display:flex;align-items:center;
+    background:transparent;
+    border-bottom:1px solid transparent;
+    transition:background .4s var(--ease),border-color .4s var(--ease),backdrop-filter .4s var(--ease);
+  }
+  header.scrolled{
+    background:rgba(10,12,16,0.72);
+    border-bottom-color:var(--line);
+    backdrop-filter:blur(16px) saturate(160%);
+    -webkit-backdrop-filter:blur(16px) saturate(160%);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .brand{display:flex;align-items:center;gap:0.6rem;font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.01em;}
+  .brand em{font-style:normal;background:linear-gradient(120deg,var(--teal),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .brand-logo{width:36px;height:36px;border-radius:10px;object-fit:cover;flex:none;border:1px solid var(--line);}
 
-        /* ===== CARD ===== */
-        .studio-card {
-            background: var(--bg-card); border-radius: 20px; overflow: hidden;
-            border: 1px solid var(--glass-border); position: relative;
-            transition: var(--transition-smooth); display: flex; flex-direction: column;
-            transform-style: preserve-3d; perspective: 1000px; cursor: pointer;
-        }
-        .studio-card:hover {
-            border-color: rgba(0, 242, 254, 0.35);
-            box-shadow: 0 30px 70px rgba(0,0,0,0.8), 0 0 40px rgba(0, 242, 254, 0.06);
-        }
-        /* Resource card icon area instead of image */
-        .card-media {
-            position: relative; width: 100%; padding-top: 65%; overflow: hidden;
-            background: linear-gradient(135deg, #0d0f17 0%, #12141e 100%);
-            display: flex; align-items: center; justify-content: center;
-        }
-        .card-icon-wrap {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px;
-        }
-        .card-icon-bg {
-            width: 80px; height: 80px; border-radius: 22px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-        }
-        .studio-card:hover .card-icon-bg { transform: scale(1.1) rotate(-5deg); }
-        .card-icon-bg::after {
-            content: ''; position: absolute; inset: -1px; border-radius: 23px;
-            background: linear-gradient(135deg, var(--primary), var(--accent)); z-index: -1;
-            opacity: 0.3;
-        }
-        .card-media::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 40%;
-            background: linear-gradient(to top, var(--bg-card) 0%, transparent 100%); z-index: 1;
-        }
-        .card-badge {
-            position: absolute; top: 14px; right: 14px;
-            background: rgba(10, 11, 15, 0.88); border: 1px solid var(--primary); color: var(--primary);
-            backdrop-filter: blur(10px); padding: 5px 12px; border-radius: 8px;
-            font-size: 0.7rem; font-weight: 700; font-family: var(--font-display);
-            text-transform: uppercase; z-index: 2;
-        }
-        .type-badge {
-            position: absolute; top: 14px; left: 14px;
-            background: rgba(255, 0, 127, 0.15); border: 1px solid var(--accent); color: var(--accent);
-            backdrop-filter: blur(10px); padding: 5px 12px; border-radius: 8px;
-            font-size: 0.7rem; font-weight: 700; z-index: 2;
-        }
-        .card-stats-row {
-            position: absolute; bottom: 12px; left: 12px; right: 12px;
-            display: flex; gap: 8px; z-index: 2;
-        }
-        .stat-pill {
-            display: flex; align-items: center; gap: 6px;
-            background: rgba(10, 11, 15, 0.9); border: 1px solid var(--glass-border);
-            backdrop-filter: blur(10px); padding: 5px 11px; border-radius: 8px;
-            font-size: 0.72rem; font-weight: 600; color: var(--text-sub);
-            font-family: var(--font-display);
-        }
-        .stat-pill i { font-size: 0.78rem; }
-        .stat-pill.stat-view i { color: var(--secondary); }
-        .stat-pill.stat-download i { color: var(--accent); }
-        .stat-pill .stat-count { color: var(--text-main); }
-        .card-body {
-            padding: 1.4rem; position: relative; z-index: 2;
-            display: flex; flex-direction: column; flex-grow: 1; background: var(--bg-card);
-        }
-        .card-info-tags { display: flex; gap: 8px; margin-bottom: 0.7rem; flex-wrap: wrap; }
-        .info-tag {
-            font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px;
-            background: rgba(255,255,255,0.04); padding: 3px 9px; border-radius: 6px;
-            border: 1px solid rgba(255,255,255,0.04);
-        }
-        .card-title {
-            font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
-            margin-bottom: 0.5rem; color: var(--text-main); line-height: 1.3;
-        }
-        .studio-card:hover .card-title { color: var(--primary); }
-        .card-meta-specs {
-            display: flex; justify-content: space-between; color: var(--text-sub);
-            font-size: 0.8rem; margin-bottom: 1.2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.04); padding-bottom: 0.9rem;
-        }
-        .card-meta-specs span i { margin-right: 5px; color: var(--secondary); }
-        .card-action-btn {
-            margin-top: auto; width: 100%; background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border); color: var(--text-main); padding: 13px;
-            border-radius: 12px; font-family: var(--font-display); font-weight: 700;
-            font-size: 0.88rem; cursor: pointer; transition: var(--transition-smooth);
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-        }
-        .card-action-btn i { transition: transform 0.3s ease; }
-        .studio-card:hover .card-action-btn {
-            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(79, 172, 254, 0.1) 100%);
-            border-color: var(--primary); box-shadow: inset 0 0 12px rgba(0, 242, 254, 0.12);
-        }
-        .card-action-btn:hover i { transform: translateX(4px); }
+  nav.links ul{display:flex;gap:2.4rem;list-style:none;}
+  nav.links a{
+    font-size:0.92rem;color:var(--muted);position:relative;padding:4px 0;
+    transition:color .25s var(--ease);
+  }
+  nav.links a::after{
+    content:'';position:absolute;left:0;bottom:-2px;height:1px;width:0;
+    background:linear-gradient(90deg,var(--teal),var(--amber));
+    transition:width .3s var(--ease);
+  }
+  nav.links a:hover,nav.links a.active{color:var(--text);}
+  nav.links a:hover::after,nav.links a.active::after{width:100%;}
 
-        /* ===== RESOURCE MODAL ===== */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(3, 3, 5, 0.9); backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px); z-index: 2000;
-            display: flex; justify-content: center; align-items: flex-start;
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1); padding: 1rem;
-            overflow-y: auto;
-        }
-        .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-window {
-            background: var(--bg-surface); border: 1px solid rgba(0, 242, 254, 0.15);
-            width: 100%; max-width: 680px; border-radius: 24px; position: relative;
-            transform: translateY(40px) scale(0.95); transition: var(--transition-smooth);
-            overflow: hidden; box-shadow: 0 50px 120px rgba(0,0,0,0.9), 0 0 60px rgba(0,242,254,0.05);
-            margin: auto;
-        }
-        .modal-overlay.active .modal-window { transform: translateY(0) scale(1); }
-        .modal-header-banner {
-            background: linear-gradient(135deg, rgba(0,242,254,0.08) 0%, rgba(255,0,127,0.08) 100%);
-            border-bottom: 1px solid var(--glass-border); padding: 2rem 2.5rem;
-            display: flex; align-items: center; gap: 16px;
-        }
-        .modal-header-icon {
-            width: 56px; height: 56px; border-radius: 16px; flex-shrink: 0;
-            display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
-        }
-        .modal-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; }
-        .modal-subtitle { font-size: 0.82rem; color: var(--text-sub); margin-top: 3px; }
-        .modal-close-btn {
-            position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.5);
-            border: 1px solid var(--glass-border); width: 38px; height: 38px;
-            border-radius: 50%; color: white; display: flex; justify-content: center;
-            align-items: center; cursor: pointer; z-index: 10; transition: var(--transition-fast);
-            font-size: 1rem;
-        }
-        .modal-close-btn:hover { background: var(--accent); transform: rotate(90deg); }
-        .modal-body { padding: 2rem 2.5rem; }
+  .burger{display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,0.04);color:var(--text);font-size:1.05rem;align-items:center;justify-content:center;}
 
-        /* Resource items inside modal */
-        .resource-list { display: flex; flex-direction: column; gap: 12px; }
-        .resource-item {
-            display: flex; align-items: center; gap: 14px;
-            background: var(--bg-card); border: 1px solid var(--glass-border);
-            padding: 14px 18px; border-radius: 14px; transition: var(--transition-smooth);
-            position: relative; overflow: hidden;
-        }
-        .resource-item:hover { border-color: rgba(0,242,254,0.3); transform: translateX(4px); background: rgba(0,242,254,0.03); }
-        .resource-item-icon {
-            width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
-            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-        }
-        .resource-item-info { flex: 1; min-width: 0; }
-        .resource-item-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .resource-item-desc { font-size: 0.75rem; color: var(--text-sub); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .resource-item-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
-        .res-badge {
-            font-size: 0.62rem; font-weight: 700; padding: 3px 9px; border-radius: 6px;
-            text-transform: uppercase; letter-spacing: 0.5px;
-        }
-        .res-badge.new { background: rgba(0,242,254,0.12); border: 1px solid rgba(0,242,254,0.3); color: var(--primary); }
-        .res-badge.popular { background: rgba(255,0,127,0.12); border: 1px solid rgba(255,0,127,0.3); color: var(--accent); }
-        .res-badge.hot { background: rgba(255,165,0,0.12); border: 1px solid rgba(255,165,0,0.3); color: #ffaa00; }
-        .res-dl-count { font-size: 0.7rem; color: var(--text-sub); display: flex; align-items: center; gap: 4px; }
-        .res-dl-count i { color: var(--accent); font-size: 0.65rem; }
-        .res-download-btn {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border: none; padding: 7px 16px; border-radius: 8px; color: #000;
-            font-weight: 700; font-family: var(--font-display); font-size: 0.75rem;
-            cursor: pointer; transition: var(--transition-fast); display: flex; align-items: center; gap: 5px;
-            text-decoration: none; white-space: nowrap;
-        }
-        .res-download-btn:hover { box-shadow: 0 4px 15px var(--primary-glow); transform: scale(1.05); }
+  .mobile-menu{
+    position:fixed;top:var(--nav-h);left:0;width:100%;z-index:890;
+    display:flex;flex-direction:column;padding:1.2rem 6vw 1.6rem;gap:0.4rem;
+    background:rgba(10,12,16,0.94);backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+    transform:translateY(-8px);opacity:0;visibility:hidden;pointer-events:none;
+    transition:all .3s var(--ease);
+  }
+  .mobile-menu.open{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto;}
+  .mobile-menu a{padding:0.75rem 0;font-size:1.05rem;border-bottom:1px solid var(--line-soft);color:var(--text);}
 
-        /* Image / Icon grid items (CC, PNG, Icons, Text Animation, Plugins) */
-        .media-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
-            gap: 14px;
-        }
-        .media-card {
-            background: var(--bg-card); border: 1px solid var(--glass-border);
-            border-radius: 14px; overflow: hidden; transition: var(--transition-smooth);
-            display: flex; flex-direction: column;
-        }
-        .media-card:hover { border-color: rgba(0,242,254,0.3); transform: translateY(-3px); }
-        .media-thumb {
-            width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #07080c; position: relative;
-        }
-        .media-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .media-thumb-icon {
-            width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
-            font-size: 2.1rem;
-        }
-        .media-info { padding: 10px 12px 2px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1; }
-        .media-name {
-            font-family: var(--font-display); font-weight: 700; font-size: 0.8rem;
-            color: var(--text-main); line-height: 1.3;
-        }
-        .media-download-btn {
-            margin: 10px 12px 12px; background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border: none; padding: 8px; border-radius: 8px; color: #000; font-weight: 700;
-            font-family: var(--font-display); font-size: 0.72rem; text-decoration: none;
-            display: flex; align-items: center; justify-content: center; gap: 6px; transition: var(--transition-fast);
-        }
-        .media-download-btn:hover { box-shadow: 0 4px 15px var(--primary-glow); transform: scale(1.03); }
+  @media(max-width:820px){
+    nav.links{display:none;}
+    .burger{display:flex;}
+  }
 
-        /* Sound effect items (play + download) */
-        .audio-item {
-            display: flex; align-items: center; gap: 14px;
-            background: var(--bg-card); border: 1px solid var(--glass-border);
-            padding: 12px 16px; border-radius: 14px; transition: var(--transition-smooth);
-        }
-        .audio-item:hover { border-color: rgba(0,242,254,0.3); background: rgba(0,242,254,0.03); }
-        .audio-play-btn {
-            width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0; border: none; cursor: pointer;
-            background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000;
-            display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
-            transition: var(--transition-fast);
-        }
-        .audio-play-btn:hover { transform: scale(1.08); }
-        .audio-play-btn.playing { background: linear-gradient(45deg, var(--accent), #ff5050); color: #fff; }
-        .audio-info { flex: 1; min-width: 0; }
-        .audio-name {
-            font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--text-main);
-            display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-        }
-        .audio-desc {
-            font-size: 0.72rem; color: var(--text-sub); display: block; margin-top: 2px;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-        }
+  /* ============ HERO ============ */
+  .hero{
+    min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:calc(var(--nav-h) + 3rem) 6vw 4rem;position:relative;z-index:0;
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--muted);
+    margin-bottom:1.6rem;
+  }
+  .kicker::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);}
 
-        /* AI Prompt items */
-        .prompt-item {
-            background: var(--bg-card); border: 1px solid var(--glass-border);
-            padding: 16px 18px; border-radius: 14px; transition: var(--transition-smooth);
-        }
-        .prompt-item:hover { border-color: rgba(0,242,254,0.3); background: rgba(0,242,254,0.03); }
-        .prompt-item-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
-        .prompt-item-title { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
-        .prompt-item-desc { font-size: 0.82rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 12px; }
-        .copy-prompt-btn {
-            background: rgba(0,242,254,0.08); border: 1px solid rgba(0,242,254,0.25); color: var(--primary);
-            padding: 8px 18px; border-radius: 8px; font-family: var(--font-display); font-weight: 700;
-            font-size: 0.78rem; cursor: pointer; transition: var(--transition-fast);
-            display: inline-flex; align-items: center; gap: 6px;
-        }
-        .copy-prompt-btn:hover { background: rgba(0,242,254,0.18); transform: scale(1.03); }
-        .copy-prompt-btn.copied { background: rgba(0,255,100,0.12); border-color: rgba(0,255,100,0.3); color: #00ff64; }
+  .hero-name{
+    font-size:clamp(3.2rem,11vw,7.6rem);line-height:0.96;font-weight:500;
+    letter-spacing:-0.02em;font-variation-settings:'opsz' 144;
+  }
+  .hero-name .ch{display:inline-block;opacity:0;transform:translateY(0.4em);filter:blur(6px);
+    animation:letterIn .8s var(--ease) forwards;animation-delay:calc(var(--i) * 45ms);}
+  .hero-name .sp{width:0.28em;display:inline-block;}
+  @keyframes letterIn{to{opacity:1;transform:translateY(0);filter:blur(0);}}
 
-        /* ===== FOOTER ===== */
-        footer { background: var(--bg-surface); border-top: 1px solid var(--glass-border); padding: 4rem 1.5rem 2rem 1.5rem; margin-top: 6rem; }
-        .footer-grid { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 3rem; }
-        .footer-brand { display: flex; flex-direction: column; gap: 16px; }
-        .footer-logo-area { display: flex; align-items: center; gap: 12px; }
-        .footer-logo-img-asset { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--secondary); padding: 2px; background: var(--bg-card); box-shadow: 0 0 12px var(--primary-glow); }
-        .footer-brand p { color: var(--text-sub); max-width: 400px; line-height: 1.7; font-size: 0.9rem; }
-        .footer-links h4 { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.2rem; color: var(--primary); font-size: 0.9rem; }
-        .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-        .footer-links ul a { color: var(--text-sub); text-decoration: none; transition: var(--transition-fast); font-size: 0.9rem; }
-        .footer-links ul a:hover { color: var(--text-main); padding-left: 6px; }
-        .footer-bottom { max-width: 1440px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 1.5rem; display: flex; justify-content: space-between; color: var(--text-sub); font-size: 0.85rem; }
-        .footer-signature { font-weight: 700; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-role{
+    margin-top:1.1rem;font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--muted);max-width:640px;
+    opacity:0;animation:fadeUp .8s var(--ease) forwards;animation-delay:0.85s;
+  }
+  .hero-role strong{color:var(--text);font-weight:600;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 
-        /* ===== CAROUSEL ===== */
-        .carousel-section {
-            width: 100%; overflow: hidden; padding: 18px 0; position: relative;
-            background: linear-gradient(90deg, var(--bg-deep) 0%, transparent 8%, transparent 92%, var(--bg-deep) 100%);
-            margin-bottom: 0;
-        }
-        .carousel-section::before, .carousel-section::after {
-            content: ''; position: absolute; top: 0; width: 120px; height: 100%; z-index: 2; pointer-events: none;
-        }
-        .carousel-section::before { left: 0; background: linear-gradient(90deg, var(--bg-deep), transparent); }
-        .carousel-section::after { right: 0; background: linear-gradient(-90deg, var(--bg-deep), transparent); }
-        .carousel-track {
-            display: flex; gap: 16px;
-            animation: carouselScroll 42s linear infinite;
-            width: max-content;
-        }
-        .carousel-track:hover { animation-play-state: paused; }
-        @keyframes carouselScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .carousel-card {
-            flex-shrink: 0; width: 150px; height: 100px; border-radius: 14px; overflow: hidden;
-            position: relative; border: 1px solid var(--glass-border);
-            cursor: pointer; transition: transform 0.3s ease, border-color 0.3s ease;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .carousel-card:hover { transform: translateY(-6px) scale(1.04); border-color: var(--primary); }
-        .carousel-card-icon {
-            display: flex; flex-direction: column; align-items: center; gap: 6px;
-            width: 100%; height: 100%; justify-content: center;
-        }
-        .carousel-card-icon i { font-size: 1.5rem; }
-        .carousel-card-label {
-            font-family: var(--font-display); font-size: 0.65rem; font-weight: 700;
-            color: var(--text-main); text-align: center; z-index: 2; line-height: 1.3; padding: 0 8px;
-        }
+  .hero-badge{
+    margin-top:1.4rem;display:inline-flex;align-items:center;gap:0.5rem;
+    padding:0.5rem 1.1rem;border-radius:999px;font-size:0.82rem;color:var(--muted);
+    border:1px solid var(--line-soft);
+    opacity:0;animation:fadeUp .8s var(--ease) forwards;animation-delay:1.05s;
+  }
+  .hero-badge i{color:var(--amber);}
 
-        /* ===== SIDE PAGE PANELS ===== */
-        .side-panel {
-            position: fixed; top: 0; right: -100%; width: 100%; max-width: 500px; height: 100vh;
-            background: var(--bg-surface); border-left: 1px solid var(--glass-border);
-            z-index: 3000; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow-y: auto; padding: 2rem;
-            box-shadow: -20px 0 60px rgba(0,0,0,0.8);
-        }
-        .side-panel.open { right: 0; }
-        .panel-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); z-index: 2999; opacity: 0; pointer-events: none;
-            transition: opacity 0.4s ease; backdrop-filter: blur(4px);
-        }
-        .panel-overlay.active { opacity: 1; pointer-events: auto; }
-        .panel-close {
-            position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.05);
-            border: 1px solid var(--glass-border); width: 38px; height: 38px; border-radius: 50%;
-            color: var(--text-main); display: flex; justify-content: center; align-items: center;
-            cursor: pointer; font-size: 1rem; transition: var(--transition-fast);
-        }
-        .panel-close:hover { background: var(--accent); transform: rotate(90deg); }
-        .panel-header { padding-bottom: 1.5rem; border-bottom: 1px solid var(--glass-border); margin-bottom: 2rem; margin-top: 1rem; }
-        .panel-header h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; }
-        .panel-header h2 span { background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .panel-body p { color: var(--text-sub); line-height: 1.8; margin-bottom: 1.2rem; font-size: 0.95rem; }
-        .panel-body h3 { font-family: var(--font-display); font-size: 1.1rem; margin: 1.5rem 0 0.6rem; color: var(--primary); }
-        .contact-form-row { display: flex; flex-direction: column; gap: 14px; margin-top: 1.5rem; }
-        .contact-link-btn {
-            display: flex; align-items: center; gap: 14px; padding: 16px 20px;
-            background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 14px;
-            text-decoration: none; color: var(--text-main); font-weight: 600; transition: var(--transition-smooth);
-        }
-        .contact-link-btn:hover { border-color: var(--primary); transform: translateX(6px); background: rgba(0,242,254,0.05); }
-        .contact-link-btn i { font-size: 1.2rem; color: var(--primary); width: 24px; text-align: center; }
-        .privacy-section { margin-bottom: 1.8rem; }
-        .privacy-section h3 { font-family: var(--font-display); font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; }
-        .privacy-section p { color: var(--text-sub); font-size: 0.88rem; line-height: 1.75; }
+  .hero-cta{
+    margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
+    opacity:0;animation:fadeUp .8s var(--ease) forwards;animation-delay:1.2s;
+  }
 
-        /* ===== HAMBURGER (3-line) BUTTON ===== */
-        .hamburger-btn {
-            display: flex; flex-direction: column; justify-content: center; gap: 5px;
-            width: 38px; height: 38px; background: rgba(255,255,255,0.04);
-            border: 1px solid var(--glass-border); border-radius: 10px;
-            cursor: pointer; padding: 8px; transition: var(--transition-fast); flex-shrink: 0;
-        }
-        .hamburger-btn span {
-            display: block; height: 2px; background: var(--text-main); border-radius: 2px;
-            transition: var(--transition-fast);
-        }
-        .hamburger-btn:hover { border-color: var(--primary); background: rgba(0,242,254,0.06); }
-        .hamburger-btn:hover span { background: var(--primary); }
+  .btn{
+    position:relative;display:inline-flex;align-items:center;gap:0.55rem;overflow:hidden;
+    padding:0.9rem 1.7rem;border-radius:999px;font-size:0.95rem;font-weight:600;
+    transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+    will-change:transform;
+  }
+  .btn::before{
+    content:'';position:absolute;top:0;left:-60%;width:35%;height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+    transform:skewX(-18deg);transition:left .7s var(--ease);
+  }
+  .btn:hover::before{left:130%;}
+  .btn-primary{background:linear-gradient(120deg,var(--teal),var(--amber));color:#0a0c10;}
+  .btn-primary:hover{box-shadow:0 16px 38px rgba(63,224,201,0.3);}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,0.03);}
+  .btn-ghost:hover{border-color:rgba(255,255,255,0.25);background:rgba(255,255,255,0.06);}
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+  .chiprow{
+    margin-top:3rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;max-width:640px;
+    opacity:0;animation:fadeUp .8s var(--ease) forwards;animation-delay:1.35s;
+  }
+  .chip{
+    padding:0 1rem;font-size:0.8rem;color:var(--muted);border-left:1px solid var(--line-soft);
+    line-height:1;
+  }
+  .chiprow .chip:first-child,.about-chips .chip:first-child{border-left:none;padding-left:0;}
 
-        /* ===== MOBILE RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .hero h1 { font-size: 3rem; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
+  .ruler{
+    position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);
+    width:min(1100px,86vw);height:120px;pointer-events:none;z-index:-1;opacity:0.5;
+  }
+  .ruler .track{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line);}
+  .ruler .tick{position:absolute;top:calc(50% - 8px);width:1px;height:16px;background:var(--line);}
+  .ruler .tick.major{height:26px;top:calc(50% - 13px);background:rgba(255,255,255,0.16);}
+  .ruler .playhead{
+    position:absolute;top:calc(50% - 22px);width:2px;height:44px;
+    background:linear-gradient(var(--teal),var(--amber));
+    box-shadow:0 0 12px rgba(63,224,201,0.6);
+    animation:playhead 9s linear infinite;
+  }
+  @keyframes playhead{0%{left:0%;}100%{left:100%;}}
 
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed; top: 70px; left: -100%; width: 100%;
-                height: calc(100vh - 70px); background: rgba(10,11,15,0.98);
-                flex-direction: column; padding: 35px 0; gap: 25px;
-                transition: var(--transition-smooth); border-top: 1px solid var(--glass-border);
-                z-index: 999;
-            }
-            .nav-links.active { left: 0; }
-            .menu-toggle { display: block; }
-            .hero h1 { font-size: 2.1rem; letter-spacing: -1px; }
-            .hero p { font-size: 0.95rem; }
-            .hero-stats { gap: 24px; }
-            .stat-num { font-size: 1.5rem; }
-            .hero { padding: 110px 1rem 40px 1rem; min-height: auto; }
-            .grid-layout { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-            .card-body { padding: 1rem; }
-            .card-title { font-size: 1rem; }
-            .card-meta-specs { font-size: 0.72rem; }
-            .card-action-btn { font-size: 0.8rem; padding: 11px; }
-            .type-badge, .card-badge { font-size: 0.62rem; padding: 4px 9px; }
-            .filter-btn { padding: 9px 18px; font-size: 0.82rem; }
-            .modal-body { padding: 1.5rem; }
-            .modal-header-banner { padding: 1.5rem; }
-            .modal-title { font-size: 1.2rem; }
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-            .search-btn { padding: 10px 18px; font-size: 0.8rem; }
-            .catalog-header h2 { font-size: 1.5rem; }
-            .main-catalog { padding: 1rem; }
-            .filter-section { padding: 0 1rem; gap: 8px; margin-bottom: 2rem; }
-            .nav-social-icons a { width: 34px; height: 34px; font-size: 0.85rem; }
-            .logo { font-size: 1.1rem; }
-            .logo-img-asset { width: 36px; height: 36px; }
-            .resource-item { flex-wrap: wrap; }
-            .resource-item-right { flex-direction: row; align-items: center; width: 100%; justify-content: space-between; }
-            .media-grid { grid-template-columns: repeat(2, 1fr); }
-            .audio-item { flex-wrap: wrap; }
-        }
+  .scroll-cue{
+    position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--faint);font-size:0.72rem;
+    letter-spacing:0.04em;opacity:0;animation:fadeUp .8s var(--ease) forwards;animation-delay:1.5s;
+  }
+  .scroll-cue span{width:1px;height:34px;background:linear-gradient(var(--teal),transparent);animation:cueMove 1.8s ease-in-out infinite;}
+  @keyframes cueMove{0%{opacity:0;transform:scaleY(0.4);}50%{opacity:1;}100%{opacity:0;transform:scaleY(1);}}
 
-        @media (max-width: 400px) {
-            .grid-layout { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 1.8rem; }
-            .hero-stats { flex-wrap: wrap; justify-content: center; }
-        }
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3347144158462397" crossorigin="anonymous"></script>
+  /* ============ SECTION HEADS ============ */
+  .head{max-width:640px;margin-bottom:3rem;}
+  .head h2{font-size:clamp(2rem,4.4vw,2.9rem);}
+  .head p{margin-top:0.9rem;color:var(--muted);font-size:1.02rem;max-width:52ch;}
+  .head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* ============ SPROCKET STRIP ============ */
+  .sprocket{height:22px;display:flex;align-items:center;gap:14px;overflow:hidden;opacity:0.5;}
+  .sprocket span{width:9px;height:9px;flex:none;border-radius:2px;background:var(--line);}
+
+  /* ============ SHOWREEL ============ */
+  .showreel{padding:8rem 0 6rem;position:relative;z-index:1;}
+  .reel-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;
+  }
+  @media(max-width:920px){.reel-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.reel-grid{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto;}}
+
+  .reel-card{
+    position:relative;border-radius:22px;overflow:hidden;aspect-ratio:1080/1200;
+    background:linear-gradient(160deg,#181c23,#101318);
+    transition:transform .5s var(--ease),box-shadow .5s var(--ease);
+    --accent:var(--teal);
+  }
+  .reel-card:hover{transform:translateY(-6px);box-shadow:0 26px 50px rgba(0,0,0,0.5);}
+
+  .reel-card video{
+    width:100%;height:100%;object-fit:cover;position:absolute;inset:0;
+    transition:transform .6s var(--ease);
+  }
+  .reel-card:hover video{transform:scale(1.06);}
+
+  .reel-placeholder{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.9rem;
+    background:
+      radial-gradient(circle at 30% 20%,rgba(63,224,201,0.14),transparent 55%),
+      radial-gradient(circle at 75% 85%,rgba(255,138,76,0.14),transparent 55%);
+    transition:opacity .45s var(--ease);
+  }
+  .reel-card:hover .reel-placeholder,.reel-card.is-playing .reel-placeholder{opacity:0;}
+  .reel-placeholder::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,0.06) 50%,transparent 65%);
+    background-size:250% 250%;animation:sheen 5s ease-in-out infinite;
+  }
+  @keyframes sheen{0%{background-position:120% 0;}100%{background-position:-20% 0;}}
+
+  .play{
+    width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,0.1);border:1px solid var(--line);
+    color:var(--text);font-size:0.95rem;cursor:pointer;z-index:1;
+    transition:transform .3s var(--ease),background .3s var(--ease);
+  }
+  .reel-card:hover .play{transform:scale(1.1);background:linear-gradient(120deg,var(--accent),var(--amber));color:#0a0c10;}
+
+  .reel-tag{
+    position:absolute;top:14px;left:14px;font-size:0.72rem;padding:0.35rem 0.7rem 0.35rem 0.6rem;border-radius:999px;
+    background:rgba(0,0,0,0.45);border:1px solid var(--line-soft);color:var(--text);z-index:1;
+    display:flex;align-items:center;gap:0.4rem;
+  }
+  .reel-tag::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);flex:none;}
+
+  .reel-foot{
+    position:absolute;left:0;right:0;bottom:0;padding:1.1rem 1.2rem;z-index:1;
+    background:linear-gradient(180deg,transparent,rgba(0,0,0,0.75));
+  }
+  .reel-foot h4{font-family:'Inter';font-size:0.95rem;font-weight:600;}
+  .reel-foot p{font-size:0.78rem;color:var(--muted);margin-top:0.15rem;}
+
+  .reel-note{margin-top:1.6rem;font-size:0.78rem;color:var(--faint);text-align:center;}
+
+  /* ============ CAPABILITIES ============ */
+  .capabilities{padding:7rem 0;position:relative;z-index:1;}
+  .cap-row{
+    display:grid;grid-template-columns:1.1fr 2fr;gap:2rem;padding:2rem 0;
+    border-top:1px solid var(--line-soft);align-items:baseline;
+  }
+  .cap-row:last-child{border-bottom:1px solid var(--line-soft);}
+  .cap-row h3{font-size:1.35rem;}
+  .cap-row p{color:var(--muted);max-width:60ch;}
+  @media(max-width:700px){.cap-row{grid-template-columns:1fr;gap:0.6rem;}}
+
+  /* ============ ABOUT ============ */
+  .about{padding:7rem 0;position:relative;z-index:1;}
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3.5rem;align-items:center;}
+  @media(max-width:800px){.about-grid{grid-template-columns:1fr;}}
+  .about-copy p{color:var(--muted);font-size:1.05rem;max-width:60ch;}
+  .about-copy p + p{margin-top:1rem;}
+  .about-chips{display:flex;flex-wrap:wrap;align-items:center;margin-top:1.8rem;}
+
+  .about-panel{
+    border-radius:26px;padding:2.4rem;aspect-ratio:4/3;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .about-panel::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 20% 15%,var(--teal),transparent 55%),
+      radial-gradient(circle at 85% 90%,var(--amber),transparent 55%);
+    opacity:0.16;filter:blur(40px);
+  }
+  .about-panel .stat{position:relative;}
+  .about-panel .stat b{font-family:'Fraunces';font-size:2.6rem;font-weight:500;display:block;}
+  .about-panel .stat span{color:var(--muted);font-size:0.85rem;}
+
+  /* ============ CONTACT ============ */
+  .contact{padding:8rem 0 5rem;text-align:center;position:relative;z-index:1;}
+  .contact .head p{margin-left:auto;margin-right:auto;}
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem;text-align:left;}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr;}}
+
+  .tile{
+    border-radius:20px;padding:1.6rem;display:flex;align-items:center;gap:1rem;
+    transition:transform .35s var(--ease),border-color .35s var(--ease);
+  }
+  .tile:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.22);}
+  .tile-icon{
+    width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(120deg,var(--teal),var(--amber));color:#0a0c10;font-size:1.05rem;flex:none;
+  }
+  .tile-label{font-size:0.78rem;color:var(--muted);}
+  .tile-value{font-size:0.98rem;font-weight:600;margin-top:0.15rem;word-break:break-word;}
+
+  /* ============ FOOTER ============ */
+  footer{padding:2.2rem 0 2.6rem;border-top:1px solid var(--line-soft);position:relative;z-index:1;}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .foot-inner p{font-size:0.82rem;color:var(--faint);}
+  .foot-links{display:flex;gap:1rem;}
+  .foot-links a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .3s var(--ease);}
+  .foot-links a:hover{color:#0a0c10;background:linear-gradient(120deg,var(--teal),var(--amber));border-color:transparent;}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(24px);filter:blur(8px);transition:opacity .8s var(--ease),transform .8s var(--ease),filter .8s var(--ease);}
+  .reveal.in{opacity:1;transform:translateY(0);filter:blur(0);}
+
+  /* ============ TOAST ============ */
+  .toast{
+    position:fixed;bottom:1.6rem;right:1.6rem;z-index:1200;padding:0.95rem 1.3rem;border-radius:14px;
+    display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;max-width:280px;
+    transform:translateY(20px);opacity:0;pointer-events:none;transition:all .4s var(--ease);
+  }
+  .toast.show{transform:translateY(0);opacity:1;}
+  .toast i{color:var(--teal);}
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:0.001s !important;animation-iteration-count:1 !important;transition-duration:0.001s !important;}
+    .ambient span{animation:none;}
+    .reveal{opacity:1;transform:none;filter:none;}
+  }
+</style>
 </head>
 <body>
 
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
+<div class="grain"></div>
+<div class="ambient"><span></span><span></span><span></span></div>
+<div class="vignette"></div>
+<div class="progress" id="progress"></div>
 
-    <header id="mainHeader">
-        <nav class="navbar">
-            <a href="#" class="logo">
-                <img src="13905.png" alt="Faisal Saber Logo" class="logo-img-asset">
-                <span>FAISAL SABER</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#catalog">Resources</a></li>
-                <li><a href="#catalog" class="nav-btn">Browse Free</a></li>
-            </ul>
-            <div class="nav-social-icons">
-                <a href="https://www.instagram.com/faisal_saber__?igsh=d2s3YW5qZmdlMTdz" target="_blank" class="insta" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://youtube.com/@faisal_saber?si=j4rFSB24CGbHPx0_" target="_blank" class="yt" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://discord.gg/cQ4wPCRmF" target="_blank" class="discord" title="Discord"><i class="fa-brands fa-discord"></i></a>
-            </div>
-            <div class="hamburger-btn" onclick="openPanel('menuPanel')" title="Menu">
-                <span></span><span></span><span></span>
-            </div>
-            <div class="menu-toggle" id="mobileMenuBtn"><i class="fa-solid fa-bars-staggered"></i></div>
-        </nav>
-    </header>
+<header id="siteHeader">
+  <div class="container nav-inner">
+    <a href="#home" class="brand"><img src="13905.png" alt="Faisal Saber logo" class="brand-logo" onerror="this.remove()">Faisal <em>Saber</em></a>
+    <nav class="links">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#showreel">Showreel</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
 
-    <section class="hero" id="home">
-        <div class="hero-badge">⚡ Premium Free Editing Resources</div>
-        <h1><span>Download Premium Free</span><br><span class="highlight">Editing Resources</span></h1>
-        <p>Free After Effects presets, PNG packs, overlays, AI prompts, LUTs, transitions and more — updated weekly.</p>
-        <div class="hero-stats">
-            <div class="stat-item"><div class="stat-num">55+</div><div class="stat-label">Free Presets</div></div>
-            <div class="stat-item"><div class="stat-num">Weekly</div><div class="stat-label">Updates</div></div>
-            <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Downloads</div></div>
-            <div class="stat-item"><div class="stat-num">Premium</div><div class="stat-label">Quality</div></div>
-        </div>
-        <div class="search-container">
-            <div class="search-wrapper">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="studioSearch" placeholder="Search resources... (e.g. Twixtor, LUT, PNG Packs)">
-                <button class="search-btn">Search</button>
-            </div>
-        </div>
-    </section>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#showreel">Showreel</a>
+  <a href="#capabilities">Capabilities</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
 
-    <!-- SCROLLING CAROUSEL -->
-    <div class="carousel-section">
-        <div class="carousel-track" id="carouselTrack">
-            <!-- Set 1 -->
-            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1520,#091525);"><div class="carousel-card-icon"><i class="fa-solid fa-bolt" style="color:#00f2fe;"></i><span class="carousel-card-label">AE Presets</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#150d20,#1a0925);"><div class="carousel-card-icon"><i class="fa-solid fa-image" style="color:#ff007f;"></i><span class="carousel-card-label">PNG Packs</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1510,#091520);"><div class="carousel-card-icon"><i class="fa-solid fa-palette" style="color:#4facfe;"></i><span class="carousel-card-label">LUT Packs</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#201505,#250d09);"><div class="carousel-card-icon"><i class="fa-solid fa-layer-group" style="color:#ffaa00;"></i><span class="carousel-card-label">Overlays</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#0d0f17,#12141e);"><div class="carousel-card-icon"><i class="fa-solid fa-film" style="color:#00f2fe;"></i><span class="carousel-card-label">Transitions</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#15100d,#1e1209);"><div class="carousel-card-icon"><i class="fa-solid fa-music" style="color:#ff007f;"></i><span class="carousel-card-label">Sound FX</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#050d15,#080f1a);"><div class="carousel-card-icon"><i class="fa-solid fa-robot" style="color:#4facfe;"></i><span class="carousel-card-label">AI Prompts</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#150520,#1a0928);"><div class="carousel-card-icon"><i class="fa-solid fa-font" style="color:#ffaa00;"></i><span class="carousel-card-label">Fonts</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1520,#091525);"><div class="carousel-card-icon"><i class="fa-solid fa-icons" style="color:#00f2fe;"></i><span class="carousel-card-label">Icons</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#150d0d,#1e1009);"><div class="carousel-card-icon"><i class="fa-solid fa-plug" style="color:#ff007f;"></i><span class="carousel-card-label">Plugins</span></div></div>
-            <!-- Set 2 (duplicate for infinite scroll) -->
-            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1520,#091525);"><div class="carousel-card-icon"><i class="fa-solid fa-bolt" style="color:#00f2fe;"></i><span class="carousel-card-label">AE Presets</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#150d20,#1a0925);"><div class="carousel-card-icon"><i class="fa-solid fa-image" style="color:#ff007f;"></i><span class="carousel-card-label">PNG Packs</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1510,#091520);"><div class="carousel-card-icon"><i class="fa-solid fa-palette" style="color:#4facfe;"></i><span class="carousel-card-label">LUT Packs</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#201505,#250d09);"><div class="carousel-card-icon"><i class="fa-solid fa-layer-group" style="color:#ffaa00;"></i><span class="carousel-card-label">Overlays</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#0d0f17,#12141e);"><div class="carousel-card-icon"><i class="fa-solid fa-film" style="color:#00f2fe;"></i><span class="carousel-card-label">Transitions</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#15100d,#1e1209);"><div class="carousel-card-icon"><i class="fa-solid fa-music" style="color:#ff007f;"></i><span class="carousel-card-label">Sound FX</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#050d15,#080f1a);"><div class="carousel-card-icon"><i class="fa-solid fa-robot" style="color:#4facfe;"></i><span class="carousel-card-label">AI Prompts</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#150520,#1a0928);"><div class="carousel-card-icon"><i class="fa-solid fa-font" style="color:#ffaa00;"></i><span class="carousel-card-label">Fonts</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#0d1520,#091525);"><div class="carousel-card-icon"><i class="fa-solid fa-icons" style="color:#00f2fe;"></i><span class="carousel-card-label">Icons</span></div></div>
-            <div class="carousel-card" style="background: linear-gradient(135deg,#150d0d,#1e1009);"><div class="carousel-card-icon"><i class="fa-solid fa-plug" style="color:#ff007f;"></i><span class="carousel-card-label">Plugins</span></div></div>
-        </div>
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="ruler" aria-hidden="true">
+    <div class="track"></div>
+    <div class="tick major" style="left:0%"></div>
+    <div class="tick" style="left:5%"></div>
+    <div class="tick" style="left:10%"></div>
+    <div class="tick" style="left:15%"></div>
+    <div class="tick major" style="left:20%"></div>
+    <div class="tick" style="left:25%"></div>
+    <div class="tick" style="left:30%"></div>
+    <div class="tick" style="left:35%"></div>
+    <div class="tick major" style="left:40%"></div>
+    <div class="tick" style="left:45%"></div>
+    <div class="tick" style="left:50%"></div>
+    <div class="tick" style="left:55%"></div>
+    <div class="tick major" style="left:60%"></div>
+    <div class="tick" style="left:65%"></div>
+    <div class="tick" style="left:70%"></div>
+    <div class="tick" style="left:75%"></div>
+    <div class="tick major" style="left:80%"></div>
+    <div class="tick" style="left:85%"></div>
+    <div class="tick" style="left:90%"></div>
+    <div class="tick" style="left:95%"></div>
+    <div class="tick major" style="left:100%"></div>
+    <div class="playhead"></div>
+  </div>
+  <p class="kicker">Available for edits</p>
+  <h1 class="hero-name" id="heroName">Faisal Saber</h1>
+  <p class="hero-role">Video editor working in <strong>After Effects</strong> — cinematic fan-edits, montage and beat-synced cuts for games, films and creators.</p>
+  <p class="hero-badge"><i class="fas fa-puzzle-piece"></i> Also building After Effects extensions</p>
+  <div class="hero-cta">
+    <a href="#showreel" class="btn btn-primary magnetic"><i class="fas fa-play"></i> Watch showreel</a>
+    <a href="#contact" class="btn btn-ghost magnetic">Get in touch</a>
+  </div>
+  <div class="chiprow">
+    <span class="chip">After Effects</span>
+    <span class="chip">Premiere Pro</span>
+    <span class="chip">Photoshop</span>
+    <span class="chip">ExtendScript (JSX)</span>
+    <span class="chip">3+ years experience</span>
+  </div>
+  <div class="scroll-cue"><span></span>SCROLL</div>
+</section>
+
+<!-- ============ SHOWREEL ============ -->
+<section class="showreel" id="showreel">
+  <div class="container">
+    <div class="sprocket reveal">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="head reveal" style="margin-top:2rem;">
+      <h2>The showreel</h2>
+      <p>Six fan-edits built around films, games and creators I love — cinematic pacing, sound design and color grading throughout. Tap any frame to play.</p>
     </div>
 
-    <!-- FILTER TABS -->
-    <div class="filter-section">
-        <button class="filter-btn active" data-filter="all">All Resources</button>
-        <button class="filter-btn" data-filter="presets">AE Presets</button>
-        <button class="filter-btn" data-filter="packs">Packs</button>
-        <button class="filter-btn" data-filter="tools">Tools</button>
-        <button class="filter-btn" data-filter="ai">AI</button>
-        <button class="filter-btn" data-filter="trending">Trending</button>
+    <div class="reel-grid">
+      <!-- Repeat this block for each clip. Drop your file in videos/ and uncomment the <source> line. -->
+      <div class="reel-card reveal" style="--accent:#ff3fa4;" data-tag="GTA 6" data-title="GTA 6 Edit" data-sub="Trailer-style montage">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/gta6-edit.mp4" type="video/mp4">
+        </video>
+        <div class="reel-placeholder"><div class="play"><i class="fas fa-play"></i></div></div>
+        <span class="reel-tag">GTA 6</span>
+        <div class="reel-foot"><h4>GTA 6 Edit</h4><p>Trailer-style montage</p></div>
+      </div>
+
+      <div class="reel-card reveal" style="--accent:#d4af37;" data-tag="Sadie Sink" data-title="Sadie Sink Edit" data-sub="Cinematic character edit">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/sadie-sink-edit.mp4" type="video/mp4">
+        </video>
+        <div class="reel-placeholder"><div class="play"><i class="fas fa-play"></i></div></div>
+        <span class="reel-tag">Sadie Sink</span>
+        <div class="reel-foot"><h4>Sadie Sink Edit</h4><p>Cinematic character edit</p></div>
+      </div>
+
+      <div class="reel-card reveal" style="--accent:#e23636;" data-tag="Spider-Man" data-title="Spider-Man: Brand New Day Edit" data-sub="Hype trailer edit">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/spiderman-brand-new-day-edit.mp4" type="video/mp4">
+        </video>
+        <div class="reel-placeholder"><div class="play"><i class="fas fa-play"></i></div></div>
+        <span class="reel-tag">Spider-Man</span>
+        <div class="reel-foot"><h4>Spider-Man: Brand New Day Edit</h4><p>Hype trailer edit</p></div>
+      </div>
+
+      <div class="reel-card reveal" style="--accent:#a78bfa;" data-tag="Emma Watson" data-title="Emma Watson Edit" data-sub="Aesthetic character edit">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/emma-watson-edit.mp4" type="video/mp4">
+        </video>
+        <div class="reel-placeholder"><div class="play"><i class="fas fa-play"></i></div></div>
+        <span class="reel-tag">Emma Watson</span>
+        <div class="reel-foot"><h4>Emma Watson Edit</h4><p>Aesthetic character edit</p></div>
+      </div>
+
+      <div class="reel-card reveal" style="--accent:#ff2e2e;" data-tag="Deadpool" data-title="Deadpool Edit" data-sub="High-energy action edit">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/deadpool-edit.mp4" type="video/mp4">
+        </video>
+        <div class="reel-placeholder"><div class="play"><i class="fas fa-play"></i></div></div>
+        <span class="reel-tag">Deadpool</span>
+        <div class="reel-foot"><h4>Deadpool Edit</h4><p>High-energy action edit</p></div>
+      </div>
+
+      <div class="reel-card reveal" style="--accent:#4d6bff;" data-tag="Avengers" data-title="Avengers: Endgame Edit" data-sub="Epic montage edit">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/avengers-endgame-edit.mp4" type="video/mp4">
+        </video>
+        <div class="reel-placeholder"><div class="play"><i class="fas fa-play"></i></div></div>
+        <span class="reel-tag">Avengers</span>
+        <div class="reel-foot"><h4>Avengers: Endgame Edit</h4><p>Epic montage edit</p></div>
+      </div>
     </div>
 
-    <main class="main-catalog" id="catalog">
-        <div class="catalog-header">
-            <h2>Resource <span>Vault</span></h2>
-            <span class="catalog-count" id="packCount">16 Resources Available</span>
-        </div>
+    <p class="reel-note reveal">Fan-made edits created for portfolio and practice purposes. All footage, characters and music remain the property of their respective owners.</p>
 
-        <div class="grid-layout" id="catalogGrid">
-
-            <!-- 1. AE Twixtor Presets -->
-            <div class="studio-card" data-id="twixtor" data-category="presets trending" data-search="twixtor after effects slow motion velocity cinematic ae presets">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(0,242,254,0.15), rgba(79,172,254,0.1));"><i class="fa-solid fa-bolt" style="color:#00f2fe;"></i></div>
-                    </div>
-                    <div class="type-badge">AE</div>
-                    <div class="card-badge">Popular</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="twixtor">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="twixtor">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Slow-Mo</span></div>
-                    <h3 class="card-title">AE Twixtor Presets</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 6 Presets</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('twixtor')">
-                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 2. Zoom Presets -->
-            <div class="studio-card" data-id="zoom" data-category="presets trending" data-search="zoom in out smooth camera whip ae preset after effects">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,0,127,0.15), rgba(255,80,80,0.1));"><i class="fa-solid fa-magnifying-glass-plus" style="color:#ff007f;"></i></div>
-                    </div>
-                    <div class="type-badge">AE</div>
-                    <div class="card-badge">New</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="zoom">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="zoom">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Zoom</span></div>
-                    <h3 class="card-title">Zoom Presets</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 6 Presets</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('zoom')">
-                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 3. Shake Presets -->
-            <div class="studio-card" data-id="shake" data-category="presets" data-search="shake camera hard flash velocity smooth ae after effects preset">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,165,0,0.15), rgba(255,100,0,0.1));"><i class="fa-solid fa-wave-square" style="color:#ffaa00;"></i></div>
-                    </div>
-                    <div class="type-badge">AE</div>
-                    <div class="card-badge">Hot</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="shake">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="shake">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Camera</span></div>
-                    <h3 class="card-title">Shake Presets</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 5 Presets</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('shake')">
-                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 4. Transition Presets -->
-            <div class="studio-card" data-id="transition" data-category="presets trending" data-search="transition smooth glitch wipe slide ae after effects preset">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(79,172,254,0.15), rgba(0,242,254,0.1));"><i class="fa-solid fa-film" style="color:#4facfe;"></i></div>
-                    </div>
-                    <div class="type-badge">AE</div>
-                    <div class="card-badge">Popular</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="transition">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="transition">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Transitions</span></div>
-                    <h3 class="card-title">Transition Presets</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 7 Presets</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('transition')">
-                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 5. Text Animation Presets -->
-            <div class="studio-card" data-id="textanim" data-category="presets" data-search="text animation kinetic typewriter reveal ae after effects preset">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(150,0,255,0.15), rgba(100,0,200,0.1));"><i class="fa-solid fa-text-height" style="color:#b060ff;"></i></div>
-                    </div>
-                    <div class="type-badge">AE</div>
-                    <div class="card-badge">New</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="textanim">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="textanim">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Typography</span></div>
-                    <h3 class="card-title">Text Animation Presets</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 6 Presets</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('textanim')">
-                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 6. Glow Presets -->
-            <div class="studio-card" data-id="glow" data-category="presets" data-search="glow neon light bloom lens flare ae after effects preset">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(0,255,150,0.15), rgba(0,200,100,0.1));"><i class="fa-solid fa-sun" style="color:#00ffaa;"></i></div>
-                    </div>
-                    <div class="type-badge">AE</div>
-                    <div class="card-badge">Popular</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="glow">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="glow">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">Neon</span></div>
-                    <h3 class="card-title">Glow Presets</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 6 Presets</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('glow')">
-                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 7. PNG Packs -->
-            <div class="studio-card" data-id="png" data-category="packs trending" data-search="png pack lightning fire smoke rain snow explosion blood energy transparent">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,0,127,0.15), rgba(200,0,80,0.1));"><i class="fa-solid fa-image" style="color:#ff007f;"></i></div>
-                    </div>
-                    <div class="type-badge">PNG</div>
-                    <div class="card-badge">Popular</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="png">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="png">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Transparent</span><span class="info-tag">VFX</span></div>
-                    <h3 class="card-title">PNG Packs</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 8 Packs</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('png')">
-                        Browse Packs <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 9. Overlay Packs -->
-            <div class="studio-card" data-id="overlay" data-category="packs" data-search="overlay pack vhs grain dust film light leak cinematic">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,165,0,0.15), rgba(200,100,0,0.1));"><i class="fa-solid fa-layer-group" style="color:#ffaa00;"></i></div>
-                    </div>
-                    <div class="type-badge">Overlay</div>
-                    <div class="card-badge">New</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="overlay">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="overlay">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">VHS</span><span class="info-tag">Film</span></div>
-                    <h3 class="card-title">Overlay Packs</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 6 Overlays</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('overlay')">
-                        Browse Packs <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 10. Faisal Saber CC Packs -->
-            <div class="studio-card" data-id="cc" data-category="packs trending" data-search="cc color correction faisal saber main crimson bright dark cinematic film look premiere resolve">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(100,200,255,0.15), rgba(50,150,255,0.1));"><i class="fa-solid fa-palette" style="color:#4facfe;"></i></div>
-                    </div>
-                    <div class="type-badge">CC</div>
-                    <div class="card-badge">Popular</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="cc">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="cc">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Faisal Saber</span><span class="info-tag">Color Correction</span></div>
-                    <h3 class="card-title">Faisal Saber CC Packs</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 4 CC Presets</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('cc')">
-                        Browse Presets <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 11. Sound Effects -->
-            <div class="studio-card" data-id="sfx" data-category="packs" data-search="sound effects sfx whoosh impact bass drop cinematic audio">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,80,80,0.15), rgba(200,0,0,0.1));"><i class="fa-solid fa-music" style="color:#ff5050;"></i></div>
-                    </div>
-                    <div class="type-badge">Audio</div>
-                    <div class="card-badge">Hot</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="sfx">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="sfx">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">SFX</span><span class="info-tag">Royalty-Free</span></div>
-                    <h3 class="card-title">Sound Effects</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 8 SFX</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('sfx')">
-                        Browse SFX <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 12. Fonts -->
-            <div class="studio-card" data-id="fonts" data-category="tools" data-search="fonts typography display serif sans editing graphic design">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(200,100,255,0.15), rgba(150,50,200,0.1));"><i class="fa-solid fa-font" style="color:#d080ff;"></i></div>
-                    </div>
-                    <div class="type-badge">Fonts</div>
-                    <div class="card-badge">New</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="fonts">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="fonts">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Typography</span><span class="info-tag">Display</span></div>
-                    <h3 class="card-title">Fonts</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 6 Fonts</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('fonts')">
-                        Browse Fonts <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 13. AI Prompt Library -->
-            <div class="studio-card" data-id="aiprompt" data-category="ai trending" data-search="ai prompt chatgpt midjourney stable diffusion sora cinematic art">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(0,242,254,0.15), rgba(0,150,200,0.1));"><i class="fa-solid fa-robot" style="color:#00f2fe;"></i></div>
-                    </div>
-                    <div class="type-badge">AI</div>
-                    <div class="card-badge">Hot</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="aiprompt">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="aiprompt">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">AI Prompts</span><span class="info-tag">Midjourney</span></div>
-                    <h3 class="card-title">AI Prompt Library</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 6 Prompts</span>
-                        <span><i class="fa-solid fa-star"></i> Copy & Use</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('aiprompt')">
-                        Browse Prompts <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 14. Icons -->
-            <div class="studio-card" data-id="icons" data-category="tools packs" data-search="icons ui svg vector editor graphic design pack free">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(0,255,200,0.15), rgba(0,200,150,0.1));"><i class="fa-solid fa-icons" style="color:#00ffcc;"></i></div>
-                    </div>
-                    <div class="type-badge">Icons</div>
-                    <div class="card-badge">New</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="icons">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="icons">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">SVG</span><span class="info-tag">Vector</span></div>
-                    <h3 class="card-title">Icons</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 6 Packs</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('icons')">
-                        Browse Icons <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 15. AE Scripts -->
-            <div class="studio-card" data-id="aescripts" data-category="tools trending" data-search="ae scripts after effects automation jsx script workflow">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,200,0,0.15), rgba(200,130,0,0.1));"><i class="fa-solid fa-code" style="color:#ffd000;"></i></div>
-                    </div>
-                    <div class="type-badge">Script</div>
-                    <div class="card-badge">Popular</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="aescripts">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="aescripts">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">After Effects</span><span class="info-tag">JSX</span></div>
-                    <h3 class="card-title">AE Scripts</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 5 Scripts</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('aescripts')">
-                        Browse Scripts <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 16. Plugins -->
-            <div class="studio-card" data-id="plugins" data-category="tools" data-search="plugins after effects premiere video editing free vfx motion">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(255,50,50,0.15), rgba(200,0,0,0.1));"><i class="fa-solid fa-plug" style="color:#ff5050;"></i></div>
-                    </div>
-                    <div class="type-badge">Plugin</div>
-                    <div class="card-badge">Hot</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="plugins">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="plugins">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">VFX</span><span class="info-tag">Workflow</span></div>
-                    <h3 class="card-title">Plugins</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 5 Plugins</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('plugins')">
-                        Browse Plugins <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 17. Motion Graphics -->
-            <div class="studio-card" data-id="mograph" data-category="packs trending" data-search="motion graphics templates lower third title card ae premiere template">
-                <div class="card-media">
-                    <div class="card-icon-wrap">
-                        <div class="card-icon-bg" style="background: linear-gradient(135deg, rgba(80,100,255,0.15), rgba(40,50,200,0.1));"><i class="fa-solid fa-shapes" style="color:#8090ff;"></i></div>
-                    </div>
-                    <div class="type-badge">MOGRT</div>
-                    <div class="card-badge">New</div>
-                    <div class="card-stats-row">
-                        <span class="stat-pill stat-view"><i class="fa-solid fa-eye"></i> <span class="stat-count" data-views="mograph">0</span></span>
-                        <span class="stat-pill stat-download"><i class="fa-solid fa-download"></i> <span class="stat-count" data-downloads="mograph">0</span></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="card-info-tags"><span class="info-tag">Templates</span><span class="info-tag">Lower Third</span></div>
-                    <h3 class="card-title">Motion Graphics</h3>
-                    <div class="card-meta-specs">
-                        <span><i class="fa-solid fa-cubes"></i> 6 Templates</span>
-                        <span><i class="fa-solid fa-star"></i> Premium Free</span>
-                    </div>
-                    <button class="card-action-btn" onclick="openResourceModal('mograph')">
-                        Browse Templates <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-    <!-- TUTORIALS SECTION -->
-    <section id="tutorials" style="max-width:1440px;margin:0 auto;padding:4rem 1.5rem 2rem;">
-        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:2.5rem;border-bottom:1px solid var(--glass-border);padding-bottom:1.2rem;">
-            <h2 style="font-family:var(--font-display);font-size:2rem;text-transform:uppercase;letter-spacing:-1px;">Editing <span style="color:var(--primary);">Tutorials</span></h2>
-            <a href="tutorials.html" style="font-size:0.82rem;font-weight:700;color:var(--primary);text-decoration:none;">View All &rarr;</a>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px;">
-            <a href="twixtor-guide.html" style="background:var(--bg-card);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--text-main);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(0,242,254,0.3)';this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='var(--glass-border)';this.style.transform='translateY(0)'">
-                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);padding:4px 12px;border-radius:50px;width:fit-content;">After Effects</span>
-                <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;line-height:1.4;">How to Use Twixtor Presets in After Effects — Complete Beginner Guide</h3>
-                <p style="font-size:0.87rem;color:var(--text-sub);line-height:1.75;flex:1;">Install and apply Twixtor presets to create ultra-smooth cinematic slow motion in After Effects. Step-by-step with troubleshooting tips.</p>
-                <div style="display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--glass-border);"><span style="font-size:0.78rem;color:var(--text-sub);">5 min read</span><span style="font-size:0.82rem;font-weight:700;color:var(--primary);">Read &rarr;</span></div>
-            </a>
-            <a href="luts-guide.html" style="background:var(--bg-card);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--text-main);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(0,242,254,0.3)';this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='var(--glass-border)';this.style.transform='translateY(0)'">
-                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);padding:4px 12px;border-radius:50px;width:fit-content;">Color Grading</span>
-                <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;line-height:1.4;">Top 5 Free LUTs for Cinematic Color Grading in 2026</h3>
-                <p style="font-size:0.87rem;color:var(--text-sub);line-height:1.75;flex:1;">The best free LUTs for Premiere Pro and DaVinci Resolve — teal & orange, film emulation, moody dark, and more.</p>
-                <div style="display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--glass-border);"><span style="font-size:0.78rem;color:var(--text-sub);">6 min read</span><span style="font-size:0.82rem;font-weight:700;color:var(--primary);">Read &rarr;</span></div>
-            </a>
-            <a href="transitions-guide.html" style="background:var(--bg-card);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--text-main);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(0,242,254,0.3)';this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='var(--glass-border)';this.style.transform='translateY(0)'">
-                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);padding:4px 12px;border-radius:50px;width:fit-content;">Transitions</span>
-                <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;line-height:1.4;">Best Free Transition Presets for After Effects — 2026 Edition</h3>
-                <p style="font-size:0.87rem;color:var(--text-sub);line-height:1.75;flex:1;">7 essential transitions every editor should know — glitch, zoom, whip pan, light leak and how to apply each one.</p>
-                <div style="display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--glass-border);"><span style="font-size:0.78rem;color:var(--text-sub);">5 min read</span><span style="font-size:0.82rem;font-weight:700;color:var(--primary);">Read &rarr;</span></div>
-            </a>
-            <a href="sfx-guide.html" style="background:var(--bg-card);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--text-main);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(0,242,254,0.3)';this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='var(--glass-border)';this.style.transform='translateY(0)'">
-                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);padding:4px 12px;border-radius:50px;width:fit-content;">Sound Design</span>
-                <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;line-height:1.4;">How to Add Sound Effects to Your Edits — Complete Guide</h3>
-                <p style="font-size:0.87rem;color:var(--text-sub);line-height:1.75;flex:1;">Professional SFX techniques — frame-perfect sync, layering sounds, audio ducking, and the 6 SFX types every editor needs.</p>
-                <div style="display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--glass-border);"><span style="font-size:0.78rem;color:var(--text-sub);">7 min read</span><span style="font-size:0.82rem;font-weight:700;color:var(--primary);">Read &rarr;</span></div>
-            </a>
-            <a href="presets-guide.html" style="background:var(--bg-card);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--text-main);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(0,242,254,0.3)';this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='var(--glass-border)';this.style.transform='translateY(0)'">
-                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);padding:4px 12px;border-radius:50px;width:fit-content;">Presets</span>
-                <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;line-height:1.4;">What Are After Effects Presets and How Do You Install Them?</h3>
-                <p style="font-size:0.87rem;color:var(--text-sub);line-height:1.75;flex:1;">Beginner's guide to .ffx presets, project files, and Motion Bro — with a complete step-by-step installation tutorial.</p>
-                <div style="display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--glass-border);"><span style="font-size:0.78rem;color:var(--text-sub);">4 min read</span><span style="font-size:0.82rem;font-weight:700;color:var(--primary);">Read &rarr;</span></div>
-            </a>
-            <a href="ai-prompts-guide.html" style="background:var(--bg-card);border:1px solid var(--glass-border);border-radius:16px;padding:1.8rem;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--text-main);transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(0,242,254,0.3)';this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='var(--glass-border)';this.style.transform='translateY(0)'">
-                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);padding:4px 12px;border-radius:50px;width:fit-content;">AI Tools</span>
-                <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;line-height:1.4;">How to Write AI Prompts for Cinematic Visuals — Midjourney & Sora Guide</h3>
-                <p style="font-size:0.87rem;color:var(--text-sub);line-height:1.75;flex:1;">Master cinematic AI prompts for Midjourney and Sora. Includes ready-to-use example prompts for portraits, landscapes, and thumbnails.</p>
-                <div style="display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--glass-border);"><span style="font-size:0.78rem;color:var(--text-sub);">8 min read</span><span style="font-size:0.82rem;font-weight:700;color:var(--primary);">Read &rarr;</span></div>
-            </a>
-        </div>
-    </section>
-
-    <!-- DISCLAIMER BAR -->
-    <div style="background:rgba(255,165,0,0.05);border-top:1px solid rgba(255,165,0,0.12);padding:1rem 1.5rem;text-align:center;">
-        <p style="font-size:0.8rem;color:var(--text-sub);max-width:1000px;margin:0 auto;line-height:1.6;"><strong style="color:#ffaa00;">Disclaimer:</strong> All resources on this website are shared for free educational and creative purposes only. We do not claim ownership of any third-party software names. If you believe any content violates your copyright, please <a href="mailto:ka9190430@gmail.com" style="color:#ffaa00;">contact us</a> immediately.</p>
+    <div class="sprocket reveal" style="margin-top:2.5rem;">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
-    </main>
+  </div>
+</section>
 
-    <!-- RESOURCE MODAL -->
-    <div class="modal-overlay" id="resourceModal">
-        <div class="modal-window">
-            <div class="modal-close-btn" onclick="closeResourceModal()"><i class="fa-solid fa-xmark"></i></div>
-            <div class="modal-header-banner">
-                <div class="modal-header-icon" id="modalHeaderIcon"></div>
-                <div>
-                    <h3 class="modal-title" id="modalTitle">Resource Pack</h3>
-                    <p class="modal-subtitle" id="modalSubtitle">Free download — no sign up required</p>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.4rem; background: linear-gradient(90deg, rgba(0,242,254,0.07), rgba(255,0,127,0.07)); border: 1px solid rgba(0,242,254,0.18); padding: 12px 18px; border-radius: 12px;">
-                    <i class="fa-solid fa-pen-nib" style="color: var(--primary); font-size:1rem;"></i>
-                    <div>
-                        <p style="margin:0; font-size:0.7rem; color:var(--text-sub); text-transform:uppercase; letter-spacing:1px;">Resource Creator</p>
-                        <p style="margin:0; font-family:var(--font-display); font-weight:700; font-size:0.95rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Curated by Faisal Saber</p>
-                    </div>
-                </div>
-                <div id="modalContent"></div>
-            </div>
-        </div>
+<!-- ============ CAPABILITIES ============ -->
+<section class="capabilities" id="capabilities">
+  <div class="container">
+    <div class="head reveal">
+      <h2>What I do</h2>
     </div>
 
-    <!-- PANEL OVERLAY -->
-    <div class="panel-overlay" id="panelOverlay" onclick="closeAllPanels()"></div>
-
-    <!-- MENU PANEL -->
-    <div class="side-panel" id="menuPanel">
-        <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
-        <div class="panel-header">
-            <h2><span>Quick Menu</span></h2>
-        </div>
-        <div class="panel-body">
-            <div style="display:flex; flex-direction:column; gap:12px;">
-                <a class="contact-link-btn" onclick="switchPanel('contactPanel')" style="cursor:pointer;">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div><div style="font-weight:700;">Contact Us</div><div style="font-size:0.78rem;color:var(--text-sub);">Get in touch with Faisal Saber</div></div>
-                    <i class="fa-solid fa-chevron-right" style="margin-left:auto; color:var(--text-sub); font-size:0.8rem;"></i>
-                </a>
-                <a class="contact-link-btn" onclick="switchPanel('aboutPanel')" style="cursor:pointer;">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <div><div style="font-weight:700;">About Us</div><div style="font-size:0.78rem;color:var(--text-sub);">Learn about this platform</div></div>
-                    <i class="fa-solid fa-chevron-right" style="margin-left:auto; color:var(--text-sub); font-size:0.8rem;"></i>
-                </a>
-                <a class="contact-link-btn" onclick="switchPanel('privacyPanel')" style="cursor:pointer;">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <div><div style="font-weight:700;">Privacy Policy</div><div style="font-size:0.78rem;color:var(--text-sub);">How we handle your data</div></div>
-                    <i class="fa-solid fa-chevron-right" style="margin-left:auto; color:var(--text-sub); font-size:0.8rem;"></i>
-                </a>
-            </div>
-            <div style="margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--glass-border);">
-                <p style="color:var(--text-sub); font-size:0.82rem; margin-bottom:1rem;">Follow Faisal Saber</p>
-                <div style="display:flex; gap:12px;">
-                    <a href="https://www.instagram.com/faisal_saber__?igsh=d2s3YW5qZmdlMTdz" target="_blank" style="color:var(--text-sub); font-size:1.4rem; text-decoration:none; transition:0.2s;" onmouseover="this.style.color='#e1306c'" onmouseout="this.style.color='var(--text-sub)'"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com/@faisal_saber?si=j4rFSB24CGbHPx0_" target="_blank" style="color:var(--text-sub); font-size:1.4rem; text-decoration:none; transition:0.2s;" onmouseover="this.style.color='#ff0000'" onmouseout="this.style.color='var(--text-sub)'"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://discord.gg/cQ4wPCRmF" target="_blank" style="color:var(--text-sub); font-size:1.4rem; text-decoration:none; transition:0.2s;" onmouseover="this.style.color='#5865f2'" onmouseout="this.style.color='var(--text-sub)'"><i class="fa-brands fa-discord"></i></a>
-                </div>
-            </div>
-        </div>
+    <div class="cap-row reveal">
+      <h3>Montage edits</h3>
+      <p>Fast-paced, rhythm-driven cuts built to hold attention from the first second to the last frame.</p>
     </div>
-
-    <!-- CONTACT PANEL -->
-    <div class="side-panel" id="contactPanel">
-        <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
-        <div class="panel-header"><h2>Contact <span>Us</span></h2></div>
-        <div class="panel-body">
-            <p>Have a request, feedback, or collaboration idea? Faisal Saber personally reads every message.</p>
-            <h3>Send an Email</h3>
-            <div class="contact-form-row">
-                <a href="mailto:ka9190430@gmail.com" class="contact-link-btn">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div><div style="font-weight:700; font-size:0.95rem;">ka9190430@gmail.com</div><div style="font-size:0.78rem; color:var(--text-sub);">Click to open your email app</div></div>
-                </a>
-            </div>
-            <h3>Social Media</h3>
-            <div class="contact-form-row">
-                <a href="https://www.instagram.com/faisal_saber__?igsh=d2s3YW5qZmdlMTdz" target="_blank" class="contact-link-btn">
-                    <i class="fa-brands fa-instagram" style="color:#e1306c;"></i>
-                    <div><div style="font-weight:700;">Instagram</div><div style="font-size:0.78rem; color:var(--text-sub);">@faisal_saber__</div></div>
-                </a>
-                <a href="https://youtube.com/@faisal_saber?si=j4rFSB24CGbHPx0_" target="_blank" class="contact-link-btn">
-                    <i class="fa-brands fa-youtube" style="color:#ff0000;"></i>
-                    <div><div style="font-weight:700;">YouTube</div><div style="font-size:0.78rem; color:var(--text-sub);">@faisal_saber</div></div>
-                </a>
-                <a href="https://discord.gg/cQ4wPCRmF" target="_blank" class="contact-link-btn">
-                    <i class="fa-brands fa-discord" style="color:#5865f2;"></i>
-                    <div><div style="font-weight:700;">Discord Server</div><div style="font-size:0.78rem; color:var(--text-sub);">Join our community</div></div>
-                </a>
-            </div>
-        </div>
+    <div class="cap-row reveal">
+      <h3>Beat-synced editing</h3>
+      <p>Cuts, transitions and effects placed precisely against the track, so the edit moves with the music.</p>
     </div>
-
-    <!-- ABOUT PANEL -->
-    <div class="side-panel" id="aboutPanel">
-        <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
-        <div class="panel-header"><h2>About <span>Us</span></h2></div>
-        <div class="panel-body">
-            <p>Welcome to <strong style="color:var(--primary);">Faisal Saber Editing Resources</strong> — the internet's most premium destination for free, high-quality editing assets built specifically for video editors and motion designers.</p>
-            <p>This platform was created by <strong style="color:var(--text-main);">Faisal Saber</strong>, a passionate video editor and content creator who understands exactly what editors need.</p>
-            <h3>What We Offer</h3>
-            <p>Every resource on this platform is carefully curated and tested — from After Effects presets and LUTs to PNG packs, AI prompts, and motion graphics templates. Everything is 100% free.</p>
-            <h3>Our Mission</h3>
-            <p>To give every editor — beginner or pro — access to the same premium tools used in top YouTube edits and AMVs, completely free.</p>
-            <h3>Community</h3>
-            <p>Join thousands of editors on our Discord server to share your edits, request new resources, and connect with fellow creators.</p>
-            <div style="margin-top:1.5rem; padding:16px; background:rgba(0,242,254,0.05); border:1px solid rgba(0,242,254,0.15); border-radius:12px;">
-                <p style="margin:0; font-family:var(--font-display); font-weight:700; color:var(--primary); font-size:0.9rem;">⚡ Built with passion by Faisal Saber</p>
-            </div>
-        </div>
+    <div class="cap-row reveal">
+      <h3>Webseries &amp; movie-style edits</h3>
+      <p>Long-form narrative pacing, with color and sound treated the way a film would be.</p>
     </div>
-
-    <!-- PRIVACY PANEL -->
-    <div class="side-panel" id="privacyPanel">
-        <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
-        <div class="panel-header"><h2>Privacy <span>Policy</span></h2></div>
-        <div class="panel-body">
-            <p style="font-size:0.8rem; color:var(--text-sub);">Last updated: June 2026</p>
-            <div class="privacy-section"><h3>1. Information We Collect</h3><p>This website does not collect any personally identifiable information from visitors. We do not require registration to access our resources.</p></div>
-            <div class="privacy-section"><h3>2. Cookies & Advertising</h3><p>This website uses <strong style="color:var(--text-main);">Google AdSense</strong>, a third-party advertising service by Google LLC. Google AdSense uses cookies to serve personalized ads based on your prior visits to this and other websites. You can opt out at <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--primary);">Google Ads Settings</a>. No personal data is sold to any third party.</p></div>
-            <div class="privacy-section"><h3>3. Third-Party Links</h3><p>Resources are hosted on MediaFire and Google Drive. Please review their privacy policies as we are not responsible for their data practices.</p></div>
-            <div class="privacy-section"><h3>4. Analytics</h3><p>We may use anonymized, aggregated analytics to understand site traffic. This data does not identify individual users.</p></div>
-            <div class="privacy-section"><h3>5. Copyright</h3><p>All resources are shared for free, non-commercial creative use. If you believe content infringes your rights, contact <a href="mailto:ka9190430@gmail.com" style="color:var(--primary);">ka9190430@gmail.com</a> and we will act promptly.</p></div>
-            <div class="privacy-section"><h3>6. Contact</h3><p>For privacy concerns: <a href="mailto:ka9190430@gmail.com" style="color:var(--primary);">ka9190430@gmail.com</a></p></div>
-        </div>
+    <div class="cap-row reveal">
+      <h3>After Effects extensions</h3>
+      <p>CEP panel tools written in ExtendScript, JavaScript, HTML and CSS — presets, captions and animation, a click away inside After Effects.</p>
     </div>
+  </div>
+</section>
 
-    <!-- TERMS OF SERVICE PANEL -->
-    <div class="side-panel" id="termsPanel">
-        <div class="panel-close" onclick="closeAllPanels()"><i class="fa-solid fa-xmark"></i></div>
-        <div class="panel-header"><h2>Terms of <span>Service</span></h2></div>
-        <div class="panel-body">
-            <p style="font-size:0.8rem; color:var(--text-sub);">Last updated: June 2026</p>
-            <div class="privacy-section"><h3>1. Acceptance</h3><p>By using faisalsaber.xyz you agree to these Terms. If you do not agree, please do not use this website.</p></div>
-            <div class="privacy-section"><h3>2. Use of Resources</h3><p>All resources are for personal, non-commercial, creative use only. You may not resell, redistribute, or claim ownership of any resource from this platform.</p></div>
-            <div class="privacy-section"><h3>3. Intellectual Property</h3><p>The design and branding of this website belong to Faisal Saber. Third-party brand names mentioned are property of their respective owners.</p></div>
-            <div class="privacy-section"><h3>4. Disclaimer</h3><p>All resources are provided "as is" without warranty. We are not responsible for compatibility issues or data loss resulting from use of resources on this platform.</p></div>
-            <div class="privacy-section"><h3>5. Advertising</h3><p>This website displays ads served by Google AdSense. We are not responsible for third-party ad content.</p></div>
-            <div class="privacy-section"><h3>6. Contact</h3><p><a href="mailto:ka9190430@gmail.com" style="color:var(--primary);">ka9190430@gmail.com</a></p></div>
-        </div>
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-copy reveal">
+      <div class="head" style="margin-bottom:1.4rem;">
+        <h2>About</h2>
+      </div>
+      <p>I'm Faisal Saber, a video editor with three-plus years inside After Effects — cutting montages, beat-synced edits, and webseries- and movie-style pieces.</p>
+      <p>Alongside editing, I build After Effects extensions of my own: CEP panels written in ExtendScript, JavaScript, HTML and CSS that put presets, captions and animation tools a click away.</p>
+      <div class="about-chips">
+        <span class="chip">After Effects</span>
+        <span class="chip">Premiere Pro</span>
+        <span class="chip">Photoshop</span>
+        <span class="chip">ExtendScript / JSX</span>
+        <span class="chip">HTML &amp; CSS</span>
+      </div>
     </div>
+    <div class="about-panel glass reveal">
+      <div class="stat"><b>3+</b><span>Years in After Effects</span></div>
+      <div class="stat"><b>CEP</b><span>Extensions built for After Effects</span></div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="footer-logo-area">
-                    <img src="13905.png" alt="Faisal Saber Footer Logo" class="footer-logo-img-asset">
-                    <span style="font-size: 18px; font-family: var(--font-display); font-weight: 700;">FAISAL SABER</span>
-                </div>
-                <p>Premium free editing resources — AE presets, PNG packs, LUTs, overlays, AI prompts, transitions and more. Updated weekly.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#catalog">Resource Vault</a></li>
-                    <li><a onclick="openPanel('aboutPanel')" style="cursor:pointer;">About Us</a></li>
-                    <li><a onclick="openPanel('contactPanel')" style="cursor:pointer;">Contact Us</a></li>
-                    <li><a onclick="openPanel('privacyPanel')" style="cursor:pointer;">Privacy Policy</a></li>
-                    <li><a onclick="openPanel('termsPanel')" style="cursor:pointer;">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Socials</h4>
-                <ul>
-                    <li><a href="https://www.instagram.com/faisal_saber__?igsh=d2s3YW5qZmdlMTdz" target="_blank">Instagram</a></li>
-                    <li><a href="https://youtube.com/@faisal_saber?si=j4rFSB24CGbHPx0_" target="_blank">YouTube</a></li>
-                    <li><a href="https://discord.gg/cQ4wPCRmF" target="_blank">Discord</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Faisal Saber Studios. All Rights Reserved.</p>
-            <p class="footer-signature">Made By Faisal Saber ⚡</p>
-        </div>
-    </footer>
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="head center reveal">
+      <h2>Got an edit in mind?</h2>
+      <p>Reach out on whichever you check first — email, Instagram or YouTube.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="tile glass reveal" href="mailto:fskgamerzztc@gmail.com">
+        <div class="tile-icon"><i class="fas fa-envelope"></i></div>
+        <div><div class="tile-label">Email</div><div class="tile-value">fskgamerzztc@gmail.com</div></div>
+      </a>
+      <a class="tile glass reveal" href="https://www.instagram.com/faisal_saber__?stkn=d2s3YW5qZmdlMTdz" target="_blank" rel="noopener">
+        <div class="tile-icon"><i class="fab fa-instagram"></i></div>
+        <div><div class="tile-label">Instagram</div><div class="tile-value">@faisal_saber__</div></div>
+      </a>
+      <a class="tile glass reveal" href="https://youtube.com/@faisal_saber?si=lPcSImo7Vw5a7_2B" target="_blank" rel="noopener">
+        <div class="tile-icon"><i class="fab fa-youtube"></i></div>
+        <div><div class="tile-label">YouTube</div><div class="tile-value">@faisal_saber</div></div>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // ===== RESOURCE DATA =====
-        // ✅ HOW TO UPDATE LINKS:
-        // Har item mein "mediafire" field hai.
-        // MediaFire par file upload karo, share link copy karo,
-        // aur neeche us item ka "mediafire": "YOUR_LINK_HERE" replace kar do.
-        // Example: mediafire: 'https://www.mediafire.com/file/abc123/SmoothTwixtor.zip/file'
+<footer>
+  <div class="container foot-inner">
+    <p>&copy; 2026 Faisal Saber</p>
+    <div class="foot-links">
+      <a href="mailto:fskgamerzztc@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/faisal_saber__?stkn=d2s3YW5qZmdlMTdz" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@faisal_saber?si=lPcSImo7Vw5a7_2B" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
 
-        const RESOURCES = {
-            twixtor: {
-                title: 'AE Twixtor Presets',
-                subtitle: '6 After Effects presets for cinematic slow-motion',
-                icon: '<i class="fa-solid fa-bolt" style="color:#00f2fe;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(0,242,254,0.2), rgba(79,172,254,0.15))',
-                type: 'preset',
-                items: [
-                    { name: 'Smooth Twixtor',    desc: 'Ultra-smooth slow-motion ramp, perfect for cinematic edits',        badge: 'popular', dl: '3.2K', mediafire: 'https://en.wikipedia.org/wiki/MediaFire' },
-                    { name: 'Slow Twixtor',      desc: 'Deep slow-mo preset with natural motion blur',                      badge: 'hot',     dl: '2.8K', mediafire: 'https://www.mediafire.com/file/SLOW_TWIXTOR/file' },
-                    { name: 'Fast Twixtor',      desc: 'Quick velocity ramp for fast-paced action sequences',               badge: 'new',     dl: '1.5K', mediafire: 'https://www.mediafire.com/file/FAST_TWIXTOR/file' },
-                    { name: 'Velocity Twixtor',  desc: 'Smooth in/out velocity curves for dynamic flow',                   badge: 'popular', dl: '2.1K', mediafire: 'https://www.mediafire.com/file/VELOCITY_TWIXTOR/file' },
-                    { name: 'Microwave Twixtor', desc: 'Signature microwave-style stuttered slow-motion effect',            badge: 'hot',     dl: '4.0K', mediafire: 'https://www.mediafire.com/file/MICROWAVE_TWIXTOR/file' },
-                    { name: 'Cinematic Twixtor', desc: 'Film-grade slow-motion with cinematic easing curves',               badge: 'new',     dl: '1.9K', mediafire: 'https://www.mediafire.com/file/CINEMATIC_TWIXTOR/file' },
-                ]
-            },
-            zoom: {
-                title: 'Zoom Presets',
-                subtitle: '6 smooth zoom presets for dynamic transitions',
-                icon: '<i class="fa-solid fa-magnifying-glass-plus" style="color:#ff007f;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(255,0,127,0.2), rgba(255,80,80,0.15))',
-                type: 'preset',
-                items: [
-                    { name: 'Smooth Zoom In',  desc: 'Elegant slow zoom-in with ease curves',                              badge: 'popular', dl: '2.4K', mediafire: 'https://www.mediafire.com/file/SMOOTH_ZOOM_IN/file' },
-                    { name: 'Smooth Zoom Out', desc: 'Fluid zoom-out perfect for dramatic reveals',                        badge: 'new',     dl: '1.8K', mediafire: 'https://www.mediafire.com/file/SMOOTH_ZOOM_OUT/file' },
-                    { name: 'Fast Zoom In',    desc: 'Punchy rapid zoom-in for high-energy cuts',                         badge: 'hot',     dl: '3.1K', mediafire: 'https://www.mediafire.com/file/FAST_ZOOM_IN/file' },
-                    { name: 'Fast Zoom Out',   desc: 'Snappy zoom-out for impact moments',                                badge: 'popular', dl: '2.0K', mediafire: 'https://www.mediafire.com/file/FAST_ZOOM_OUT/file' },
-                    { name: 'Camera Zoom',     desc: 'Realistic camera lens zoom simulation',                             badge: 'new',     dl: '1.6K', mediafire: 'https://www.mediafire.com/file/CAMERA_ZOOM/file' },
-                    { name: 'Whip Zoom',       desc: 'Aggressive whip-pan zoom for AMV-style transitions',                badge: 'hot',     dl: '3.7K', mediafire: 'https://www.mediafire.com/file/WHIP_ZOOM/file' },
-                ]
-            },
-            shake: {
-                title: 'Shake Presets',
-                subtitle: '5 camera shake presets for raw cinematic energy',
-                icon: '<i class="fa-solid fa-wave-square" style="color:#ffaa00;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(255,165,0,0.2), rgba(255,100,0,0.15))',
-                type: 'preset',
-                items: [
-                    { name: 'Smooth Shake',   desc: 'Subtle hand-held camera feel for organic motion',                     badge: 'popular', dl: '2.2K', mediafire: 'https://www.mediafire.com/file/SMOOTH_SHAKE/file' },
-                    { name: 'Hard Shake',     desc: 'Intense impact shake for explosions and hits',                        badge: 'hot',     dl: '3.5K', mediafire: 'https://www.mediafire.com/file/HARD_SHAKE/file' },
-                    { name: 'Camera Shake',   desc: 'Realistic handheld camera shake simulation',                         badge: 'popular', dl: '2.8K', mediafire: 'https://www.mediafire.com/file/CAMERA_SHAKE/file' },
-                    { name: 'Flash Shake',    desc: 'Quick flash-shake combo for beat drops',                             badge: 'new',     dl: '1.9K', mediafire: 'https://www.mediafire.com/file/FLASH_SHAKE/file' },
-                    { name: 'Velocity Shake', desc: 'Speed-synced shake that reacts to motion velocity',                  badge: 'hot',     dl: '4.1K', mediafire: 'https://www.mediafire.com/file/VELOCITY_SHAKE/file' },
-                ]
-            },
-            transition: {
-                title: 'Transition Presets',
-                subtitle: '7 cinematic transition presets for seamless cuts',
-                icon: '<i class="fa-solid fa-film" style="color:#4facfe;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(79,172,254,0.2), rgba(0,242,254,0.15))',
-                type: 'preset',
-                items: [
-                    { name: 'Glitch Transition', desc: 'Digital glitch effect for edgy scene cuts',                       badge: 'hot',     dl: '4.5K', mediafire: 'https://www.mediafire.com/file/GLITCH_TRANSITION/file' },
-                    { name: 'Whip Pan',          desc: 'Classic whip-pan transition with motion blur',                   badge: 'popular', dl: '3.2K', mediafire: 'https://www.mediafire.com/file/WHIP_PAN/file' },
-                    { name: 'Light Leak',        desc: 'Organic film light-leak transition overlay',                     badge: 'new',     dl: '2.1K', mediafire: 'https://www.mediafire.com/file/LIGHT_LEAK/file' },
-                    { name: 'Zoom Blur',         desc: 'Zoom-blur push-in/pull-out transition',                          badge: 'hot',     dl: '3.8K', mediafire: 'https://www.mediafire.com/file/ZOOM_BLUR/file' },
-                    { name: 'Flash Cut',         desc: 'White flash cut for high-impact moments',                        badge: 'popular', dl: '2.6K', mediafire: 'https://www.mediafire.com/file/FLASH_CUT/file' },
-                    { name: 'Slide Transition',  desc: 'Smooth directional slide with motion blur',                      badge: 'new',     dl: '1.7K', mediafire: 'https://www.mediafire.com/file/SLIDE_TRANSITION/file' },
-                    { name: 'Spin Transition',   desc: '360-degree spin transition with depth blur',                     badge: 'popular', dl: '2.9K', mediafire: 'https://www.mediafire.com/file/SPIN_TRANSITION/file' },
-                ]
-            },
-            textanim: {
-                title: 'Text Animation Presets',
-                subtitle: '6 kinetic typography presets for After Effects',
-                icon: '<i class="fa-solid fa-text-height" style="color:#b060ff;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(150,0,255,0.2), rgba(100,0,200,0.15))',
-                type: 'image',
-                items: [
-                    { name: 'Typewriter Reveal', desc: 'Classic typewriter character-by-character reveal',                badge: 'popular', dl: '2.1K', image: 'textanim-typewriter.jpg',   mediafire: 'https://www.mediafire.com/file/TYPEWRITER_REVEAL/file' },
-                    { name: 'Word Bounce',       desc: 'Elastic word-bounce with overshoot easing',                      badge: 'new',     dl: '1.4K', image: 'textanim-word-bounce.jpg',  mediafire: 'https://www.mediafire.com/file/WORD_BOUNCE/file' },
-                    { name: 'Glitch Text',       desc: 'Digital glitch-style text scramble animation',                   badge: 'hot',     dl: '3.0K', image: 'textanim-glitch-text.jpg',  mediafire: 'https://www.mediafire.com/file/GLITCH_TEXT/file' },
-                    { name: 'Fade Rise',         desc: 'Clean fade-up reveal for professional titles',                   badge: 'popular', dl: '2.5K', image: 'textanim-fade-rise.jpg',    mediafire: 'https://www.mediafire.com/file/FADE_RISE/file' },
-                    { name: 'Kinetic Slide',     desc: 'Fast-sliding kinetic text with tracking animation',              badge: 'new',     dl: '1.2K', image: 'textanim-kinetic-slide.jpg',mediafire: 'https://www.mediafire.com/file/KINETIC_SLIDE/file' },
-                    { name: 'Blur Reveal',       desc: 'Gaussian blur-to-sharp dramatic text reveal',                    badge: 'hot',     dl: '2.8K', image: 'textanim-blur-reveal.jpg',  mediafire: 'https://www.mediafire.com/file/BLUR_REVEAL/file' },
-                ]
-            },
-            glow: {
-                title: 'Glow Presets',
-                subtitle: '6 neon glow and bloom presets for cinematic flair',
-                icon: '<i class="fa-solid fa-sun" style="color:#00ffaa;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(0,255,150,0.2), rgba(0,200,100,0.15))',
-                type: 'preset',
-                items: [
-                    { name: 'Neon Glow',      desc: 'Vivid neon-edge glow for futuristic aesthetics',                    badge: 'hot',     dl: '3.3K', mediafire: 'https://www.mediafire.com/file/NEON_GLOW/file' },
-                    { name: 'Soft Bloom',     desc: 'Cinematic soft bloom for dreamy highlights',                        badge: 'popular', dl: '2.7K', mediafire: 'https://www.mediafire.com/file/SOFT_BLOOM/file' },
-                    { name: 'Lens Flare Glow',desc: 'Optical lens flare with anamorphic glow',                          badge: 'new',     dl: '1.9K', mediafire: 'https://www.mediafire.com/file/LENS_FLARE_GLOW/file' },
-                    { name: 'Pulse Glow',     desc: 'Rhythmic pulsing glow synced to beats',                            badge: 'hot',     dl: '2.5K', mediafire: 'https://www.mediafire.com/file/PULSE_GLOW/file' },
-                    { name: 'Edge Glow',      desc: 'Subject edge-detection glow highlight',                            badge: 'popular', dl: '2.0K', mediafire: 'https://www.mediafire.com/file/EDGE_GLOW/file' },
-                    { name: 'Dream Glow',     desc: 'Ethereal dreamy glow with chromatic shift',                        badge: 'new',     dl: '1.5K', mediafire: 'https://www.mediafire.com/file/DREAM_GLOW/file' },
-                ]
-            },
-            png: {
-                title: 'PNG Packs',
-                subtitle: '8 transparent VFX PNG asset packs',
-                icon: '<i class="fa-solid fa-image" style="color:#ff007f;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(255,0,127,0.2), rgba(200,0,80,0.15))',
-                type: 'image',
-                items: [
-                    { name: 'Lightning PNG',  desc: 'High-res transparent lightning bolt VFX assets',                   badge: 'popular', dl: '5.1K', image: 'png-lightning.png',  mediafire: 'https://www.mediafire.com/file/LIGHTNING_PNG/file' },
-                    { name: 'Fire PNG',       desc: 'Realistic fire and ember transparent overlays',                    badge: 'hot',     dl: '4.8K', image: 'png-fire.png',       mediafire: 'https://www.mediafire.com/file/FIRE_PNG/file' },
-                    { name: 'Smoke PNG',      desc: 'Cinematic smoke and fog transparent assets',                       badge: 'popular', dl: '3.9K', image: 'png-smoke.png',      mediafire: 'https://www.mediafire.com/file/SMOKE_PNG/file' },
-                    { name: 'Rain PNG',       desc: 'Realistic rain streaks and droplet overlays',                      badge: 'new',     dl: '2.2K', image: 'png-rain.png',       mediafire: 'https://www.mediafire.com/file/RAIN_PNG/file' },
-                    { name: 'Snow PNG',       desc: 'Soft snowfall and bokeh snow transparent PNGs',                   badge: 'new',     dl: '2.0K', image: 'png-snow.png',       mediafire: 'https://www.mediafire.com/file/SNOW_PNG/file' },
-                    { name: 'Explosion PNG',  desc: 'Cinematic explosion and shockwave VFX PNGs',                       badge: 'hot',     dl: '4.3K', image: 'png-explosion.png',  mediafire: 'https://www.mediafire.com/file/EXPLOSION_PNG/file' },
-                    { name: 'Blood PNG',      desc: 'Action-style blood splatter transparent assets',                   badge: 'popular', dl: '3.5K', image: 'png-blood.png',      mediafire: 'https://www.mediafire.com/file/BLOOD_PNG/file' },
-                    { name: 'Energy PNG',     desc: 'Anime-style energy aura and ki blast PNGs',                        badge: 'hot',     dl: '6.2K', image: 'png-energy.png',     mediafire: 'https://www.mediafire.com/file/ENERGY_PNG/file' },
-                ]
-            },
-            overlay: {
-                title: 'Overlay Packs',
-                subtitle: '6 cinematic overlay packs for premium aesthetics',
-                icon: '<i class="fa-solid fa-layer-group" style="color:#ffaa00;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(255,165,0,0.2), rgba(200,100,0,0.15))',
-                type: 'pack',
-                items: [
-                    { name: 'VHS Overlay',       desc: 'Retro VHS scanlines, noise, and color bleed effect',             badge: 'hot',     dl: '4.2K', mediafire: 'https://www.mediafire.com/file/VHS_OVERLAY/file' },
-                    { name: 'Film Grain',         desc: 'Authentic 35mm analog film grain texture overlay',              badge: 'popular', dl: '3.8K', mediafire: 'https://www.mediafire.com/file/FILM_GRAIN/file' },
-                    { name: 'Dust & Scratches',   desc: 'Old film dust particles and scratch overlay',                   badge: 'new',     dl: '2.1K', mediafire: 'https://www.mediafire.com/file/DUST_SCRATCHES/file' },
-                    { name: 'Light Leaks',        desc: 'Organic film light-leak bokeh overlays',                        badge: 'popular', dl: '3.0K', mediafire: 'https://www.mediafire.com/file/LIGHT_LEAKS/file' },
-                    { name: 'Lens Flare Overlay', desc: 'Anamorphic and optical lens flare overlays',                   badge: 'hot',     dl: '3.5K', mediafire: 'https://www.mediafire.com/file/LENS_FLARE_OVERLAY/file' },
-                    { name: 'Rain on Lens',       desc: 'Realistic rain droplets on camera lens overlay',               badge: 'new',     dl: '1.8K', mediafire: 'https://www.mediafire.com/file/RAIN_ON_LENS/file' },
-                ]
-            },
-            cc: {
-                title: 'Faisal Saber CC Packs',
-                subtitle: '4 signature color correction presets by Faisal Saber',
-                icon: '<i class="fa-solid fa-palette" style="color:#4facfe;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(79,172,254,0.2), rgba(0,242,254,0.15))',
-                type: 'image',
-                items: [
-                    { name: 'Faisal Saber Main CC',    desc: 'Signature all-purpose cinematic color correction',     badge: 'popular', dl: '6.8K', image: 'Millie.png',    mediafire: 'https://www.mediafire.com/file/MAIN_CC/file' },
-                    { name: 'Faisal Saber Crimson CC', desc: 'Bold red-toned cinematic grade for intense scenes',    badge: 'hot',     dl: '5.1K', image: 'iron.png', mediafire: 'https://www.mediafire.com/file/CRIMSON_CC/file' },
-                    { name: 'Faisal Saber Bright CC',  desc: 'Vibrant high-key bright correction for clean footage', badge: 'new',     dl: '3.9K', image: 'ronaldo.png',  mediafire: 'https://www.mediafire.com/file/BRIGHT_CC/file' },
-                    { name: 'Faisal Saber Dark CC',    desc: 'Deep moody dark correction for dramatic tone',         badge: 'popular', dl: '4.5K', image: 'thor.png',    mediafire: 'https://www.mediafire.com/file/DARK_CC/file' },
-                ]
-            },
-            sfx: {
-                title: 'Sound Effects',
-                subtitle: '8 royalty-free cinematic SFX packs',
-                icon: '<i class="fa-solid fa-music" style="color:#ff5050;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(255,80,80,0.2), rgba(200,0,0,0.15))',
-                type: 'audio',
-                items: [
-                    { name: 'Whoosh Pack',     desc: 'Fast air whoosh and swipe transition sounds',                      badge: 'popular', dl: '4.0K', audio: 'whoosh-sfx.mp3',          mediafire: 'https://www.mediafire.com/file/dnlgsenf3v89gag/whoosh-sfx.mp3/file' },
-                    { name: 'Impact Hit Pack', desc: 'Heavy punch and impact hit sound effects',                         badge: 'hot',     dl: '4.8K', audio: 'IMPACT.mp3',       mediafire: 'https://www.mediafire.com/file/0wg6hxkldw81cel/IMPACT.mp3/file' },
-                    { name: 'Bass Drop SFX',   desc: 'Deep bass drops for high-energy beat drops',                      badge: 'popular', dl: '3.5K', audio: 'bass-drop-edit_mixdown.mp3',        mediafire: 'https://www.mediafire.com/file/wjqtw9ncx58m13y/bass-drop-edit_mixdown.mp3/file' },
-                    { name: 'Cinematic Booms', desc: 'Huge cinematic explosion and boom sounds',                        badge: 'hot',     dl: '3.9K', audio: 'cinematicboom.mp3',  mediafire: 'https://www.mediafire.com/file/xxdfs06aixdimqz/cinematicboom.mp3/file' },
-                    { name: 'UI Sounds',       desc: 'Clean UI interaction and notification sounds',                    badge: 'new',     dl: '1.6K', audio: 'pop.mp3',        mediafire: 'https://www.mediafire.com/file/30j1hnkggnqdlhs/pop.mp3/file' },
-                    { name: 'Glitch SFX',      desc: 'Digital glitch and electronic distortion sounds',                 badge: 'new',     dl: '2.2K', audio: 'error-glitch.mp3',           mediafire: 'https://www.mediafire.com/file/31wv0rrs4byddb0/error-glitch.mp3/file' },
-                    { name: 'Tension Rises',   desc: 'Cinematic tension-building and riser sounds',                     badge: 'popular', dl: '2.8K', audio: 'riser.mp3',    mediafire: 'https://www.mediafire.com/file/7b3y16x447i4p7x/riser.mp3/file' },
-                    { name: 'Heartbeat SFX',   desc: 'Dramatic heartbeat and pulse sound effects',                      badge: 'hot',     dl: '3.1K', audio: 'heartbeat.mp3',        mediafire: 'https://www.mediafire.com/file/sigv5zbax9dywm0/heartbeat.mp3/file' },
-                ]
-            },
-            fonts: {
-                title: 'Fonts',
-                subtitle: '6 premium display fonts for video editors',
-                icon: '<i class="fa-solid fa-font" style="color:#d080ff;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(200,100,255,0.2), rgba(150,50,200,0.15))',
-                type: 'pack',
-                items: [
-                    { name: 'Futura Bold',     desc: 'Clean geometric sans-serif for modern titles',                     badge: 'popular', dl: '3.2K', mediafire: 'https://www.mediafire.com/file/r7eyf3cl5iy9ze1/futura-bold_BsXRo.zip/file' },
-                    { name: 'Cinematic Serif', desc: 'Elegant high-contrast serif for drama/thriller',                   badge: 'new',     dl: '1.9K', mediafire: 'https://www.mediafire.com/file/CINEMATIC_SERIF/file' },
-                    { name: 'Grunge Display',  desc: 'Rough-textured grunge font for edgy content',                     badge: 'hot',     dl: '3.7K', mediafire: 'https://www.mediafire.com/file/GRUNGE_DISPLAY/file' },
-                    { name: 'Neon Script',     desc: 'Fluid neon-style cursive script font',                            badge: 'popular', dl: '2.5K', mediafire: 'https://www.mediafire.com/file/NEON_SCRIPT/file' },
-                    { name: 'Minimal Sans',    desc: 'Ultra-clean minimal sans-serif for captions',                     badge: 'new',     dl: '2.0K', mediafire: 'https://www.mediafire.com/file/MINIMAL_SANS/file' },
-                    { name: 'Anime Bold',      desc: 'Thick impactful font inspired by anime titles',                   badge: 'hot',     dl: '4.1K', mediafire: 'https://www.mediafire.com/file/ANIME_BOLD/file' },
-                ]
-            },
-            aiprompt: {
-                title: 'AI Prompt Library',
-                subtitle: '6 powerful AI prompts for editors and creators',
-                icon: '<i class="fa-solid fa-robot" style="color:#00f2fe;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(0,242,254,0.2), rgba(0,150,200,0.15))',
-                type: 'ai',
-                items: [
-                    { name: 'Comic Art AI Prompt',   desc: 'Make this comic art type with same background and height and width + High-detail comic book illustration, monochrome or limited colorful palette, bold colorful linework, precise inking, cinematic lighting and composition, cel-shaded shadows, detailed textures, clean edges, moody atmosphere, graphic-novel tone, dramatic contrast, realistic proportions but stylized like comic art, smooth gradients, 4K ink illustration quality.', badge: 'hot' },
-                    { name: 'Ai Sunglasses Prompt',      desc: 'subject wearing realistic, dark, reflective aviator sunglasses, identical to user request. The lenses must have specular highlights and slight reflections of the ambient lighting conditions, and the arms of the sunglasses must rest naturally on the ears. Facial features and expression must remain untouched. Natural, matching directional light and shadows, integrated realistically. 4k resolution, extreme detail..', badge: 'popular' },
-                    { name: 'Realistic 3d text ai prompt', desc: 'Highly detailed, hyper-realistic cinematic landscape Text Faisal Saber prominently carved/built into environment (not an overlay). 8k quality, dramatic lighting, absolutely no humans.', badge: 'new' },
-                    { name: 'Futuristic City Prompt',   desc: 'Blade Runner-inspired futuristic city at night, neon reflections on wet streets, flying vehicles, dense urban cyberpunk skyline. Cinematic rain, volumetric fog, ultra-detailed, 8K render.', badge: 'hot' },
-                    { name: 'Portrait Lighting Prompt', desc: 'Cinematic portrait with dramatic Rembrandt lighting, rich bokeh background, emotional expression. Shot on ARRI Alexa, anamorphic lens, film-grain aesthetic, professional color grade.', badge: 'popular' },
-                    { name: 'AMV Thumbnail Prompt',     desc: 'Eye-catching AMV YouTube thumbnail with a dramatic anime character in the foreground, explosive energy effects, bold color contrast, glowing accents, cinematic aspect ratio composition.', badge: 'new' },
-                ]
-            },
-            icons: {
-                title: 'Icons',
-                subtitle: '6 premium icon packs in SVG and PNG format',
-                icon: '<i class="fa-solid fa-icons" style="color:#00ffcc;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(0,255,200,0.2), rgba(0,200,150,0.15))',
-                type: 'image',
-                items: [
-                    { name: 'Social Media Icons',    desc: 'All major social platform icons in clean vector SVG',        badge: 'popular', dl: '3.8K', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/SOCIAL_MEDIA_ICONS/file' },
-                    { name: 'UI Interface Icons',    desc: 'Clean minimal UI/UX icon set for motion graphics',           badge: 'new',     dl: '2.2K', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/UI_INTERFACE_ICONS/file' },
-                    { name: 'Emoji Icon Pack',       desc: 'Flat-style animated emoji icon collection',                  badge: 'hot',     dl: '4.0K', image: 'https://images.unsplash.com/photo-1493707553966-283afac8c358?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/EMOJI_ICON_PACK/file' },
-                    { name: 'Gaming Icons',          desc: 'Gaming-themed icon pack for streamer content',               badge: 'popular', dl: '3.3K', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/GAMING_ICONS/file' },
-                    { name: 'Nature & Weather Icons',desc: 'Weather and nature icon set for intros and overlays',       badge: 'new',     dl: '1.5K', image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/NATURE_WEATHER_ICONS/file' },
-                    { name: 'Arrow & Shape Icons',   desc: 'Bold directional arrows and geometric shape icons',          badge: 'hot',     dl: '2.9K', image: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=400&q=80', mediafire: 'https://www.mediafire.com/file/ARROW_SHAPE_ICONS/file' },
-                ]
-            },
-            aescripts: {
-                title: 'AE Scripts',
-                subtitle: '5 automation scripts to supercharge After Effects',
-                icon: '<i class="fa-solid fa-code" style="color:#ffd000;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(255,200,0,0.2), rgba(200,130,0,0.15))',
-                type: 'pack',
-                items: [
-                    { name: 'Auto Ease Script',      desc: 'Instantly converts all keyframes to smooth cubic eases',    badge: 'popular', dl: '4.2K', mediafire: 'https://www.mediafire.com/file/AUTO_EASE_SCRIPT/file' },
-                    { name: 'Layer Organizer',       desc: 'Auto-names, color-codes and groups layers instantly',       badge: 'hot',     dl: '3.6K', mediafire: 'https://www.mediafire.com/file/LAYER_ORGANIZER/file' },
-                    { name: 'Text Animator Pro',     desc: 'One-click text animation rig with 20+ presets built in',   badge: 'popular', dl: '3.1K', mediafire: 'https://www.mediafire.com/file/TEXT_ANIMATOR_PRO/file' },
-                    { name: 'Render Queue Manager',  desc: 'Batch render with custom settings and notifications',      badge: 'new',     dl: '1.8K', mediafire: 'https://www.mediafire.com/file/RENDER_QUEUE_MANAGER/file' },
-                    { name: 'Motion Bro Companion',  desc: 'Companion script for managing preset libraries fast',      badge: 'hot',     dl: '2.7K', mediafire: 'https://www.mediafire.com/file/MOTION_BRO_COMPANION/file' },
-                ]
-            },
-            plugins: {
-                title: 'Plugins',
-                subtitle: '5 essential free plugins for AE and Premiere',
-                icon: '<i class="fa-solid fa-plug" style="color:#ff5050;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(255,50,50,0.2), rgba(200,0,0,0.15))',
-                type: 'icon',
-                items: [
-                    { name: 'Video Copilot Element 3D Lite', desc: 'Lite version of the legendary 3D object plugin for AE', badge: 'hot',     dl: '5.5K', icon: '<i class="fa-solid fa-cube" style="color:#ff5050;"></i>',          mediafire: 'https://www.videocopilot.net/products/element2' },
-                    { name: 'Twitch by Video Copilot',       desc: 'Randomize AE layers with flicker, shake, and color',   badge: 'popular', dl: '4.1K', icon: '<i class="fa-solid fa-bolt" style="color:#ffaa00;"></i>',          mediafire: 'https://www.videocopilot.net/products/twitch/' },
-                    { name: 'Rsmb Motion Blur',              desc: 'Real Smart Motion Blur plugin for smooth velocity',    badge: 'hot',     dl: '6.0K', icon: '<i class="fa-solid fa-gauge-high" style="color:#4facfe;"></i>',    mediafire: 'https://revisionfx.com/products/rsmb/' },
-                    { name: 'Saber by Video Copilot',        desc: 'Create realistic lightsaber and energy beam effects',  badge: 'popular', dl: '4.8K', icon: '<i class="fa-solid fa-wand-sparkles" style="color:#00f2fe;"></i>', mediafire: 'https://www.videocopilot.net/blog/2016/03/new-plug-in-saber-now-available-100-free/' },
-                    { name: 'Optical Flares Starter',        desc: 'Starter edition optical lens flare generator for AE', badge: 'new',     dl: '3.2K', icon: '<i class="fa-solid fa-sun" style="color:#ffd000;"></i>',           mediafire: 'https://www.videocopilot.net/products/opticalflares' },
-                ]
-            },
-            mograph: {
-                title: 'Motion Graphics',
-                subtitle: '6 editable MOGRT and AE motion graphic templates',
-                icon: '<i class="fa-solid fa-shapes" style="color:#8090ff;font-size:1.5rem;"></i>',
-                iconBg: 'linear-gradient(135deg, rgba(80,100,255,0.2), rgba(40,50,200,0.15))',
-                type: 'pack',
-                items: [
-                    { name: 'Lower Third Pack',  desc: 'Clean animated lower-third title templates',                    badge: 'popular', dl: '3.5K', mediafire: 'https://www.mediafire.com/file/LOWER_THIRD_PACK/file' },
-                    { name: 'Intro Logo Sting',  desc: 'Dynamic logo reveal intro with particle effects',              badge: 'hot',     dl: '4.2K', mediafire: 'https://www.mediafire.com/file/INTRO_LOGO_STING/file' },
-                    { name: 'Social Media Pack', desc: 'Instagram, YouTube and TikTok motion graphic assets',         badge: 'popular', dl: '3.9K', mediafire: 'https://www.mediafire.com/file/SOCIAL_MEDIA_PACK/file' },
-                    { name: 'Countdown Timer',   desc: 'Customizable animated countdown for livestreams',             badge: 'new',     dl: '2.0K', mediafire: 'https://www.mediafire.com/file/COUNTDOWN_TIMER/file' },
-                    { name: 'Stats & Numbers',   desc: 'Animated statistics and counter graphic templates',           badge: 'new',     dl: '1.7K', mediafire: 'https://www.mediafire.com/file/STATS_NUMBERS/file' },
-                    { name: 'Cinematic Titles',  desc: 'Epic cinematic film title card templates in AE',              badge: 'hot',     dl: '4.6K', mediafire: 'https://www.mediafire.com/file/CINEMATIC_TITLES/file' },
-                ]
-            },
-        };
+<div class="toast" id="toast"><i class="fas fa-film"></i><span id="toastMsg"></span></div>
 
-        // ===== PANEL SYSTEM =====
-        function openPanel(id) {
-            closeAllPanels();
-            document.getElementById(id).classList.add('open');
-            document.getElementById('panelOverlay').classList.add('active');
-            document.body.style.overflow = 'hidden';
+<script>
+(function(){
+  var fine = window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+  /* ---------- scroll progress + navbar state ---------- */
+  var progress = document.getElementById('progress');
+  var header = document.getElementById('siteHeader');
+  function onScroll(){
+    var h = document.documentElement;
+    var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progress.style.width = pct + '%';
+    header.classList.toggle('scrolled', h.scrollTop > 20);
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- mobile menu ---------- */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.innerHTML = open ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>';
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+      burger.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+  });
+
+  /* ---------- hero letter reveal ---------- */
+  var heroName = document.getElementById('heroName');
+  var text = heroName.textContent;
+  heroName.textContent = '';
+  var i = 0;
+  text.split('').forEach(function(ch){
+    var span = document.createElement('span');
+    span.className = ch === ' ' ? 'ch sp' : 'ch';
+    span.style.setProperty('--i', i);
+    span.textContent = ch === ' ' ? '\u00A0' : ch;
+    heroName.appendChild(span);
+    i++;
+  });
+
+  /* ---------- magnetic buttons ---------- */
+  if(fine){
+    document.querySelectorAll('.magnetic').forEach(function(btn){
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var mx = e.clientX - r.left - r.width/2;
+        var my = e.clientY - r.top - r.height/2;
+        btn.style.transform = 'translate('+mx*0.25+'px,'+my*0.3+'px)';
+      });
+      btn.addEventListener('mouseleave', function(){ btn.style.transform = 'translate(0,0)'; });
+    });
+  }
+
+  /* ---------- scroll reveal ---------- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    var groups = {};
+    document.querySelectorAll('.reveal').forEach(function(el){
+      var parent = el.parentElement;
+      if(!groups[parent] ) { parent.__stagger = 0; }
+    });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var el = entry.target;
+          var parent = el.parentElement;
+          var n = (parent.__stagger || 0);
+          parent.__stagger = n + 1;
+          setTimeout(function(){ el.classList.add('in'); }, Math.min(n,6) * 70);
+          io.unobserve(el);
         }
-        function switchPanel(id) {
-            document.querySelectorAll('.side-panel').forEach(p => p.classList.remove('open'));
-            document.getElementById(id).classList.add('open');
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- active nav link on scroll ---------- */
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('nav.links a');
+  if('IntersectionObserver' in window){
+    var navIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          navLinks.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#'+entry.target.id); });
         }
-        function closeAllPanels() {
-            document.querySelectorAll('.side-panel').forEach(p => p.classList.remove('open'));
-            document.getElementById('panelOverlay').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){ navIo.observe(s); });
+  }
 
-        // ===== NAVBAR SCROLL =====
-        const header = document.getElementById('mainHeader');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
+  /* ---------- toast ---------- */
+  var toast = document.getElementById('toast');
+  var toastMsg = document.getElementById('toastMsg');
+  var toastTimer;
+  function showToast(msg){
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2800);
+  }
 
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.querySelector('i').className = navLinks.classList.contains('active')
-                ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered';
-        });
-        navLinks.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.querySelector('i').className = 'fa-solid fa-bars-staggered';
-            });
-        });
+  /* ---------- showreel cards: hover-preview + click-to-play ---------- */
+  document.querySelectorAll('.reel-card').forEach(function(card){
+    var video = card.querySelector('video');
+    var title = card.dataset.title || 'this clip';
 
-        // Search
-        const searchInput = document.getElementById('studioSearch');
-        const allCards = document.querySelectorAll('.studio-card');
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            let visible = 0;
-            allCards.forEach(card => {
-                const match = card.getAttribute('data-search').includes(query);
-                card.style.display = match ? 'flex' : 'none';
-                if (match) visible++;
-            });
-            document.getElementById('packCount').textContent = visible + ' Resources Available';
-        });
+    function hasSource(){ return !!video.querySelector('source'); }
 
-        // Filter tabs
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filterValue = btn.getAttribute('data-filter');
-                let visible = 0;
-                allCards.forEach(card => {
-                    const cats = card.getAttribute('data-category').split(' ');
-                    const show = filterValue === 'all' || cats.includes(filterValue);
-                    card.style.display = show ? 'flex' : 'none';
-                    if (show) visible++;
-                });
-                document.getElementById('packCount').textContent = visible + ' Resources Available';
-            });
-        });
+    video.addEventListener('play', function(){ card.classList.add('is-playing'); });
+    video.addEventListener('pause', function(){ card.classList.remove('is-playing'); });
 
-        // ===== COUNTER API =====
-        const COUNTER_API = 'https://countapi.mileshilliard.com/api/v1';
-        const COUNTER_PREFIX = 'faisalsaber-resources-v1';
-
-        // Fallback shown for image-type items until the real preview file is uploaded
-        // (matching filename in the RESOURCES object below) replaces it automatically.
-        const PLACEHOLDER_IMG = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
-            '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">' +
-            '<rect width="100%" height="100%" fill="#11131a"/>' +
-            '<rect x="1" y="1" width="398" height="398" fill="none" stroke="#23262f" stroke-width="2"/>' +
-            '<text x="50%" y="47%" font-family="Arial, sans-serif" font-size="20" fill="#4facfe" text-anchor="middle">PREVIEW</text>' +
-            '<text x="50%" y="58%" font-family="Arial, sans-serif" font-size="12" fill="#84899e" text-anchor="middle">Coming Soon</text>' +
-            '</svg>'
-        );
-
-        function counterKey(id, type) { return `${COUNTER_PREFIX}-${id}-${type}`; }
-        function formatCount(n) {
-            n = Number(n) || 0;
-            if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
-            if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
-            return String(n);
-        }
-        async function getCounter(id, type) {
-            try {
-                const res = await fetch(`${COUNTER_API}/get/${counterKey(id, type)}`);
-                if (!res.ok) return 0;
-                const data = await res.json();
-                return parseInt(data.value) || 0;
-            } catch (e) { return 0; }
-        }
-        async function hitCounter(id, type) {
-            try {
-                const res = await fetch(`${COUNTER_API}/hit/${counterKey(id, type)}`);
-                if (!res.ok) return null;
-                const data = await res.json();
-                return parseInt(data.value);
-            } catch (e) { return null; }
-        }
-        function setStatDisplay(id, type, value) {
-            const el = document.querySelector(
-                type === 'views' ? `[data-views="${id}"]` : `[data-downloads="${id}"]`
-            );
-            if (el) el.textContent = formatCount(value);
-        }
-        async function loadAllStats() {
-            const cards = document.querySelectorAll('.studio-card[data-id]');
-            await Promise.all(Array.from(cards).map(async (card) => {
-                const id = card.getAttribute('data-id');
-                const [views, downloads] = await Promise.all([
-                    getCounter(id, 'views'), getCounter(id, 'downloads')
-                ]);
-                setStatDisplay(id, 'views', views);
-                setStatDisplay(id, 'downloads', downloads);
-            }));
-        }
-        loadAllStats();
-
-        // ===== RESOURCE MODAL =====
-        const modal = document.getElementById('resourceModal');
-        let currentModalId = null;
-
-        // ===== LOCAL DOWNLOAD HELPER =====
-        // Saari files apke VS Code project ke "files" folder se direct download hongi.
-        // Bas folder structure ye rakhna: files/<category-id>/<file-name>
-        // Example: files/twixtor/smooth-twixtor.zip , files/sfx/whoosh-sfx.mp3
-        // Agar kisi item ka asli filename alag rakhna ho to us item mein "file: 'apna-naam.zip'" add kar do,
-        // wahi use ho jayega (category id ke andar se).
-        function slugify(str) {
-            return String(str).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-        }
-        function getDownloadAttrs(categoryId, item) {
-            // PLUGINS hamesha external official site par hi redirect honge (jaise pehle se ho raha tha)
-            if (categoryId === 'plugins') {
-                return `href="${item.mediafire}" target="_blank" rel="noopener noreferrer"`;
-            }
-            // Baaki sab -> local file jo aap VS Code me "files" folder ke andar daalenge
-            let fileName = item.file;
-            if (!fileName) {
-                fileName = item.audio ? item.audio : `${slugify(item.name)}.zip`;
-            }
-            const filePath = `files/${categoryId}/${fileName}`;
-            return `href="${filePath}" download="${fileName}"`;
-        }
-
-        function openResourceModal(id) {
-            const data = RESOURCES[id];
-            if (!data) return;
-            currentModalId = id;
-
-            document.getElementById('modalTitle').textContent = data.title;
-            document.getElementById('modalSubtitle').textContent = data.subtitle;
-
-            const iconEl = document.getElementById('modalHeaderIcon');
-            iconEl.innerHTML = data.icon;
-            iconEl.style.background = data.iconBg;
-
-            const content = document.getElementById('modalContent');
-
-            if (data.type === 'ai') {
-                content.innerHTML = '<div class="resource-list" id="promptList"></div>';
-                const list = document.getElementById('promptList');
-                data.items.forEach((item) => {
-                    const el = document.createElement('div');
-                    el.className = 'prompt-item';
-                    el.innerHTML = `
-                        <div class="prompt-item-header">
-                            <span class="prompt-item-title">${item.name}</span>
-                            <span class="res-badge ${item.badge}">${item.badge.charAt(0).toUpperCase() + item.badge.slice(1)}</span>
-                        </div>
-                        <p class="prompt-item-desc">${item.desc}</p>
-                        <button class="copy-prompt-btn" onclick="copyPrompt(this, \`${item.desc.replace(/`/g, '\\`')}\`)">
-                            <i class="fa-solid fa-copy"></i> Copy Prompt
-                        </button>
-                    `;
-                    list.appendChild(el);
-                });
-            } else if (data.type === 'image') {
-                // CC, PNG, Icons, Text Animation -> show the actual preview image with a download button below
-                content.innerHTML = '<div class="media-grid" id="mediaGrid"></div>';
-                const grid = document.getElementById('mediaGrid');
-                data.items.forEach((item) => {
-                    const el = document.createElement('div');
-                    el.className = 'media-card';
-                    el.innerHTML = `
-                        <div class="media-thumb">
-                            <img src="${item.image}" alt="${item.name}" loading="lazy"
-                                 onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">
-                        </div>
-                        <div class="media-info">
-                            <span class="media-name">${item.name}</span>
-                            <span class="res-badge ${item.badge}">${item.badge.charAt(0).toUpperCase() + item.badge.slice(1)}</span>
-                        </div>
-                        <a ${getDownloadAttrs(id, item)} class="media-download-btn" onclick="trackDownload('${id}')">
-                            <i class="fa-solid fa-download"></i> Download
-                        </a>
-                    `;
-                    grid.appendChild(el);
-                });
-            } else if (data.type === 'icon') {
-                // Plugins -> show a distinct icon per item with a download button below
-                content.innerHTML = '<div class="media-grid" id="mediaGrid"></div>';
-                const grid = document.getElementById('mediaGrid');
-                data.items.forEach((item) => {
-                    const el = document.createElement('div');
-                    el.className = 'media-card';
-                    el.innerHTML = `
-                        <div class="media-thumb-icon" style="background:${data.iconBg};">${item.icon}</div>
-                        <div class="media-info">
-                            <span class="media-name">${item.name}</span>
-                            <span class="res-badge ${item.badge}">${item.badge.charAt(0).toUpperCase() + item.badge.slice(1)}</span>
-                        </div>
-                        <a href="${item.mediafire}" target="_blank" rel="noopener noreferrer" class="media-download-btn" onclick="trackDownload('${id}')">
-                            <i class="fa-brands fa-mediafire"></i> Download
-                        </a>
-                    `;
-                    grid.appendChild(el);
-                });
-            } else if (data.type === 'audio') {
-                // Sound Effects -> play-to-preview button, then download if they like it
-                content.innerHTML = '<div class="resource-list" id="audioList"></div>';
-                const list = document.getElementById('audioList');
-                data.items.forEach((item, idx) => {
-                    const audioId = `audio-${id}-${idx}`;
-                    const el = document.createElement('div');
-                    el.className = 'audio-item';
-                    el.innerHTML = `
-                        <button class="audio-play-btn" type="button" onclick="toggleAudio('${audioId}', this)">
-                            <i class="fa-solid fa-play"></i>
-                        </button>
-                        <div class="audio-info">
-                            <span class="audio-name">${item.name}</span>
-                            <span class="audio-desc">${item.desc}</span>
-                        </div>
-                        <span class="res-dl-count"><i class="fa-solid fa-download"></i> ${item.dl}</span>
-                        <a ${getDownloadAttrs(id, item)} class="res-download-btn" onclick="trackDownload('${id}')">
-                            <i class="fa-solid fa-download"></i> Download
-                        </a>
-                        <audio id="${audioId}" src="files/${id}/${item.audio}" preload="none"></audio>
-                    `;
-                    list.appendChild(el);
-                });
-            } else {
-                content.innerHTML = '<div class="resource-list" id="resList"></div>';
-                const list = document.getElementById('resList');
-                data.items.forEach((item) => {
-                    const el = document.createElement('div');
-                    el.className = 'resource-item';
-                    el.innerHTML = `
-                        <div class="resource-item-icon" style="background:${data.iconBg};">${data.icon}</div>
-                        <div class="resource-item-info">
-                            <div class="resource-item-name">${item.name}</div>
-                            <div class="resource-item-desc">${item.desc}</div>
-                        </div>
-                        <div class="resource-item-right">
-                            <span class="res-badge ${item.badge}">${item.badge.charAt(0).toUpperCase() + item.badge.slice(1)}</span>
-                            <span class="res-dl-count"><i class="fa-solid fa-download"></i> ${item.dl}</span>
-                            <a ${getDownloadAttrs(id, item)} class="res-download-btn" onclick="trackDownload('${id}')">
-                                <i class="fa-solid fa-download"></i> Download
-                            </a>
-                        </div>
-                    `;
-                    list.appendChild(el);
-                });
-            }
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-
-            hitCounter(id, 'views').then((val) => {
-                if (val !== null) setStatDisplay(id, 'views', val);
-            });
-        }
-
-        function closeResourceModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeResourceModal(); });
-
-        function trackDownload(id) {
-            hitCounter(id, 'downloads').then((val) => {
-                if (val !== null) setStatDisplay(id, 'downloads', val);
-            });
-        }
-
-        // ===== AUDIO PREVIEW PLAYER (Sound Effects) =====
-        let currentlyPlayingAudio = null;
-        function toggleAudio(audioId, btn) {
-            const audio = document.getElementById(audioId);
-            if (!audio) return;
-
-            // Stop whatever else is currently playing first
-            if (currentlyPlayingAudio && currentlyPlayingAudio !== audio) {
-                currentlyPlayingAudio.pause();
-                currentlyPlayingAudio.currentTime = 0;
-            }
-            document.querySelectorAll('.audio-play-btn').forEach((b) => {
-                if (b !== btn) {
-                    b.innerHTML = '<i class="fa-solid fa-play"></i>';
-                    b.classList.remove('playing');
-                }
-            });
-
-            if (audio.paused) {
-                audio.play().catch(() => {});
-                btn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-                btn.classList.add('playing');
-                currentlyPlayingAudio = audio;
-            } else {
-                audio.pause();
-                btn.innerHTML = '<i class="fa-solid fa-play"></i>';
-                btn.classList.remove('playing');
-                currentlyPlayingAudio = null;
-            }
-            audio.onended = () => {
-                btn.innerHTML = '<i class="fa-solid fa-play"></i>';
-                btn.classList.remove('playing');
-                currentlyPlayingAudio = null;
-            };
-        }
-
-        function copyPrompt(btn, text) {
-            navigator.clipboard.writeText(text).then(() => {
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-                btn.classList.add('copied');
-                setTimeout(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Prompt';
-                    btn.classList.remove('copied');
-                }, 2200);
-            }).catch(() => {
-                // Fallback
-                const ta = document.createElement('textarea');
-                ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-                document.body.appendChild(ta); ta.select();
-                document.execCommand('copy'); document.body.removeChild(ta);
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-                btn.classList.add('copied');
-                setTimeout(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Prompt';
-                    btn.classList.remove('copied');
-                }, 2200);
-            });
-        }
-
-        // ===== 3D TILT =====
-        if (window.matchMedia('(hover: hover)').matches) {
-            allCards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const rotateX = (rect.height / 2 - y) / 14;
-                    const rotateY = (x - rect.width / 2) / 14;
-                    card.style.transform = `translateY(-10px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                });
-                card.style.transition = "transform 0.1s ease, border-color 0.3s ease, box-shadow 0.3s ease";
-                card.addEventListener('mouseleave', () => {
-                    card.style.transition = "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease";
-                    card.style.transform = 'translateY(0) scale(1) rotateX(0deg) rotateY(0deg)';
-                });
-            });
-        }
-    </script>
+    card.addEventListener('mouseenter', function(){
+      if(fine && hasSource()){ video.play().catch(function(){}); }
+    });
+    card.addEventListener('mouseleave', function(){
+      if(fine && hasSource()){ video.pause(); video.currentTime = 0; }
+    });
+    card.addEventListener('click', function(){
+      if(!hasSource()){
+        showToast('Add your ' + title.toLowerCase() + ' file to see it play here.');
+        return;
+      }
+      if(video.paused){ video.play().catch(function(){}); } else { video.pause(); }
+    });
+  });
+})();
+</script>
 </body>
 </html>
